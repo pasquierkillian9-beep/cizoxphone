@@ -367,6 +367,18 @@ footer{max-width:1000px;margin:64px auto 0;padding:0 16px calc(96px + env(safe-a
 .det h2{margin-top:6px}
 .sold-note{margin-top:14px}
 @media(min-width:720px){.fgrid{grid-template-columns:1.3fr 1fr 1fr 1fr}}
+
+/* ===== V5 : reprise de l'ancien téléphone à l'achat ===== */
+.rpb{display:flex;align-items:center;gap:14px;width:100%;margin:6px 0 16px;padding:16px;border-radius:18px;border:1px solid rgba(125,255,178,.45);background:radial-gradient(circle at 100% 0,rgba(125,255,178,.16),transparent 55%),linear-gradient(160deg,rgba(26,10,77,.75),rgba(10,4,32,.8));color:#fff;font:inherit;text-align:left;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.rpb .ri{display:grid;place-items:center;flex:none;width:46px;height:46px;border-radius:14px;background:rgba(125,255,178,.15);color:#7dffb2;font-size:22px}
+.rpb b{display:block;font:700 16px 'Sora',sans-serif}.rpb small{display:block;color:var(--mute);font-size:13.5px;margin-top:2px}
+.rpb .ra{margin-left:auto;flex:none;color:#7dffb2;font-size:20px;transition:transform .3s var(--ease)}
+.rpb:active{transform:scale(.98)}
+@media(hover:hover){.rpb:hover{border-color:#7dffb2;box-shadow:0 0 24px rgba(125,255,178,.25)}.rpb:hover .ra{transform:translateX(4px)}}
+.det .rpb{margin:16px 0 0}
+.rpt{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 14px;padding:12px 16px;border-radius:16px;border:1px solid rgba(125,255,178,.45);background:rgba(125,255,178,.08);font-size:14.5px}
+.rpt b{color:#9dffc6}
+.rpt button{margin-left:auto;background:none;border:0;color:var(--acc2);font:600 14px 'Exo 2',sans-serif;cursor:pointer;text-decoration:underline;padding:4px 0}
 </style>
 <link rel="canonical" href="https://www.cizoxphone.com/">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://www.cizoxphone.com/">
@@ -635,8 +647,9 @@ function shop(i){
   const cta=t.statut==="vendu"?`<p class="ref sold-note"><b>Ce téléphone est vendu.</b><br>Écris-moi : je te préviens dès qu'un modèle similaire arrive.</p><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai vu que le ${t.nom} est vendu. Pouvez-vous me prévenir si un modèle similaire arrive ?`)}">Être prévenu</a>`
     :t.statut==="reserve"?`<p class="inf sold-note">Ce téléphone est réservé pour le moment.</p><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, le ${t.nom} (${t.prix}) est réservé : pouvez-vous me prévenir s'il se libère ?`)}">Me prévenir s'il se libère</a>`
     :`<a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, je vous contacte pour votre ${t.nom} (${t.prix}) : est-il toujours disponible ?`)}">Réserver mon téléphone</a>`;
-  el.innerHTML = `<button class="back" id="bk">← Tous les téléphones</button><div class="det"><div>${gal}</div><div><h2>${esc(t.nom)} · ${esc(t.prix)}</h2>${bdg(t)}<p style="white-space:pre-line">${esc(t.desc)}</p>${cta}</div></div>`;
+  el.innerHTML = `<button class="back" id="bk">← Tous les téléphones</button><div class="det"><div>${gal}</div><div><h2>${esc(t.nom)} · ${esc(t.prix)}</h2>${bdg(t)}<p style="white-space:pre-line">${esc(t.desc)}</p>${cta}${t.statut==="vendu"?"":`<button class="rpb" id="rpb"><span class="ri">⇄</span><span><b>Paie moins cher : fais reprendre ton ancien iPhone</b><small>Je déduis la valeur de ton ancien iPhone du prix de ${esc(t.prix)}.</small></span><span class="ra">→</span></button>`}</div></div>`;
   $("#bk").onclick=()=>{shop();el.scrollIntoView({block:"start"})};
+  {const rb=$("#rpb"); if(rb) rb.onclick=()=>reprise(i);}
   [...el.children].forEach((k,j)=>{k.classList.add("rise");k.style.animationDelay=j*40+"ms"});
   const gt=$("#gt"); if(gt&&n>1){
     const go=d=>{const w=gt.clientWidth,c=Math.round(gt.scrollLeft/w);gt.scrollTo({left:((c+d+n)%n)*w,behavior:RM.matches?"auto":"smooth"})};
@@ -686,6 +699,8 @@ const AVANT=[["Fonctionnait","Oui, il s’est éteint sans prévenir","Il marcha
 /* À REMPLIR : prix de base "Modèle|Stockage" : 300 ; déductions "Question|Réponse" : 40. Tant que la grille est vide, aucun prix n’est affiché. */
 const GRILLE_RACHAT={}, DEDUC={};
 let R={go:false,i:0,a:{},fin:false,sub:"gen",ic:false,pc:[],df:[],ph:[],pv:[],bat:100,bk:false};
+let REPRISE=null; /* index du téléphone acheté (ou -1 = pas encore choisi) quand on vient de l'onglet Acheter */
+function reprise(i){tab(3,true);REPRISE=i==null?-1:i;R={go:true,i:0,a:{},fin:false,sub:"gen",ic:false,pc:[],df:[],ph:[],pv:[],bat:100,bk:false};R._k=null;vendre();haut();}
 const PIECES=["Écran avant","Batterie","Caméra arrière","Vitre arrière","Autres"];
 const act=()=>QS.filter(q=>!(q.off&&R.a.Allumage==="Non"));
 const devis=()=>REFUS.some(x=>R.a[x[0]]===x[1])||["A pris l’eau","Face ID HS"].includes(R.a["Avant la panne"]); /* true = iPhone non repris */
@@ -728,8 +743,8 @@ function vendre(){
   const side=`<div class="wzs">${p!=null?`<div class="val"><div class="vt"><small>Valeur estimée</small><b>${dv?"Non repris":p==null?"—":eur(p)}</b><small>${dv?"Je ne reprends pas cet iPhone.":p==null?"Ton prix s’affiche à la fin des questions.":"Prix indicatif, confirmé après vérification."}</small></div>${vimg}</div>`:""}<div class="box dev${a["Modèle"]?"":" nm"}"><h3>Ton appareil</h3>${dev}</div><div class="box"><div class="pg"><span>Progression</span><b>${R.fin?"Terminé":"Étape "+(R.i+1)+"/"+n}</b></div><div class="bar"><i style="width:${Math.round((R.fin?n:R.i)/n*100)}%"></i></div></div></div>`;
   let main;
   if(R.fin){
-    const base="Bonjour, je voudrais vendre mon iPhone :\n"+rw.map(x=>x[0]+" : "+x[1]).join("\n")+(p==null?"":"\nEstimation du site : "+eur(p));
-    main=`<div class="main fin"><div class="st">Dernière étape</div><h2 class="qt">${p==null?"Envoie-moi ta demande":"Ton estimation : "+eur(p)}</h2><p class="note">Remise en main propre à Verrières-en-Anjou et alentours. Je te réponds sur WhatsApp avec mon prix de reprise, confirmé après vérification de ton iPhone.</p>${R.ph.length?`<p class="inf">📎 Après l’ouverture de WhatsApp, joins tes ${R.ph.length} photo${R.ph.length>1?"s":""} dans la conversation (bouton + puis Photos) : WhatsApp ne permet pas de les envoyer automatiquement depuis un site.</p><div class="thumbs sm">${R.pv.map(u=>`<div class="th"><img loading="lazy" decoding="async" src="${u}" alt=""></div>`).join("")}</div>`:""}<div class="opts"><a class="oc" target="_blank" rel="noopener" href="${wa(base+"\nRemise : en main propre à Verrières-en-Anjou et alentours")}"><b>Envoyer ma demande sur WhatsApp</b><small>Via WhatsApp · remise en main propre à Verrières-en-Anjou et alentours</small></a></div><div class="nav"><button class="bk" id="bk">← Retour</button></div></div>`;
+    const RT=REPRISE!=null&&TELEPHONES[REPRISE];const base=(REPRISE==null?"Bonjour, je voudrais vendre mon iPhone :\n":RT?`Bonjour, je voudrais acheter votre ${RT.nom} (${RT.prix}) et faire reprendre mon ancien iPhone pour payer moins cher :\n`:"Bonjour, je voudrais acheter un de vos téléphones et faire reprendre mon ancien iPhone pour payer moins cher :\n")+rw.map(x=>x[0]+" : "+x[1]).join("\n")+(p==null?"":"\nEstimation du site : "+eur(p));
+    main=`<div class="main fin"><div class="st">Dernière étape</div><h2 class="qt">${p==null?(REPRISE!=null?"Envoie-moi ta demande de reprise":"Envoie-moi ta demande"):"Ton estimation : "+eur(p)}</h2><p class="note">Remise en main propre à Verrières-en-Anjou et alentours. ${REPRISE!=null?"Je te réponds sur WhatsApp avec mon prix de reprise, déduit du prix de ton nouveau téléphone. L’échange se fait en main propre, prix confirmé après vérification de ton ancien iPhone.":"Je te réponds sur WhatsApp avec mon prix de reprise, confirmé après vérification de ton iPhone."}</p>${R.ph.length?`<p class="inf">📎 Après l’ouverture de WhatsApp, joins tes ${R.ph.length} photo${R.ph.length>1?"s":""} dans la conversation (bouton + puis Photos) : WhatsApp ne permet pas de les envoyer automatiquement depuis un site.</p><div class="thumbs sm">${R.pv.map(u=>`<div class="th"><img loading="lazy" decoding="async" src="${u}" alt=""></div>`).join("")}</div>`:""}<div class="opts"><a class="oc" target="_blank" rel="noopener" href="${wa(base+"\nRemise : en main propre à Verrières-en-Anjou et alentours")}"><b>Envoyer ma demande sur WhatsApp</b><small>Via WhatsApp · remise en main propre à Verrières-en-Anjou et alentours</small></a></div><div class="nav"><button class="bk" id="bk">← Retour</button></div></div>`;
   } else {
     let t=q.t,h=q.h||"",body="";
     if(q.ty==="modele"){
@@ -761,7 +776,9 @@ function vendre(){
     }
     main=`<div class="main"><div class="st">Étape ${R.i+1} sur ${n}</div><h2 class="qt">${t}</h2>${h?`<p class="note">${h}</p>`:""}${body}<div class="nav"><button class="bk" id="bk"${R.i>0||R.sub==="model"?"":" hidden"}>← Retour</button>${(q.ty==="allum"?(a.Allumage&&!devis()):okOf(q))?`<button class="nx" id="nx"${okOf(q)?"":" disabled"}>${R.i===n-1?"Terminer":"Continuer →"}</button>`:""}</div></div>`;
   }
-  el.innerHTML=`<div class="wz">${side}${main}</div>`;
+  const RB=REPRISE!=null?`<div class="rpt"><span>Reprise pour l’achat de <b>${REPRISE>=0&&TELEPHONES[REPRISE]?esc(TELEPHONES[REPRISE].nom+" · "+TELEPHONES[REPRISE].prix):"ton nouveau téléphone"}</b>. Je déduis la valeur de ton ancien iPhone de ton achat.</span><button id="rpback">← Retour au téléphone</button></div>`:"";
+  el.innerHTML=`${RB}<div class="wz">${side}${main}</div>`;
+  {const rk=$("#rpback"); if(rk) rk.onclick=()=>{const k=REPRISE;tab(2,true);if(k>=0)shop(k);};}
   {const k=R.fin?999:R.i*2+(R.sub==="model"?1:0);if(R._k!=null&&k!==R._k){const m=el.querySelector(".main");if(m)m.classList.add(k>R._k?"fwd":"bwd")}else if(R._k==null)anim(el.firstElementChild,0);R._k=k}
   el.querySelectorAll("button.oc").forEach(b=>b.onclick=()=>{
     const k=b.dataset.k,v=b.dataset.v;
@@ -797,7 +814,7 @@ function tab(n,scroll){
   moveInd();
   $("#repar").hidden = n!==1; $("#achat").hidden = n!==2; $("#vendre").hidden = n!==3;
   if(n===2) shop();
-  if(n===3){R.go=false;vendre();}
+  if(n===3){R.go=false;REPRISE=null;vendre();}
   const sec=$(["","#repar","#achat","#vendre"][n]);
   if(!same&&n===1){sec.classList.remove("fadein");void sec.offsetWidth;sec.classList.add("fadein")}
   if(scroll||$(".tabs").getBoundingClientRect().top<12) sec.scrollIntoView({block:"start",behavior:RM.matches?"auto":"smooth"});

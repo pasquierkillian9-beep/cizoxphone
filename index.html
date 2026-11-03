@@ -356,6 +356,7 @@ footer{max-width:1000px;margin:64px auto 0;padding:0 16px calc(96px + env(safe-a
 .bfc span{display:flex;flex-direction:column;align-items:center;min-width:64px;padding:8px 6px;border-radius:12px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12)}
 .bfc b{font:800 26px 'Sora',sans-serif;color:#fff}.bfc small{font-size:11px;color:#c9a8ff;text-transform:uppercase;letter-spacing:.04em}
 .bfe{color:#c9a8ff;font-size:12.5px}
+.bfo2{opacity:.5;font-size:.7em;font-style:normal;margin-right:4px}.bfl .bft{display:inline-block;font:800 11px system-ui,sans-serif;padding:3px 8px;border-radius:99px;background:#ff6bd6;color:#1a0633;margin-right:4px;font-style:normal}.bfl{margin-top:8px;font-size:14px;color:#ff9be6;font-weight:700}.bfl small{display:block;font-weight:400;color:#c9a8ff;margin-top:3px}
 .bfo{margin:10px 0 2px;font:700 17px/1.35 'Sora',system-ui,sans-serif;color:#ff9be6}.bfo small{display:block;margin-top:4px;font:400 12px system-ui,sans-serif;color:#c9a8ff}
 .pr s{font-size:.72em;font-weight:600;color:#9a8bb5;margin-right:4px}.pr .bfp{font-style:normal;color:#ff6bd6;text-shadow:0 0 10px rgba(255,107,214,.5)}
 .pr .bft{display:inline-block;font:800 10px system-ui,sans-serif;padding:2px 6px;border-radius:99px;background:#ff6bd6;color:#1a0633;vertical-align:middle;margin-left:2px}
@@ -615,9 +616,13 @@ function upd(skip){ // met à jour le bouton devis pour Samsung / autre sans per
 function getP(m,r,q){const p=PRIX[m+"|"+r];return(p&&typeof p==="object")?p[q]:p}
 const eur=n=>String(n).replace(".",",")+" €";
 const QN={incell:"Incell",oled:"Soft OLED",orig:"Original"};
+const BF_REM=10; // remise Black Friday réparations, en €
+const bfR=()=>bfOn(); // true tant que le Black Friday est actif
+const bfP=v=>Math.max(0,v-BF_REM);
+const bfTag=`<i class="bft">BLACK FRIDAY -${BF_REM} €</i>`;
 function qb(m,key){
   const pp=PRIX[m+"|Écran"]||{};
-  return '<p class="note">'+EXPLICATION_ECRAN+'</p>'+Object.keys(QN).filter(k=>pp[k]!=="non").map(k=>`<div class="q ${(S[key]||"oled")===k?"on":""}" data-k="${k}" data-key="${key}"><span>${QN[k]}</span><b>${fmt(pp[k])}</b></div>`).join("");
+  return '<p class="note">'+EXPLICATION_ECRAN+'</p>'+Object.keys(QN).filter(k=>pp[k]!=="non").map(k=>`<div class="q ${(S[key]||"oled")===k?"on":""}" data-k="${k}" data-key="${key}"><span>${QN[k]}</span><b>${typeof pp[k]==="number"&&bfR()?`<s class="bfo2">${pp[k]} €</s> ${bfP(pp[k])} €`:fmt(pp[k])}</b></div>`).join("");
 }
 function result(){
   const sam=S.brand==="Samsung", m=sam?"Samsung "+S.model:S.model, r=S.rep;
@@ -628,11 +633,12 @@ function result(){
   if(r==="Châssis complet") h+='<p class="note">Sur ces modèles, la vitre arrière est collée au châssis : la remplacer seule est fragile et casse à la moindre chute. Le châssis complet donne un téléphone solide avec un arrière neuf. Valable uniquement pour les modèles listés, ailleurs la vitre arrière est clipsée.</p>';
   if(r==="Caméra avant") h+='<p class="note">Attention : le remplacement de la caméra avant désactive Face ID de façon permanente (tous les modèles).</p>';
   if(ec) h+=qb(m,"qual");
-  const prix=num?eur(p1):p1==="devis"?"Sur devis":p1==="non"?"Non prise en charge":"Tarif à confirmer";
-  h+=`<div class="price"><div>${esc(m)} · ${esc(r)}${ql}</div><b>${prix}</b></div>`;
+  const bf=num&&bfR(), p1b=bf?bfP(p1):p1;
+  const prix=num?(bf?`<s class="bfo2">${eur(p1)}</s> ${eur(p1b)}`:eur(p1)):p1==="devis"?"Sur devis":p1==="non"?"Non prise en charge":"Tarif à confirmer";
+  h+=`<div class="price"><div>${esc(m)} · ${esc(r)}${ql}</div><b>${prix}</b>${bf?`<div class="bfl">${bfTag} + protection hydrogel offerte</div>`:""}</div>`;
   if(p1==="non"&&r==="Connecteur de charge") h+='<p class="note">Pas de micro-soudure : cette réparation ne peut pas être prise en charge sur ce modèle.</p>';
   let label=devis?"Demander un devis":"Prendre rendez-vous";
-  let msg=`Bonjour, je souhaite ${devis?"un devis":"prendre rendez-vous"} pour mon ${m} : ${r}${ql}${num?" ("+eur(p1)+")":""}.`;
+  let msg=`Bonjour, je souhaite ${devis?"un devis":"prendre rendez-vous"} pour mon ${m} : ${r}${ql}${num?(bf?` (${eur(p1)}, offre Black Friday -${BF_REM} € : ${eur(p1b)}, protection hydrogel offerte)`:" ("+eur(p1)+")"):""}.`;
   if(num){
     h+='<p class="note" style="margin-top:10px">Pièces garanties 1 an · 2 réparations en même temps = -10 %</p>';
     if(!S.two) h+=`<button class="opt" style="width:100%;margin-top:8px;border-color:var(--acc2)" onclick="S.two=1;render()">Besoin d'une 2ème réparation ? Obtiens tes -10% sur ta réparation complète</button>`;
@@ -643,9 +649,11 @@ function result(){
         const r2=S.rep2, ec2=r2==="Écran"&&!sam, q2=S.qual2||"oled", p2=getP(m,r2,q2), ql2=ec2?` (${QN[q2]})`:"";
         if(ec2) h+=qb(m,"qual2");
         if(typeof p2==="number"){
-          const sub=p1+p2, disc=Math.round(sub*10)/100; total=Math.round((sub-disc)*100)/100;
-          h+=`<div class="price" style="margin-top:12px"><div>${esc(r)}${ql} : ${eur(p1)}</div><div>${esc(r2)}${ql2} : ${eur(p2)}</div><div>Remise -10 % : -${eur(disc)}</div><div style="margin-top:8px">Total</div><b>${eur(total)}</b></div>`;
-          msg=`Bonjour, je souhaite prendre rendez-vous pour mon ${m} : 1) ${r}${ql} (${eur(p1)}) + 2) ${r2}${ql2} (${eur(p2)}). Remise -10 % : -${eur(disc)}. Total : ${eur(total)}.`;
+          const sub=p1+p2, d10=Math.round(sub*10)/100, useBF=bfR()&&BF_REM*2>=d10;
+          const disc=useBF?BF_REM*2:d10, rl=useBF?`Black Friday -${BF_REM} € x2`:"Remise -10 %";
+          total=Math.round((sub-disc)*100)/100;
+          h+=`<div class="price" style="margin-top:12px"><div>${esc(r)}${ql} : ${eur(p1)}</div><div>${esc(r2)}${ql2} : ${eur(p2)}</div><div>${rl} : -${eur(disc)}</div><div style="margin-top:8px">Total</div><b>${eur(total)}</b>${bfR()?`<div class="bfl">${bfTag} + protection hydrogel offerte<small>Remise la plus avantageuse appliquée (non cumulable)</small></div>`:""}</div>`;
+          msg=`Bonjour, je souhaite prendre rendez-vous pour mon ${m} : 1) ${r}${ql} (${eur(p1)}) + 2) ${r2}${ql2} (${eur(p2)}). ${rl} : -${eur(disc)}. Total : ${eur(total)}.${bfR()?" Protection hydrogel offerte (Black Friday).":""}`;
           label="Prendre rendez-vous";
         } else {
           h+='<p class="note" style="margin-top:10px">Le tarif de la 2ème réparation est sur devis, la remise de -10 % sera appliquée.</p>';

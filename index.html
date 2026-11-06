@@ -237,9 +237,15 @@ body{-webkit-tap-highlight-color:transparent;overflow-x:hidden}
 @media(hover:hover){.tab:hover:not([aria-selected=true]){color:#fff;background:rgba(255,255,255,.06)}}
 .tab svg{width:18px;height:18px;flex:none}
 .tab .tl{display:none}
-@media(max-width:719px){.tabs{gap:2px}.tab,.tab#t3,.tab#t4{gap:5px;padding:10px 3px;font-size:13px}.tab svg{width:16px;height:16px}}
-@media(max-width:519px){.tab svg{display:none}.tab,.tab#t3,.tab#t4,.tab#t5{font-size:12.5px;padding:10px 2px}}
-.tabs .ind{position:absolute;z-index:0;top:5px;bottom:5px;left:0;width:0;border-radius:13px;background:linear-gradient(120deg,#7b2fff,#e04bff);box-shadow:0 0 24px rgba(200,80,255,.55);transition:transform .5s var(--ease),width .5s var(--ease)}
+@media(max-width:719px){.tab svg{width:16px;height:16px}.tab{gap:5px}}
+@media(max-width:719px){.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.tab#t1{order:1}.tab#t4{order:2}.tab#t5{order:3}.tab#t2{order:4}.tab#t3{order:5}
+.tab#t1,.tab#t4,.tab#t5{grid-column:span 2}.tab#t2,.tab#t3{grid-column:span 3}
+.tab#t2 .tl,.tab#t3 .tl{display:inline}.tab#t2 .ts,.tab#t3 .ts{display:none}
+.tab,.tab#t3{min-height:46px;padding:8px 6px;font-size:13px;line-height:1.2;text-align:center}}
+
+@media(max-width:719px){.tab#t1,.tab#t4,.tab#t5{flex-direction:column;gap:4px;padding:9px 4px}.tab#t1 svg,.tab#t4 svg,.tab#t5 svg{display:block;width:18px;height:18px}}
+.tabs .ind{position:absolute;z-index:0;top:0;left:0;width:0;border-radius:13px;background:linear-gradient(120deg,#7b2fff,#e04bff);box-shadow:0 0 24px rgba(200,80,255,.55);transition:transform .5s var(--ease),width .5s var(--ease)}
 @media(min-width:720px){.tabs{width:fit-content;max-width:100%}.tab,.tab#t3{flex:0 0 auto;white-space:nowrap;font-size:15px;padding:12px 18px}.tab .tl{display:inline}.tab .ts{display:none}}
 
 /* Liste des modèles regroupée par génération */
@@ -422,11 +428,11 @@ footer{max-width:1000px;margin:64px auto 0;padding:0 16px calc(96px + env(safe-a
 
 <div class="tabs" role="tablist">
   <span class="ind" aria-hidden="true"></span>
-  <button class="tab" role="tab" id="t1" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5z"/><path d="M5 19l3-3"/></svg><span class="tl">Demander ma réparation</span><span class="ts">Réparation</span></button>
+  <button class="tab" role="tab" id="t1" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5z"/><path d="M5 19l3-3"/></svg><span class="tl">Réparer mon téléphone</span><span class="ts">Réparer mon téléphone</span></button>
   <button class="tab" role="tab" id="t2" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="tl">Acheter mon nouveau téléphone</span><span class="ts">Acheter</span></button>
   <button class="tab" role="tab" id="t3" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5V8m0 8v1.5"/></svg><span class="tl">Vendre mon iPhone</span><span class="ts">Vendre</span></button>
-<button class="tab" role="tab" id="t4" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span class="tl">Écouteurs CizoxBuds</span><span class="ts">Écouteurs</span></button>
-  <button class="tab" role="tab" id="t5" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="tl">Film hydrogel</span><span class="ts">Hydrogel</span></button>
+<button class="tab" role="tab" id="t4" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span class="tl">Écouteurs sans fil</span><span class="ts">Écouteurs sans fil</span></button>
+  <button class="tab" role="tab" id="t5" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="tl">Protection d'écran hydrogel</span><span class="ts">Protection d'écran hydrogel</span></button>
 </div>
 
 <section id="repar"></section>
@@ -499,7 +505,7 @@ const AVIS = [
  {nom:"Gabin P.", note:5, texte:"J’ai fais changer la batterie de mon iPhone 16 pro chez cizoxphone à Pellouailles les vignes à côté d’Angers et en 10 minutes il avait finit ! Travail professionnel et soigner je recommande à 100% ! En plus les pièces sont garanties"},
 ];
 /* Ta note Google (à mettre à jour de temps en temps) */
-const NOTE_GOOGLE = {note:"5,0", nombre:28};
+const NOTE_GOOGLE = {note:"5,0", nombre:30};
 /* Ta photo pour « Qui suis-je » : mets-la dans le dossier img puis écris son nom, ex : "killian.webp" */
 const PHOTO_MOI = "killian.webp";
 /* Statistiques GoatCounter (gratuit, sans cookies). Laisse vide "" pour désactiver. */
@@ -898,7 +904,7 @@ function vendre(){
   if(bk) bk.onclick=()=>{ if(R.fin) R.fin=false; else if(R.i===0&&R.sub==="model") R.sub="gen"; else if(R.i>0) R.i--; vendre(); haut(); };
 }
 
-function moveInd(){const t=document.querySelector('.tab[aria-selected="true"]'),i=$(".tabs .ind");if(t&&i){i.style.width=t.offsetWidth+"px";i.style.transform=`translateX(${t.offsetLeft}px)`}}
+function moveInd(){const t=document.querySelector('.tab[aria-selected="true"]'),i=$(".tabs .ind");if(t&&i){i.style.width=t.offsetWidth+"px";i.style.height=t.offsetHeight+"px";i.style.transform=`translate(${t.offsetLeft}px,${t.offsetTop}px)`}}
 let CUR=1;
 function tab(n,scroll){
   const same=n===CUR;CUR=n;

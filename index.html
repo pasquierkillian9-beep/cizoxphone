@@ -431,7 +431,7 @@ footer{max-width:1000px;margin:64px auto 0;padding:0 16px calc(96px + env(safe-a
   <button class="tab" role="tab" id="t1" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5z"/><path d="M5 19l3-3"/></svg><span class="tl">Réparer mon téléphone</span><span class="ts">Réparer mon téléphone</span></button>
   <button class="tab" role="tab" id="t2" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="tl">Acheter mon nouveau téléphone</span><span class="ts">Acheter</span></button>
   <button class="tab" role="tab" id="t3" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5V8m0 8v1.5"/></svg><span class="tl">Vendre mon iPhone</span><span class="ts">Vendre</span></button>
-<button class="tab" role="tab" id="t4" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span class="tl">Écouteurs sans fil</span><span class="ts">Écouteurs sans fil</span></button>
+<button class="tab" role="tab" id="t4" aria-selected="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span class="tl">Écouteurs sans fil</span><span class="ts">Écouteurs sans fil</span></button>
   <button class="tab" role="tab" id="t5" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="tl">Protection d'écran hydrogel</span><span class="ts">Protection d'écran hydrogel</span></button>
 </div>
 
@@ -466,7 +466,7 @@ footer{max-width:1000px;margin:64px auto 0;padding:0 16px calc(96px + env(safe-a
 <footer>
 <div class="fgrid">
  <div><a class="wm" href="/"><img class="lg" alt="" src="logo.webp" width="56" height="46" loading="lazy"><span class="wt">Cizox<span>Phone</span></span></a><p>Réparation de téléphones, vente d'iPhone reconditionnés et rachat d'iPhone à Verrières-en-Anjou, près d'Angers (49).</p></div>
- <div><h3>Services</h3><button class="fl" data-tab="1">Réparer mon téléphone</button><button class="fl" data-tab="2">Acheter un téléphone</button><button class="fl" data-tab="3">Vendre mon iPhone</button><button class="fl" data-tab="4">Écouteurs CizoxBuds</button><button class="fl" data-tab="5">Pose de film hydrogel</button></div>
+ <div><h3>Services</h3><button class="fl" data-tab="1">Réparer mon téléphone</button><button class="fl" data-tab="2">Acheter un téléphone</button><button class="fl" data-tab="3">Vendre mon iPhone</button><button class="fl" data-tab="4" hidden>Écouteurs CizoxBuds</button><button class="fl" data-tab="5">Pose de film hydrogel</button></div>
  <div><h3>Réparations</h3><a href="/reparation-ecran-iphone-angers.html">Écran iPhone à Angers</a><a href="/changement-batterie-iphone-angers.html">Batterie iPhone à Angers</a><a href="/reparation-samsung-angers.html">Samsung à Angers</a><a href="/reparation-telephone-verrieres-en-anjou.html">Réparation à Verrières-en-Anjou</a></div>
  <div><h3>Contact</h3><a id="fwa" target="_blank" rel="noopener">WhatsApp · 06 59 00 61 84</a><a href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener">TikTok · @cizoxphone</a><a href="https://www.instagram.com/cizoxphone/" target="_blank" rel="noopener">Instagram · @cizoxphone</a><a id="avis2" target="_blank" rel="noopener">Avis Google</a><span>Pellouailles-les-Vignes · Verrières-en-Anjou · Angers</span><span style="display:block;margin-top:8px">Tous les jours · 10h – 22h</span></div>
 </div>
@@ -569,9 +569,9 @@ const TELEPHONES = [ // un téléphone = un bloc. statut : "" (disponible), "res
 /* ÉCOUTEURS CIZOXBUDS : photo:"nom-du-fichier.webp" (vide = dessin). dispo:false pour cacher un modèle en rupture. */
 const BUDS_PREMIER=30, BUDS_SUIVANT=20;
 const BUDS=[
- {id:"b2",nom:"CizoxBuds 2",photo:"",dispo:true,desc:"Écouteurs sans fil classiques",pts:["Bluetooth","Étui de charge","Compatibles iPhone & Android"]},
- {id:"bp3",nom:"CizoxBuds Pro 3",photo:"",dispo:true,desc:"Écouteurs intra-auriculaires avec embouts",pts:["Bluetooth","Étui de charge","Compatibles iPhone & Android"]},
- {id:"b4",nom:"CizoxBuds 4",photo:"",dispo:true,desc:"Écouteurs sans fil nouvelle génération",pts:["Bluetooth","Étui de charge","Compatibles iPhone & Android"]}
+ {id:"b2",nom:"CizoxBuds 2",photo:"",dispo:false,desc:"Écouteurs sans fil classiques",pts:["Bluetooth","Étui de charge","Compatibles iPhone & Android"]},
+ {id:"bp3",nom:"CizoxBuds Pro 3",photo:"",dispo:false,desc:"Écouteurs intra-auriculaires avec embouts",pts:["Bluetooth","Étui de charge","Compatibles iPhone & Android"]},
+ {id:"b4",nom:"CizoxBuds 4",photo:"",dispo:false,desc:"Écouteurs sans fil nouvelle génération",pts:["Bluetooth","Étui de charge","Compatibles iPhone & Android"]}
 ];
 /* ======================== */
 
@@ -996,7 +996,7 @@ if(PHOTO_MOI) $("#moiph").innerHTML=`<img src="${esc(PHOTO_MOI)}" alt="Killian, 
 
 /* Liens directs : ?devis=iphone|samsung|autre  ou  ?onglet=acheter|vendre */
 (function(){const q=new URLSearchParams(location.search),d=(q.get("devis")||"").toLowerCase(),o=(q.get("onglet")||"").toLowerCase();
-  if(o==="acheter")tab(2,true);else if(o==="vendre")tab(3,true);else if(o==="ecouteurs")tab(4,true);else if(o==="hydrogel")tab(5,true);
+  if(o==="acheter")tab(2,true);else if(o==="vendre")tab(3,true);else if(o==="hydrogel")tab(5,true);
   else if(d){const b={iphone:"iPhone",samsung:"Samsung",autre:"Autre modèle"}[d];if(b){S={brand:b};render();setTimeout(()=>{const h=document.querySelectorAll("#repar h2");(h[1]||h[0]).scrollIntoView({block:"start"})},300)}}})();
 
 /* Statistiques : visites + clics WhatsApp (GoatCounter) */

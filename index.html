@@ -552,7 +552,7 @@ h2.rvl.vis::after{width:64px}
 .reps{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .rep{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:14px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);color:#fff;cursor:pointer;font-family:'Exo 2',sans-serif;text-align:left;min-height:118px}
 .rep .ri{font-size:26px;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(139,47,255,.25);margin-bottom:4px}
-.rep b{font-size:15px;line-height:1.2}.rep em{font-style:normal;font-weight:800;color:#e9b8ff;font-size:14px;margin-top:auto}
+.rep b{font-size:15px;line-height:1.2}.rep .gar{font-size:11.5px;color:#7ee2a8;font-weight:600;line-height:1.25}.rep .gar i{display:block;font-style:normal;font-weight:400;font-size:10.5px;color:#a9d9bd}.rep em{font-style:normal;font-weight:800;color:#e9b8ff;font-size:14px;margin-top:auto}
 .rep.on{border-color:#e04bff;background:rgba(139,47,255,.28);box-shadow:0 0 22px rgba(224,75,255,.35)}
 #devis{margin-top:8px}
 .crumbs,.mh,#devis{scroll-margin-top:var(--stk,150px)}
@@ -651,6 +651,10 @@ textarea#dgt{width:100%;min-height:90px;box-sizing:border-box;border-radius:14px
 #cbox input[type=password]{width:100%;box-sizing:border-box;margin:0 0 8px;padding:12px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:#fff;font:15px 'Exo 2',sans-serif}
 .envb{margin-top:12px;padding:12px;border-radius:14px;background:rgba(139,47,255,.14);border:1px solid var(--line)}.envb ol{padding-left:18px;margin:8px 0;font-size:14px;line-height:1.45}.adr{white-space:pre-wrap;background:#0f0628;border:1px solid var(--line);border-radius:10px;padding:10px;font:600 14px 'Exo 2',sans-serif;margin:6px 0 10px}
 button.oc.mode{width:100%;font-family:inherit;cursor:pointer;color:inherit}
+/* Estimation à droite de « Votre appareil » */
+@media(max-width:859px){.wzs{grid-template-columns:1fr 1fr;align-items:stretch}.wzs>.dev{order:1}.wzs>.val{order:2}.wzs>.box:not(.dev){grid-column:1/-1;order:3}
+.wzs>.dev.nm{display:none}.wzs>.dev.nm~.val{grid-column:1/-1}}
+@media(max-width:599px){.wzs>.val .vimg{display:none}.wzs>.val{padding:14px}.wzs>.val b{font-size:28px}.wzs>.val small{font-size:12.5px}.wzs>.dev{padding:14px}.wzs>.dev .dm .ph{display:none}}
 </style>
 <link rel="canonical" href="https://www.cizoxphone.com/">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://www.cizoxphone.com/">
@@ -673,11 +677,11 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <h1>Je répare votre téléphone en 20 minutes seulement&nbsp;!</h1>
 <div class="hrow"><a class="avis" id="avis" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h6a5.1 5.1 0 0 1-2.2 3.3v2.8h3.6c2.1-1.9 3.2-4.8 3.2-8.1z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1V7H2a11 11 0 0 0 0 9.9l3.7-2.9z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7l3.7 2.9C6.6 7.4 9.1 5.4 12 5.4z"/></svg>Retrouve nos avis Google <i>→</i></a><span class="open" id="open"></span></div>
 <p class="lead">Écran, batterie, vitre arrière, connecteur de charge. Vous venez à Verrières-en-Anjou, on répare sur place, vous repartez avec votre téléphone.</p>
-<div class="pills"><span>Réparation sur place</span><span>Prix annoncé tout de suite</span><span>Pièces garanties 1 an</span></div>
+<div class="pills"><span>Réparation sur place</span><span>Prix annoncé tout de suite</span><span>Écran garanti 1 an</span></div>
 </div>
 <div class="hero-vis" aria-hidden="true">
 <img class="hv-logo" src="logo.webp" alt="" width="360" height="294">
-<div class="hcard hc2"><span>✓</span>Pièces garanties 1 an</div>
+<div class="hcard hc2"><span>✓</span>Écran garanti 1 an</div>
 <div class="hcard hc1"><small>Devis instantané</small><span class="hcv"><span id="hvm">iPhone 15 Pro · Écran Soft OLED</span><b id="hvp">175 €</b></span><div class="bar"><i id="hvb" style="width:100%"></i></div><small style="margin-top:6px">Réparé sur place pendant que vous attendez</small></div>
 <div class="hcard hc3"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.3A11.8 11.8 0 0 0 1.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg></span>Rendez-vous sur WhatsApp</div>
 </div>
@@ -698,7 +702,7 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <section id="accs" hidden></section>
 <section class="seo">
 <div class="avs rvl" id="avs"><h2 id="avh">Ils m'ont confié leur téléphone</h2><div class="rvw" id="rvw"></div><div class="rdots" id="rdots"></div><a class="avall" id="avis3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h6a5.1 5.1 0 0 1-2.2 3.3v2.8h3.6c2.1-1.9 3.2-4.8 3.2-8.1z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1V7H2a11 11 0 0 0 0 9.9l3.7-2.9z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7l3.7 2.9C6.6 7.4 9.1 5.4 12 5.4z"/></svg>Voir tous les avis sur Google</a><br><a class="avbtn" href="https://search.google.com/local/writereview?placeid=ChIJw1envgLkbA8Rmj7QH9JrqhU" target="_blank" rel="noopener">⭐ Laisser un avis Google</a></div>
-<div class="moi rvl"><div class="moi-ph" id="moiph"><span>K</span></div><div><small>Qui suis-je ?</small><h2>Moi c'est Killian</h2><p>C'est moi qui répare votre téléphone chez CizoxPhone, à Verrières-en-Anjou, près d'Angers. Vous venez, vous attendez sur place et vous repartez avec votre téléphone réparé. Je vous annonce le prix avant de commencer, et toutes les pièces que je change sont garanties 1 an.</p></div></div>
+<div class="moi rvl"><div class="moi-ph" id="moiph"><span>K</span></div><div><small>Qui suis-je ?</small><h2>Moi c'est Killian</h2><p>C'est moi qui répare votre téléphone chez CizoxPhone, à Verrières-en-Anjou, près d'Angers. Vous venez, vous attendez sur place et vous repartez avec votre téléphone réparé. Je vous annonce le prix avant de commencer, et l'écran est garanti 1 an et la batterie 3 mois.</p></div></div>
 <div class="tt rvl"><span class="tti"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></span><div><small>Avant / Après</small><h2>Regardez mes réparations en vidéo</h2><p>Écrans cassés, dos explosés, batteries à bout : retrouve mes réparations avant / après sur TikTok.</p></div><a class="ttb" href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg>Voir sur TikTok · @cizoxphone</a></div>
 <div class="intro rvl" style="margin-top:40px">
 <h2>Réparation de téléphone à Verrières-en-Anjou (49)</h2>
@@ -706,7 +710,7 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 </div>
 <h2 class="rvl">Nos réparations</h2>
 <ul class="svc"><li class="rvl" data-svc="Écran"><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5h4M9 13l3-3m-1 6l4-4"/></svg></span><b>Écran</b><small>Incell, Soft OLED ou Original · iPhone et Samsung</small><em data-from="Écran"></em></li><li class="rvl" data-svc="Batterie"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3M7 10v4m3-4v4"/></svg></span><b>Batterie</b><small>Retrouve l'autonomie du premier jour</small><em data-from="Batterie"></em></li><li class="rvl" data-svc="Connecteur de charge"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 2v5m6-5v5M7 7h10v4a5 5 0 0 1-10 0zM12 16v6"/></svg></span><b>Connecteur de charge</b><small>Votre téléphone ne charge plus ou mal</small><em data-from="Connecteur de charge"></em></li><li class="rvl" data-svc="Caméra"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><b>Caméra avant et arrière</b><small>Photo floue, tache ou caméra noire</small><em data-from="Caméra"></em></li><li class="rvl" data-svc="Dos"><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><rect x="8.5" y="5" width="5" height="5" rx="1.5"/></svg></span><b>Vitre arrière ou châssis complet</b><small>Dos fissuré ou contour abîmé</small><em data-from="Dos"></em></li><li class="rvl" data-svc="Autre"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5z"/></svg></span><b>Autres réparations sur devis</b><small>Haut-parleur, boutons, Face ID… demandez-moi</small><em data-from="Autre"></em></li></ul>
-<p class="note2 rvl">Toutes les pièces changées sont garanties 1 an. Deux réparations en même temps : -10 %.</p>
+<p class="note2 rvl">Écran garanti 1 an, batterie garantie 3 mois. Deux réparations en même temps : -10 %.</p>
 <h2 class="rvl">Questions fréquentes</h2>
 <h3 class="rvl faqh">🔧 Réparations</h3>
 <details class="rvl"><summary>Combien de temps dure une réparation ?</summary><p>Écran, batterie ou caméra : environ 20 minutes. Vitre arrière : 30 minutes. Connecteur de charge : 45 minutes. Châssis complet : 1h20. Vous attendez sur place et vous repartez avec votre téléphone.</p></details>
@@ -719,7 +723,7 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <details class="rvl"><summary>Où se passe la réparation ?</summary><p>À Pellouailles-les-Vignes (Verrières-en-Anjou), à côté d'Angers : vous déposez votre téléphone et vous attendez sur place. L'adresse exacte vous est donnée après la prise de rendez-vous.</p></details>
 <details class="rvl"><summary>Peut-on envoyer son téléphone ?</summary><p>Oui, la réparation par envoi est possible. Les frais d'envoi et de retour sont à votre charge. Écrivez-moi sur WhatsApp avant d'envoyer votre téléphone pour recevoir l'adresse et les consignes d'emballage.</p></details>
 <details class="rvl"><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Espèces, carte bancaire et virement. Le paiement se fait une fois la réparation terminée et vérifiée avec vous.</p></details>
-<details class="rvl"><summary>Quelle garantie sur les pièces ?</summary><p>Les pièces changées sont garanties 1 an contre tout défaut de fonctionnement de la pièce (tactile qui ne répond plus, batterie qui ne tient pas la charge, connecteur qui ne charge plus…). La garantie ne couvre pas la casse ou une nouvelle chute, le contact avec un liquide ni un téléphone ouvert ou réparé par quelqu'un d'autre entre-temps. En cas de souci, écrivez-moi sur WhatsApp avec une photo.</p></details>
+<details class="rvl"><summary>Quelle garantie sur les réparations ?</summary><p>L'écran est garanti 1 an et la batterie 3 mois contre tout défaut de fonctionnement de la pièce (tactile qui ne répond plus, batterie qui ne tient pas la charge…). Les autres réparations ne sont pas garanties. La garantie ne couvre pas la casse ou une nouvelle chute, le contact avec un liquide ni un téléphone ouvert ou réparé par quelqu'un d'autre entre-temps. En cas de souci, écrivez-moi sur WhatsApp avec une photo.</p></details>
 <h3 class="rvl faqh">📱 Achat d'un téléphone</h3>
 <details class="rvl"><summary>Les téléphones sont-ils garantis ?</summary><p>Oui : tous nos téléphones reconditionnés sont testés et garantis 2 ans, sauf casse et oxydation. Vous bénéficiez aussi des garanties légales de conformité et des vices cachés.</p></details>
 <details class="rvl"><summary>Que veulent dire les grades Diamant, Pépite et Excellent ?</summary><p>C'est l'état esthétique du téléphone. Diamant : comme neuf. Pépite : parfait état avec de possibles micro-rayures. Excellent : rayures et coups visibles. Dans tous les cas, le téléphone fonctionne parfaitement.</p></details>
@@ -736,7 +740,7 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <div class="fgrid">
  <div><a class="wm" href="/"><img class="lg" alt="" src="logo.webp" width="56" height="46" loading="lazy"><span class="wt">Cizox<span>Phone</span></span></a><p>Réparation de téléphones, vente d'iPhone reconditionnés et rachat d'iPhone à Verrières-en-Anjou, près d'Angers (49).</p></div>
  <div><h3>Services</h3><button class="fl" data-tab="1">Réparer mon téléphone</button><button class="fl" data-tab="2">Acheter un téléphone</button><button class="fl" data-tab="3">Vendre mon iPhone</button><button class="fl" data-tab="4">Accessoires</button><button class="fl" onclick="suiviOpen()">Suivre ma réparation</button><button class="fl" onclick="compteOpen()">Mon espace client</button></div>
- <div><h3>Réparations</h3><a href="/reparation-ecran-iphone-angers.html">Écran iPhone à Angers</a><a href="/changement-batterie-iphone-angers.html">Batterie iPhone à Angers</a><a href="/reparation-samsung-angers.html">Samsung à Angers</a><a href="/reparation-telephone-verrieres-en-anjou.html">Réparation à Verrières-en-Anjou</a></div>
+ <div><h3>Près d'Angers</h3><a href="/reparation-iphone-angers.html">Réparation iPhone à Angers</a><a href="/reparation-ecran-iphone-angers.html">Écran iPhone à Angers</a><a href="/changement-batterie-iphone-angers.html">Batterie iPhone à Angers</a><a href="/reparation-samsung-angers.html">Samsung à Angers</a><a href="/iphone-reconditionne-angers.html">iPhone reconditionnés à Angers</a><a href="/rachat-iphone-angers.html">Vendre son iPhone à Angers</a><a href="/reparation-telephone-verrieres-en-anjou.html">Réparation à Verrières-en-Anjou</a></div>
  <div><h3>Contact</h3><a id="fwa" target="_blank" rel="noopener">WhatsApp · 06 59 00 61 84</a><a href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener">TikTok · @cizoxphone</a><a href="https://www.instagram.com/cizoxphone/" target="_blank" rel="noopener">Instagram · @cizoxphone</a><a id="avis2" target="_blank" rel="noopener">Avis Google</a><span>Pellouailles-les-Vignes · Verrières-en-Anjou · Angers</span><span style="display:block;margin-top:8px">Tous les jours · 10h – 22h</span></div>
 </div>
 <div class="fbot">© <span id="yr">2026</span> CizoxPhone · <a href="/mentions-legales.html">Mentions légales</a> · <a href="/cgv.html">CGV, Livraison &amp; Retours</a></div>
@@ -778,29 +782,370 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 ]
 </script>
 <!-- CATALOGUE DES TÉLÉPHONES (lu aussi par le serveur de paiement) · statut : "" (dispo), "reserve" ou "vendu" · grade : "diamant", "pepite" ou "excellent" -->
-<script type="application/json" id="catalogue">
-[
- {"id": "iphone-14-pro-256-go-violet-intense", "nom": "iPhone 14 Pro 256 Go Violet intense", "prix": "459 €", "grade": "diamant", "statut": "", "badges": ["Châssis neuf", "Batterie neuve 100 %", "256 Go"], "photos": ["iphone-14-pro-violet-1.webp", "iphone-14-pro-violet-2.webp", "iphone-14-pro-violet-3.webp"], "desc": "Le haut de gamme Apple dans sa couleur la plus recherchée, le Violet intense. Écran ProMotion 120 Hz, Dynamic Island, appareil photo 48 Mpx et 256 Go pour tout garder : un iPhone 14 Pro comme neuf, prêt pour des années.\n\n## L'état\n💎 Grade Diamant : comme neuf. Le châssis a été remplacé par un neuf : aucune rayure, aucun choc sur le contour ni sur la face arrière.\n\n## Batterie\n🔋 Batterie neuve, capacité 100 %.\nBatterie compatible, identique à celle d'origine. Un message « pièce inconnue » peut s'afficher dans les réglages, sans aucun effet sur le fonctionnement.\n\n## Pièces changées\n• Châssis neuf\n• Batterie neuve\n• Tout le reste est d'origine Apple\n\n## Testé et vérifié\n• Testé et vérifié avant la vente\n• Débloqué tout opérateur, iCloud libre\n\n## Caractéristiques\n• Écran 6,1\" Super Retina XDR ProMotion jusqu'à 120 Hz, toujours activé\n• Dynamic Island\n• Puce A16 Bionic · 5G\n• Triple appareil photo : principal 48 Mpx, ultra grand-angle et téléobjectif 3x + scanner LiDAR\n• Détection des accidents et SOS d'urgence par satellite\n• Port Lightning · 256 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."},
- {"id": "iphone-12-mini-128-go-noir", "nom": "iPhone 12 mini 128 Go Noir", "prix": "219 €", "grade": "diamant", "statut": "", "badges": ["100 % d'origine", "Batterie 97 %", "128 Go"], "photos": ["iphone-12-mini-noir-1.webp", "iphone-12-mini-noir-2.webp", "iphone-12-mini-noir-3.webp"], "desc": "Le plus compact des iPhone modernes : il tient dans une main et se glisse dans toutes les poches, sans rien sacrifier. Écran OLED, 5G, Face ID et 128 Go. Entièrement d'origine, avec une batterie presque comme neuve.\n\n## L'état\n💎 Grade Diamant : comme neuf. Écran, châssis et face arrière sans défaut visible.\n\n## Batterie\n🔋 Batterie d'origine Apple, capacité maximale 97 %.\n\n## Pièces changées\nAucune : téléphone 100 % d'origine Apple.\n\n## Testé et vérifié\n• Testé et vérifié avant la vente\n• Débloqué tout opérateur, iCloud libre\n\n## Caractéristiques\n• Écran 5,4\" OLED Super Retina XDR, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle), mode Nuit\n• Face ID\n• Port Lightning · 128 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."},
- {"id": "iphone-12-pro-128-go-argent", "nom": "iPhone 12 Pro 128 Go Argent", "prix": "259 €", "grade": "diamant", "statut": "", "badges": ["Écran et châssis neufs", "Batterie neuve 100 %", "Garantie 2 ans"], "photos": ["photo-vente-04.webp", "photo-vente-05.webp", "photo-vente-06.webp"], "desc": "L'iPhone 12 Pro avec son triple appareil photo et son contour en acier inoxydable, remis à neuf : écran, châssis et batterie neufs. Le confort d'un Pro à un petit prix.\n\n## L'état\n💎 Grade Diamant : comme neuf. Écran et châssis remplacés par des pièces neuves : aucune rayure, aucun choc.\n\n## Batterie\n🔋 Batterie neuve, capacité 100 %.\nBatterie compatible : l'iPhone affiche « impossible de vérifier » dans les réglages. C'est normal et ça ne change rien au fonctionnement.\n\n## Pièces changées\n• Écran neuf\n• Châssis neuf\n• Batterie neuve\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" OLED Super Retina XDR, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Triple appareil photo 12 Mpx (grand-angle, ultra grand-angle, téléobjectif) + scanner LiDAR\n• Port Lightning · 128 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."},
- {"id": "iphone-12-64-go-violet", "nom": "iPhone 12 64 Go Violet", "prix": "229 €", "grade": "diamant", "statut": "", "badges": ["État neuf", "Batterie neuve 100 %", "Boîte d'origine"], "photos": ["photo-vente-07.webp", "photo-vente-08.webp"], "desc": "Un iPhone 12 dans sa jolie teinte Violet, en état neuf, avec sa boîte d'origine. Écran OLED, 5G et MagSafe : l'essentiel d'Apple dans un téléphone comme neuf.\n\n## L'état\n💎 Grade Diamant : état neuf. Aucune rayure sur l'écran, le châssis ou la face arrière.\n\n## Batterie\n🔋 Batterie neuve, capacité 100 %.\nBatterie compatible : iOS affiche un message « pièce inconnue », sans aucun effet sur le fonctionnement.\n\n## Pièces changées\n• Batterie neuve\n• Tout le reste est d'origine Apple\n\n## Testé et vérifié\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" OLED Super Retina XDR, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle), mode Nuit\n• Port Lightning · 64 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."},
- {"id": "iphone-11-64-go-blanc", "nom": "iPhone 11 64 Go Blanc", "prix": "130 €", "grade": "", "statut": "vendu", "badges": ["Écran neuf", "Batterie neuve", "Garantie 2 ans"], "photos": ["photo-vente-09.webp", "photo-vente-10.webp", "photo-vente-11.webp", "photo-vente-12.webp"], "desc": "iPhone 11 – 64 Go – Blanc\n\n• Écran neuf\n• Batterie neuve à 100 % (pièce compatible : iOS affiche un message « batterie non d'origine »)\n• ⚠️ Face ID ne fonctionne pas : déverrouillage par code\n• Appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Face arrière en très bon état ; marques d'usure sur le contour (près du port de charge), visibles en photo\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."},
- {"id": "iphone-14-plus-128-go-minuit", "nom": "iPhone 14 Plus 128 Go Minuit", "prix": "369 €", "grade": "excellent", "statut": "", "badges": ["Écran et vitre arrière neufs", "Batterie 95 %", "Garantie 2 ans"], "photos": ["photo-vente-13.webp", "photo-vente-14.webp", "photo-vente-15.webp", "photo-vente-16.webp", "photo-vente-17.webp", "photo-vente-18.webp"], "desc": "Le grand écran 6,7\" et l'une des meilleures autonomies de la gamme iPhone. Écran et vitre arrière neufs, batterie d'origine encore à 95 % : idéal pour les vidéos, les jeux et les longues journées.\n\n## L'état\n👍 Grade Excellent : écran neuf et vitre arrière neuve. Un petit impact sur le châssis, visible en photo, sans effet sur le fonctionnement.\n\n## Batterie\n🔋 Batterie d'origine Apple, capacité maximale 95 %.\n\n## Pièces changées\n• Écran neuf\n• Vitre arrière neuve\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Grand écran 6,7\" OLED Super Retina XDR\n• Puce A15 Bionic · 5G\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle)\n• Détection des accidents et SOS d'urgence par satellite\n• Port Lightning · 128 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."},
- {"id": "iphone-13-pro-max-128-go-vert-alpin", "nom": "iPhone 13 Pro Max 128 Go Vert Alpin", "prix": "479 €", "grade": "", "statut": "vendu", "badges": ["Caméra arrière neuve", "Batterie 84 %", "Garantie 2 ans"], "photos": ["photo-vente-19.webp", "photo-vente-20.webp"], "desc": "iPhone 13 Pro Max – 128 Go – Vert Alpin\n\n• D'origine, sauf la caméra arrière, qui est neuve\n• Batterie à 84 %\n• Écran OLED 120 Hz, Face ID fonctionnel\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."},
- {"id": "iphone-15-128-go-noir", "nom": "iPhone 15 128 Go Noir", "prix": "449 €", "grade": "excellent", "statut": "", "badges": ["Écran neuf", "Batterie 86 %", "Garantie 2 ans"], "photos": ["photo-vente-21.webp", "photo-vente-22.webp", "photo-vente-23.webp", "photo-vente-24.webp"], "desc": "L'iPhone 15 avec Dynamic Island, appareil photo 48 Mpx et port USB-C : le même câble que votre ordinateur et vos écouteurs. Écran neuf, et tout le reste d'origine Apple.\n\n## L'état\n👍 Grade Excellent : écran neuf, face arrière en très bon état. Traces d'usure sur le contour (tranche du bas et haut du téléphone), visibles en photo.\n\n## Batterie\n🔋 Batterie d'origine Apple, capacité maximale 86 %.\n\n## Pièces changées\n• Écran neuf Soft OLED (pièce compatible, non d'origine)\n• Tout le reste est 100 % d'origine Apple\n\n## Testé et vérifié\n• Dynamic Island, Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" Super Retina XDR avec Dynamic Island\n• Puce A16 Bionic · 5G\n• Appareil photo principal 48 Mpx + ultra grand-angle 12 Mpx\n• Port USB-C · 128 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."},
- {"id": "iphone-13-128-go-lumiere-stellaire", "nom": "iPhone 13 128 Go Lumière stellaire", "prix": "319 €", "grade": "", "statut": "vendu", "badges": ["Batterie 100 %", "Débloqué", "Garantie 2 ans"], "photos": ["photo-vente-25.webp", "photo-vente-26.webp", "photo-vente-27.webp", "photo-vente-28.webp"], "desc": "iPhone 13 – 128 Go – Lumière stellaire (blanc)\n\n• Batterie 100 %\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Écran OLED Super Retina XDR 6,1\" – Puce A15 Bionic\n• Débloqué tout opérateur, iCloud libre\n• Très bon état : face arrière propre, écran sans rayure visible, un petit éclat discret sur la tranche gauche (visible en photo)\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."},
- {"id": "iphone-13-pro-128-go-or", "nom": "iPhone 13 Pro 128 Go Or", "prix": "429 €", "grade": "", "statut": "vendu", "badges": ["100 % d'origine", "Batterie neuve", "Garantie 2 ans"], "photos": ["photo-vente-32.webp"], "desc": "iPhone 13 Pro – 128 Go – Or – Entièrement d'origine\n\n• 100 % d'origine, seule la batterie a été changée (neuve)\n• Écran OLED Super Retina XDR 120 Hz\n• Face ID, appareils photo et haut-parleurs fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Quelques traces d'usure visibles et micro-rayures sur l'écran, sans impact sur l'utilisation\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."},
- {"id": "iphone-15-128-go-rose", "nom": "iPhone 15 128 Go Rose", "prix": "439 €", "grade": "", "statut": "vendu", "badges": ["Batterie 89 %", "Aucune rayure", "Garantie 2 ans"], "photos": ["iphone-15-128go-rose-1.webp", "iphone-15-128go-rose-2.webp", "iphone-15-128go-rose-3.webp"], "desc": "iPhone 15 – 128 Go – Rose\n\n• Batterie 89 % (état normal)\n• Aucune rayure, aucune fissure, aucun choc\n• Écran et appareils photo d'origine\n• Garantie 2 ans CizoxPhone"},
- {"id": "iphone-17-pro-max-256-go-argent", "nom": "iPhone 17 Pro Max 256 Go Argent", "prix": "1 000 €", "grade": "", "statut": "vendu", "badges": ["Batterie 100 %", "Garantie 2 ans", "Boîte + facture"], "photos": ["iphone-17-pro-max-256go-argent-1.webp", "iphone-17-pro-max-256go-argent-2.webp"], "desc": "iPhone 17 Pro Max – 256 Go – Argent – État neuf\n\n• 100 % d'origine, aucune pièce changée\n• Batterie à 100 %\n• Vendu avec boîte et facture\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre sur Angers et alentours, ou envoi suivi et assuré partout en France.\nMessage privé pour toute question."},
- {"id": "iphone-13-pro-128-go-graphite", "nom": "iPhone 13 Pro 128 Go Graphite", "prix": "370 €", "grade": "", "statut": "vendu", "badges": ["Batterie neuve", "100 % d'origine"], "photos": ["iphone-13-pro-graphite-face.webp", "iphone-13-pro-graphite-dos.webp"], "desc": "iPhone 13 Pro – 128 Go – Graphite\n\nEn état parfait. Appareil 100 % d'origine : aucune pièce remplacée, hormis la batterie, neuve.\n\n• Écran OLED Super Retina XDR 120 Hz\n• Face ID, appareil photo et haut-parleurs 100 % fonctionnels\n• Batterie neuve : autonomie comme au premier jour\n• Débloqué tout opérateur, iCloud libre\n• Testé pendant une semaine avant la vente\n\nRemise en main propre à Pellouailles-les-Vignes ou envoi soigné et suivi partout en France."},
- {"id": "iphone-14-plus-128-go-mauve", "nom": "iPhone 14 Plus 128 Go Mauve", "prix": "350 €", "grade": "", "statut": "vendu", "badges": ["Batterie neuve", "Vitre arrière neuve", "Boîte"], "photos": ["iphone-14-plus-128go-mauve-1.webp", "iphone-14-plus-128go-mauve-2.webp", "iphone-14-plus-128go-mauve-3.webp", "iphone-14-plus-128go-mauve-4.webp"], "desc": "iPhone 14 Plus – 128 Go – Mauve – État neuf\n\n• Batterie neuve\n• Vitre arrière neuve\n• Aucune rayure, un seul petit poc, fonctionne parfaitement\n• Garantie sur les pièces changées sauf casse et oxydation\n\nRemise en main propre à Pellouailles-les-Vignes, possibilité de tester le téléphone sur place avant achat."},
- {"id": "iphone-16-pro-max-256-go-titane-noir", "nom": "iPhone 16 Pro Max 256 Go Titane noir", "prix": "879 €", "grade": "", "statut": "vendu", "badges": ["Batterie 86 %", "Garantie 3 mois", "Boîte"], "photos": ["iphone-16-pro-max-256go-titane-noir-1.webp", "iphone-16-pro-max-256go-titane-noir-2.webp", "iphone-16-pro-max-256go-titane-noir-3.webp", "iphone-16-pro-max-256go-titane-noir-4.webp", "iphone-16-pro-max-256go-titane-noir-5.webp"], "desc": "iPhone 16 Pro Max – 256 Go – Titane noir\n\nSuperbe iPhone 16 Pro Max en titane noir, 256 Go, entièrement d'origine (aucune pièce remplacée).\n\n✅ Débloqué tout opérateur\n✅ Vendu avec sa boîte d'origine\n✅ Garantie 3 mois\n✅ Santé de la batterie : 86 %\n\nMoins cher que pas cher\n\nRemise en main propre à Angers ou envoi suivi et assuré partout en France.\n\nMessage pour plus de photos ou d'infos."},
- {"id": "iphone-16-pro-128-go-titane-desert", "nom": "iPhone 16 Pro 128 Go Titane Désert", "prix": "679 €", "grade": "", "statut": "vendu", "badges": ["Batterie 90 %", "Garantie 3 mois", "Boîte"], "photos": ["iphone-16-pro-128go-titane-desert-1.webp", "iphone-16-pro-128go-titane-desert-2.webp", "iphone-16-pro-128go-titane-desert-3.webp", "iphone-16-pro-128go-titane-desert-4.webp", "iphone-16-pro-128go-titane-desert-5.webp", "iphone-16-pro-128go-titane-desert-6.webp"], "desc": "iPhone 16 Pro – 128 Go – Titane Désert\n\n• Tout d'origine, aucune pièce remplacée\n• Batterie à 90 % de santé\n• Fonctionne parfaitement\n• Quelques marques sur le châssis, visibles sur les photos\n• Vendu avec sa boîte d'origine\n• Garantie CizoxPhone 3 mois (défauts de fonctionnement)\n\nRemise en main propre à Pellouailles-les-Vignes ou envoi soigné en Colissimo suivi."},
- {"id": "iphone-12-128-go-noir-reconditionne", "nom": "iPhone 12 128 Go Noir reconditionné", "prix": "180 €", "grade": "", "statut": "vendu", "badges": ["Batterie neuve", "Châssis neuf", "Écran neuf"], "photos": ["iphone-12-128go-noir-reconditionne-1.webp", "iphone-12-128go-noir-reconditionne-2.webp", "iphone-12-128go-noir-reconditionne-3.webp", "iphone-12-128go-noir-reconditionne-4.webp"], "desc": "iPhone 12 128 Go noir entièrement remis à neuf :\n\n• Châssis neuf\n• Batterie neuve\n• Écran Soft OLED neuf (pièce compatible, non d'origine)\n• Face ID fonctionnel\n• Débloqué tout opérateur, testé avant remise\n• Garantie sur les pièces changées (châssis, batterie, écran)\n\nRemise en main propre à Angers/Verrières-en-Anjou ou envoi en France. Contactez-moi pour plus d'infos."},
- {"id": "iphone-14-128-go-noir", "nom": "iPhone 14 128 Go Noir", "prix": "280 €", "grade": "", "statut": "vendu", "badges": ["Batterie neuve", "Écran d'origine", "Boîte"], "photos": ["iphone-14-128go-noir-1.webp", "iphone-14-128go-noir-2.webp", "iphone-14-128go-noir-3.webp"], "desc": "iPhone 14 – 128 Go – Noir\n\nReconditionné par Cizox Phone :\n• Batterie neuve\n• Écran d'origine\n• Quelques traces d'usure normales\n• Garantie sur toutes les pièces changées\n\nVendu avec sa boîte\nTesté pendant 1 semaine avant la vente\nRemise en main propre à Pellouailles-les-Vignes ou envoi possible partout en France"},
- {"id": "iphone-14-128-go-bleu", "nom": "iPhone 14 128 Go Bleu", "prix": "320 €", "grade": "", "statut": "vendu", "badges": ["Écran neuf", "Batterie neuve", "Châssis neuf"], "photos": ["iphone-14-128go-bleu-1.webp", "iphone-14-128go-bleu-2.webp"], "desc": "iPhone 14 – 128 Go – Bleu\n\nReconditionné par Cizox Phone, avec les pièces remplacées suivantes :\n• Écran neuf\n• Batterie neuve\n• Châssis neuf\n• Vitre arrière neuve\n• Caméra neuve\n• Garantie sur toutes les pièces changées\n\nTesté pendant 1 semaine avant la vente\nRemise en main propre à Pellouailles-les-Vignes ou envoi possible partout en France"}
-]
-</script>
+<script type="application/json" id="catalogue">[
+ {
+  "id": "iphone-17-pro-256-go-orange-cosmique",
+  "nom": "iPhone 17 Pro 256 Go Orange cosmique",
+  "prix": "950 €",
+  "grade": "diamant",
+  "statut": "",
+  "badges": [
+   "100 % d'origine",
+   "Batterie 91 %",
+   "256 Go"
+  ],
+  "photos": [
+   "iphone-17-pro-orange-1.webp",
+   "iphone-17-pro-orange-2.webp",
+   "iphone-17-pro-orange-3.webp"
+  ],
+  "desc": "Le tout dernier iPhone 17 Pro dans sa nouvelle couleur Orange cosmique. Écran ProMotion 120 Hz, puce A19 Pro et triple appareil photo 48 Mpx : un iPhone récent, 100 % d'origine et comme neuf.\n\n## L'état\n💎 Grade Diamant : comme neuf. Aucune rayure, aucun choc sur l'écran, le contour ni la face arrière.\n\n## Batterie\n🔋 Batterie d'origine Apple, capacité maximale 91 %. Première utilisation en décembre 2025.\n\n## Pièces changées\n• Aucune : téléphone 100 % d'origine Apple\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,3\" Super Retina XDR ProMotion jusqu'à 120 Hz, toujours activé\n• Dynamic Island\n• Puce A19 Pro · 5G\n• Triple appareil photo 48 Mpx : principal, ultra grand-angle et téléobjectif\n• Port USB-C · 256 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-14-pro-256-go-violet-intense",
+  "nom": "iPhone 14 Pro 256 Go Violet intense",
+  "prix": "470 €",
+  "grade": "diamant",
+  "statut": "",
+  "badges": [
+   "Châssis neuf",
+   "Batterie neuve 100 %",
+   "256 Go"
+  ],
+  "photos": [
+   "iphone-14-pro-violet-1.webp",
+   "iphone-14-pro-violet-2.webp",
+   "iphone-14-pro-violet-3.webp"
+  ],
+  "desc": "Le haut de gamme Apple dans sa couleur la plus recherchée, le Violet intense. Écran ProMotion 120 Hz, Dynamic Island, appareil photo 48 Mpx et 256 Go pour tout garder : un iPhone 14 Pro comme neuf, prêt pour des années.\n\n## L'état\n💎 Grade Diamant : comme neuf. Le châssis a été remplacé par un neuf : aucune rayure, aucun choc sur le contour ni sur la face arrière.\n\n## Batterie\n🔋 Batterie neuve, capacité 100 %.\nBatterie compatible, identique à celle d'origine. Un message « pièce inconnue » peut s'afficher dans les réglages, sans aucun effet sur le fonctionnement.\n\n## Pièces changées\n• Châssis neuf\n• Batterie neuve\n• Tout le reste est d'origine Apple\n\n## Testé et vérifié\n• Testé et vérifié avant la vente\n• Débloqué tout opérateur, iCloud libre\n\n## Caractéristiques\n• Écran 6,1\" Super Retina XDR ProMotion jusqu'à 120 Hz, toujours activé\n• Dynamic Island\n• Puce A16 Bionic · 5G\n• Triple appareil photo : principal 48 Mpx, ultra grand-angle et téléobjectif 3x + scanner LiDAR\n• Détection des accidents et SOS d'urgence par satellite\n• Port Lightning · 256 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-12-mini-128-go-noir",
+  "nom": "iPhone 12 mini 128 Go Noir",
+  "prix": "219 €",
+  "grade": "diamant",
+  "statut": "",
+  "badges": [
+   "100 % d'origine",
+   "Batterie 97 %",
+   "128 Go"
+  ],
+  "photos": [
+   "iphone-12-mini-noir-1.webp",
+   "iphone-12-mini-noir-2.webp",
+   "iphone-12-mini-noir-3.webp"
+  ],
+  "desc": "Le plus compact des iPhone modernes : il tient dans une main et se glisse dans toutes les poches, sans rien sacrifier. Écran OLED, 5G, Face ID et 128 Go. Entièrement d'origine, avec une batterie presque comme neuve.\n\n## L'état\n💎 Grade Diamant : comme neuf. Écran, châssis et face arrière sans défaut visible.\n\n## Batterie\n🔋 Batterie d'origine Apple, capacité maximale 97 %.\n\n## Pièces changées\nAucune : téléphone 100 % d'origine Apple.\n\n## Testé et vérifié\n• Testé et vérifié avant la vente\n• Débloqué tout opérateur, iCloud libre\n\n## Caractéristiques\n• Écran 5,4\" OLED Super Retina XDR, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle), mode Nuit\n• Face ID\n• Port Lightning · 128 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-12-pro-128-go-argent",
+  "nom": "iPhone 12 Pro 128 Go Argent",
+  "prix": "259 €",
+  "grade": "diamant",
+  "statut": "",
+  "badges": [
+   "Écran et châssis neufs",
+   "Batterie neuve 100 %",
+   "Garantie 2 ans"
+  ],
+  "photos": [
+   "photo-vente-04.webp",
+   "photo-vente-05.webp",
+   "photo-vente-06.webp"
+  ],
+  "desc": "L'iPhone 12 Pro avec son triple appareil photo et son contour en acier inoxydable, remis à neuf : écran, châssis et batterie neufs. Le confort d'un Pro à un petit prix.\n\n## L'état\n💎 Grade Diamant : comme neuf. Écran et châssis remplacés par des pièces neuves : aucune rayure, aucun choc.\n\n## Batterie\n🔋 Batterie neuve, capacité 100 %.\nBatterie compatible : l'iPhone affiche « impossible de vérifier » dans les réglages. C'est normal et ça ne change rien au fonctionnement.\n\n## Pièces changées\n• Écran neuf\n• Châssis neuf\n• Batterie neuve\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" OLED Super Retina XDR, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Triple appareil photo 12 Mpx (grand-angle, ultra grand-angle, téléobjectif) + scanner LiDAR\n• Port Lightning · 128 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-12-64-go-violet",
+  "nom": "iPhone 12 64 Go Violet",
+  "prix": "229 €",
+  "grade": "diamant",
+  "statut": "",
+  "badges": [
+   "État neuf",
+   "Batterie neuve 100 %",
+   "Boîte d'origine"
+  ],
+  "photos": [
+   "photo-vente-07.webp",
+   "photo-vente-08.webp"
+  ],
+  "desc": "Un iPhone 12 dans sa jolie teinte Violet, en état neuf, avec sa boîte d'origine. Écran OLED, 5G et MagSafe : l'essentiel d'Apple dans un téléphone comme neuf.\n\n## L'état\n💎 Grade Diamant : état neuf. Aucune rayure sur l'écran, le châssis ou la face arrière.\n\n## Batterie\n🔋 Batterie neuve, capacité 100 %.\nBatterie compatible : iOS affiche un message « pièce inconnue », sans aucun effet sur le fonctionnement.\n\n## Pièces changées\n• Batterie neuve\n• Tout le reste est d'origine Apple\n\n## Testé et vérifié\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" OLED Super Retina XDR, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle), mode Nuit\n• Port Lightning · 64 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-11-64-go-blanc",
+  "nom": "iPhone 11 64 Go Blanc",
+  "prix": "130 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Écran neuf",
+   "Batterie neuve",
+   "Garantie 2 ans"
+  ],
+  "photos": [
+   "photo-vente-09.webp",
+   "photo-vente-10.webp",
+   "photo-vente-11.webp",
+   "photo-vente-12.webp"
+  ],
+  "desc": "iPhone 11 – 64 Go – Blanc\n\n• Écran neuf\n• Batterie neuve à 100 % (pièce compatible : iOS affiche un message « batterie non d'origine »)\n• ⚠️ Face ID ne fonctionne pas : déverrouillage par code\n• Appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Face arrière en très bon état ; marques d'usure sur le contour (près du port de charge), visibles en photo\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."
+ },
+ {
+  "id": "iphone-14-plus-128-go-minuit",
+  "nom": "iPhone 14 Plus 128 Go Minuit",
+  "prix": "369 €",
+  "grade": "diamant",
+  "statut": "",
+  "badges": [
+   "Châssis neuf",
+   "Écran neuf",
+   "Batterie 95 %"
+  ],
+  "photos": [
+   "iphone-14-plus-minuit-1.webp",
+   "iphone-14-plus-minuit-2.webp",
+   "iphone-14-plus-minuit-3.webp"
+  ],
+  "desc": "Le grand écran 6,7\" et l'une des meilleures autonomies de la gamme iPhone. Écran neuf et châssis neuf, batterie d'origine encore à 95 % : idéal pour les vidéos, les jeux et les longues journées.\n\n## L'état\n💎 Grade Diamant : comme neuf. Écran neuf et châssis remplacé par un neuf : aucune rayure, aucun choc sur le contour ni sur la face arrière.\n\n## Batterie\n🔋 Batterie d'origine Apple, capacité maximale 95 %.\n\n## Pièces changées\n• Écran neuf\n• Châssis neuf (contour et face arrière)\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Grand écran 6,7\" OLED Super Retina XDR\n• Puce A15 Bionic · 5G\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle)\n• Détection des accidents et SOS d'urgence par satellite\n• Port Lightning · 128 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-13-pro-max-128-go-vert-alpin",
+  "nom": "iPhone 13 Pro Max 128 Go Vert Alpin",
+  "prix": "479 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Caméra arrière neuve",
+   "Batterie 84 %",
+   "Garantie 2 ans"
+  ],
+  "photos": [
+   "photo-vente-19.webp",
+   "photo-vente-20.webp"
+  ],
+  "desc": "iPhone 13 Pro Max – 128 Go – Vert Alpin\n\n• D'origine, sauf la caméra arrière, qui est neuve\n• Batterie à 84 %\n• Écran OLED 120 Hz, Face ID fonctionnel\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."
+ },
+ {
+  "id": "iphone-15-128-go-noir",
+  "nom": "iPhone 15 128 Go Noir",
+  "prix": "449 €",
+  "grade": "excellent",
+  "statut": "",
+  "badges": [
+   "Écran neuf",
+   "Batterie 86 %",
+   "Garantie 2 ans"
+  ],
+  "photos": [
+   "photo-vente-21.webp",
+   "photo-vente-22.webp",
+   "photo-vente-23.webp",
+   "photo-vente-24.webp"
+  ],
+  "desc": "L'iPhone 15 avec Dynamic Island, appareil photo 48 Mpx et port USB-C : le même câble que votre ordinateur et vos écouteurs. Écran neuf, et tout le reste d'origine Apple.\n\n## L'état\n👍 Grade Excellent : écran neuf, face arrière en très bon état. Traces d'usure sur le contour (tranche du bas et haut du téléphone), visibles en photo.\n\n## Batterie\n🔋 Batterie d'origine Apple, capacité maximale 86 %.\n\n## Pièces changées\n• Écran neuf Soft OLED (pièce compatible, non d'origine)\n• Tout le reste est 100 % d'origine Apple\n\n## Testé et vérifié\n• Dynamic Island, Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" Super Retina XDR avec Dynamic Island\n• Puce A16 Bionic · 5G\n• Appareil photo principal 48 Mpx + ultra grand-angle 12 Mpx\n• Port USB-C · 128 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-13-128-go-lumiere-stellaire",
+  "nom": "iPhone 13 128 Go Lumière stellaire",
+  "prix": "319 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie 100 %",
+   "Débloqué",
+   "Garantie 2 ans"
+  ],
+  "photos": [
+   "photo-vente-25.webp",
+   "photo-vente-26.webp",
+   "photo-vente-27.webp",
+   "photo-vente-28.webp"
+  ],
+  "desc": "iPhone 13 – 128 Go – Lumière stellaire (blanc)\n\n• Batterie 100 %\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Écran OLED Super Retina XDR 6,1\" – Puce A15 Bionic\n• Débloqué tout opérateur, iCloud libre\n• Très bon état : face arrière propre, écran sans rayure visible, un petit éclat discret sur la tranche gauche (visible en photo)\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."
+ },
+ {
+  "id": "iphone-13-pro-128-go-or",
+  "nom": "iPhone 13 Pro 128 Go Or",
+  "prix": "429 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "100 % d'origine",
+   "Batterie neuve",
+   "Garantie 2 ans"
+  ],
+  "photos": [
+   "photo-vente-32.webp"
+  ],
+  "desc": "iPhone 13 Pro – 128 Go – Or – Entièrement d'origine\n\n• 100 % d'origine, seule la batterie a été changée (neuve)\n• Écran OLED Super Retina XDR 120 Hz\n• Face ID, appareils photo et haut-parleurs fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Quelques traces d'usure visibles et micro-rayures sur l'écran, sans impact sur l'utilisation\n• Testé et vérifié avant la vente\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre à Verrières-en-Anjou / Pellouailles-les-Vignes, ou envoi suivi partout en France."
+ },
+ {
+  "id": "iphone-15-128-go-rose",
+  "nom": "iPhone 15 128 Go Rose",
+  "prix": "439 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie 89 %",
+   "Aucune rayure",
+   "Garantie 2 ans"
+  ],
+  "photos": [
+   "iphone-15-128go-rose-1.webp",
+   "iphone-15-128go-rose-2.webp",
+   "iphone-15-128go-rose-3.webp"
+  ],
+  "desc": "iPhone 15 – 128 Go – Rose\n\n• Batterie 89 % (état normal)\n• Aucune rayure, aucune fissure, aucun choc\n• Écran et appareils photo d'origine\n• Garantie 2 ans CizoxPhone"
+ },
+ {
+  "id": "iphone-17-pro-max-256-go-argent",
+  "nom": "iPhone 17 Pro Max 256 Go Argent",
+  "prix": "1 000 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie 100 %",
+   "Garantie 2 ans",
+   "Boîte + facture"
+  ],
+  "photos": [
+   "iphone-17-pro-max-256go-argent-1.webp",
+   "iphone-17-pro-max-256go-argent-2.webp"
+  ],
+  "desc": "iPhone 17 Pro Max – 256 Go – Argent – État neuf\n\n• 100 % d'origine, aucune pièce changée\n• Batterie à 100 %\n• Vendu avec boîte et facture\n• Garantie 2 ans CizoxPhone\n\nRemise en main propre sur Angers et alentours, ou envoi suivi et assuré partout en France.\nMessage privé pour toute question."
+ },
+ {
+  "id": "iphone-13-pro-128-go-graphite",
+  "nom": "iPhone 13 Pro 128 Go Graphite",
+  "prix": "370 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie neuve",
+   "100 % d'origine"
+  ],
+  "photos": [
+   "iphone-13-pro-graphite-face.webp",
+   "iphone-13-pro-graphite-dos.webp"
+  ],
+  "desc": "iPhone 13 Pro – 128 Go – Graphite\n\nEn état parfait. Appareil 100 % d'origine : aucune pièce remplacée, hormis la batterie, neuve.\n\n• Écran OLED Super Retina XDR 120 Hz\n• Face ID, appareil photo et haut-parleurs 100 % fonctionnels\n• Batterie neuve : autonomie comme au premier jour\n• Débloqué tout opérateur, iCloud libre\n• Testé pendant une semaine avant la vente\n\nRemise en main propre à Pellouailles-les-Vignes ou envoi soigné et suivi partout en France."
+ },
+ {
+  "id": "iphone-14-plus-128-go-mauve",
+  "nom": "iPhone 14 Plus 128 Go Mauve",
+  "prix": "350 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie neuve",
+   "Vitre arrière neuve",
+   "Boîte"
+  ],
+  "photos": [
+   "iphone-14-plus-128go-mauve-1.webp",
+   "iphone-14-plus-128go-mauve-2.webp",
+   "iphone-14-plus-128go-mauve-3.webp",
+   "iphone-14-plus-128go-mauve-4.webp"
+  ],
+  "desc": "iPhone 14 Plus – 128 Go – Mauve – État neuf\n\n• Batterie neuve\n• Vitre arrière neuve\n• Aucune rayure, un seul petit poc, fonctionne parfaitement\n• Garantie sur les pièces changées sauf casse et oxydation\n\nRemise en main propre à Pellouailles-les-Vignes, possibilité de tester le téléphone sur place avant achat."
+ },
+ {
+  "id": "iphone-16-pro-max-256-go-titane-noir",
+  "nom": "iPhone 16 Pro Max 256 Go Titane noir",
+  "prix": "879 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie 86 %",
+   "Garantie 3 mois",
+   "Boîte"
+  ],
+  "photos": [
+   "iphone-16-pro-max-256go-titane-noir-1.webp",
+   "iphone-16-pro-max-256go-titane-noir-2.webp",
+   "iphone-16-pro-max-256go-titane-noir-3.webp",
+   "iphone-16-pro-max-256go-titane-noir-4.webp",
+   "iphone-16-pro-max-256go-titane-noir-5.webp"
+  ],
+  "desc": "iPhone 16 Pro Max – 256 Go – Titane noir\n\nSuperbe iPhone 16 Pro Max en titane noir, 256 Go, entièrement d'origine (aucune pièce remplacée).\n\n✅ Débloqué tout opérateur\n✅ Vendu avec sa boîte d'origine\n✅ Garantie 3 mois\n✅ Santé de la batterie : 86 %\n\nMoins cher que pas cher\n\nRemise en main propre à Angers ou envoi suivi et assuré partout en France.\n\nMessage pour plus de photos ou d'infos."
+ },
+ {
+  "id": "iphone-16-pro-128-go-titane-desert",
+  "nom": "iPhone 16 Pro 128 Go Titane Désert",
+  "prix": "679 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie 90 %",
+   "Garantie 3 mois",
+   "Boîte"
+  ],
+  "photos": [
+   "iphone-16-pro-128go-titane-desert-1.webp",
+   "iphone-16-pro-128go-titane-desert-2.webp",
+   "iphone-16-pro-128go-titane-desert-3.webp",
+   "iphone-16-pro-128go-titane-desert-4.webp",
+   "iphone-16-pro-128go-titane-desert-5.webp",
+   "iphone-16-pro-128go-titane-desert-6.webp"
+  ],
+  "desc": "iPhone 16 Pro – 128 Go – Titane Désert\n\n• Tout d'origine, aucune pièce remplacée\n• Batterie à 90 % de santé\n• Fonctionne parfaitement\n• Quelques marques sur le châssis, visibles sur les photos\n• Vendu avec sa boîte d'origine\n• Garantie CizoxPhone 3 mois (défauts de fonctionnement)\n\nRemise en main propre à Pellouailles-les-Vignes ou envoi soigné en Colissimo suivi."
+ },
+ {
+  "id": "iphone-12-128-go-noir-reconditionne",
+  "nom": "iPhone 12 128 Go Noir reconditionné",
+  "prix": "180 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie neuve",
+   "Châssis neuf",
+   "Écran neuf"
+  ],
+  "photos": [
+   "iphone-12-128go-noir-reconditionne-1.webp",
+   "iphone-12-128go-noir-reconditionne-2.webp",
+   "iphone-12-128go-noir-reconditionne-3.webp",
+   "iphone-12-128go-noir-reconditionne-4.webp"
+  ],
+  "desc": "iPhone 12 128 Go noir entièrement remis à neuf :\n\n• Châssis neuf\n• Batterie neuve\n• Écran Soft OLED neuf (pièce compatible, non d'origine)\n• Face ID fonctionnel\n• Débloqué tout opérateur, testé avant remise\n• Garantie sur les pièces changées (châssis, batterie, écran)\n\nRemise en main propre à Angers/Verrières-en-Anjou ou envoi en France. Contactez-moi pour plus d'infos."
+ },
+ {
+  "id": "iphone-14-128-go-noir",
+  "nom": "iPhone 14 128 Go Noir",
+  "prix": "280 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Batterie neuve",
+   "Écran d'origine",
+   "Boîte"
+  ],
+  "photos": [
+   "iphone-14-128go-noir-1.webp",
+   "iphone-14-128go-noir-2.webp",
+   "iphone-14-128go-noir-3.webp"
+  ],
+  "desc": "iPhone 14 – 128 Go – Noir\n\nReconditionné par Cizox Phone :\n• Batterie neuve\n• Écran d'origine\n• Quelques traces d'usure normales\n• Garantie sur toutes les pièces changées\n\nVendu avec sa boîte\nTesté pendant 1 semaine avant la vente\nRemise en main propre à Pellouailles-les-Vignes ou envoi possible partout en France"
+ },
+ {
+  "id": "iphone-14-128-go-bleu",
+  "nom": "iPhone 14 128 Go Bleu",
+  "prix": "320 €",
+  "grade": "",
+  "statut": "vendu",
+  "badges": [
+   "Écran neuf",
+   "Batterie neuve",
+   "Châssis neuf"
+  ],
+  "photos": [
+   "iphone-14-128go-bleu-1.webp",
+   "iphone-14-128go-bleu-2.webp"
+  ],
+  "desc": "iPhone 14 – 128 Go – Bleu\n\nReconditionné par Cizox Phone, avec les pièces remplacées suivantes :\n• Écran neuf\n• Batterie neuve\n• Châssis neuf\n• Vitre arrière neuve\n• Caméra neuve\n• Garantie sur toutes les pièces changées\n\nTesté pendant 1 semaine avant la vente\nRemise en main propre à Pellouailles-les-Vignes ou envoi possible partout en France"
+ }
+]</script>
 <script>
 /* ====== À MODIFIER ====== */
 /* Horaires (heure de Paris). jours : 0 = dimanche, 1 = lundi … 6 = samedi */
@@ -899,7 +1244,7 @@ const BUDS=[
 
 const $ = s => document.querySelector(s);
 const wa = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-$("#avis").href = "https://maps.google.com/?cid=1561178771058343578";
+$("#avis").href = "https://www.google.com/search?q=CizoxPhone+Verri%C3%A8res-en-Anjou#lrd=0xf6ce402bea757c3:0x15aa6bd21fd03e9a,1";
 const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const genOf=m=>{const x=m.match(/^iPhone (\d+)/);return x?x[1]:"X"};
 const btnsG=arr=>`<div class="grid mg">${["17","16","15","14","13","12","11","X"].map(g=>{const it=arr.map((a,i)=>[a,i]).filter(([a])=>genOf(a)===g);return it.length?`<div class="gl">iPhone ${g}</div>`+it.map(([a,i])=>`<button class="opt" data-i="${i}">${esc(a.replace(/^iPhone /,""))}</button>`).join(""):""}).join("")}</div>`;
@@ -973,7 +1318,7 @@ function render(){
   }
   const nm=S.brand==="Samsung"?"Galaxy "+S.model:S.model;
   h+=`<section class="rs"><button class="bkb" data-back="1">← Retour</button><div class="mhero"><div class="mhi">${modelImg(S.model)}</div><div class="mht"><small>Votre téléphone</small><h3>${esc(nm)}</h3><button class="chg" data-go="1">Changer de modèle</button></div></div>
-  <h2>Quelle réparation ?</h2><div class="reps"><button class="rep dgc${S.rep==="__diag"?" on":""}" data-rep="__diag"><span class="ri">🔍</span><span><b>Je ne connais pas la panne</b><small>Décrivez ce qui se passe : je vous dis ce que c'est</small></span><em>En 30 s</em></button>${repList().map(r=>`<button class="rep${S.rep===r?" on":""}" data-rep="${esc(r)}"><span class="ri">${REP_ICO[r]||"🔧"}</span><b>${esc(r)}</b><em>${prixDes(r)}</em></button>`).join("")}</div></section>`;
+  <h2>Quelle réparation ?</h2><div class="reps"><button class="rep dgc${S.rep==="__diag"?" on":""}" data-rep="__diag"><span class="ri">🔍</span><span><b>Je ne connais pas la panne</b><small>Décrivez ce qui se passe : je vous dis ce que c'est</small></span><em>En 30 s</em></button>${repList().map(r=>`<button class="rep${S.rep===r?" on":""}" data-rep="${esc(r)}"><span class="ri">${REP_ICO[r]||"🔧"}</span><b>${esc(r)}</b>${/batterie/i.test(r)?'<small class="gar">🛡️ Garantie 3 mois<i>sauf casse et oxydation</i></small>':/^[ée]cran/i.test(r)?'<small class="gar">🛡️ Garantie 1 an<i>sauf casse et oxydation</i></small>':""}<em>${prixDes(r)}</em></button>`).join("")}</div></section>`;
   if(S.done)h+=`<section class="rs" id="devis">${result()}</section>`;
  }
  el.innerHTML=h;
@@ -1005,7 +1350,7 @@ function navSync(){const k=[S.brand||"",S.gamme||"",S.model||""].join("|");if(k=
  const st={cz:1,S:{brand:S.brand,gamme:S.gamme,model:S.model}};
  try{if(NAVKEY===null||NAVPOP)history.replaceState(st,"");else history.pushState(st,"")}catch(e){}
  NAVKEY=k}
-window.addEventListener("popstate",e=>{const st=e.state;if(!st||!st.cz)return;
+window.addEventListener("popstate",e=>{const st=e.state;if(!st||st.cz!==1||CUR===3)return;
  S={};for(const x of ["brand","gamme","model"])if(st.S[x])S[x]=st.S[x];
  NAVPOP=true;if(CUR!==1)tab(1);STEP_ANIM=".rs";render();NAVPOP=false;
  const c=$(".crumbs")||$("#repar");if(c)c.scrollIntoView({block:"start"})});
@@ -1324,7 +1669,7 @@ function result(){
   let label=devis?"Demander un devis":"Prendre rendez-vous";
   let msg=`Bonjour, je souhaite ${devis?"un devis":"prendre rendez-vous"} pour mon ${m} : ${r}${ql}${num?(bf?` (${eur(p1)}, offre Black Friday -${BF_REM} € : ${eur(p1b)}, protection hydrogel offerte)`:" ("+eur(p1)+")"):""}.`;
   if(num){
-    h+='<p class="note" style="margin-top:10px">Pièces garanties 1 an · 2 réparations en même temps = -10 %</p>';
+    h+='<p class="note" style="margin-top:10px">Garantie : écran 1 an, batterie 3 mois · 2 réparations en même temps = -10 %</p>';
     if(!S.two) h+=`<button class="opt" style="width:100%;margin-top:8px;border-color:var(--acc2)" onclick="S.two=1;render()">Besoin d'une 2ème réparation ? Obtenez vos -10% sur votre réparation complète</button>`;
     else {
       const opts=(sam?SAMR:repairsIphone(S.model)).filter(x=>x!==r&&x!=="Autres réparations");
@@ -1522,7 +1867,7 @@ function shop(i){
     :t.statut==="reserve"?`<p class="inf sold-note">Ce téléphone est réservé pour le moment.</p><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, le ${t.nom} (${pxT(t)}) est réservé : pouvez-vous me prévenir s'il se libère ?`)}">Me prévenir s'il se libère</a>`
     :`<button class="addc${CART.includes(t.id)?" inc":""}" id="addc">${CART.includes(t.id)?"✓ Dans le panier · Voir mon panier":"🛒 Ajouter au panier"}</button><span class="klar">ou payez en <b>3 fois sans frais avec Klarna</b></span><button class="rpk" id="rpbtn">♻️ Payez moins cher : <b>faites reprendre votre ancien iPhone</b></button><div class="livr">🚚 <b>Point relais Mondial Relay</b> : 4,99 €<br>🏠 <b>Livraison à domicile</b> : 9,99 €<br>🤝 <b>Main propre</b> à Verrières-en-Anjou : gratuit</div><a class="cta q2" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai une question sur le ${t.nom} (${pxT(t)}).`)}">Une question ? WhatsApp</a>`;
   el.innerHTML = `<button class="back" id="bk">← Tous les téléphones</button><div class="det"><div>${gal}</div><div><h2>${esc(t.nom)}</h2>${pxH(t)}${t.grade?`<div>${grdH(t.grade)}<p class="gexp">${GRADES[t.grade].d}</p></div>`:""}${bdg(t)}${t.perso?`<p class="gar2 occn">Occasion vendue en l'état décrit</p>`:""}<div class="dsc">${descH(t.desc)}</div>${cta}</div></div>`;
-  $("#bk").onclick=()=>{shop();el.scrollIntoView({block:"start"})};
+  document.querySelector("#achat #bk").onclick=()=>{shop();el.scrollIntoView({block:"start"})};
   {const ab=$("#addc"); if(ab) ab.onclick=()=>{if(!CART.includes(t.id)){cartAdd(t.id);ab.classList.add("inc");ab.textContent="✓ Dans le panier · Voir mon panier"}cartOpen()};}
   {const rb=$("#rpbtn"); if(rb) rb.onclick=()=>reprise(i);}
   [...el.children].forEach((k,j)=>{k.classList.add("rise");k.style.animationDelay=j*40+"ms"});
@@ -1710,10 +2055,17 @@ function vendre(){
   const bt=$("#bt"); if(bt) bt.oninput=()=>{R.bat=+bt.value;a.Batterie=R.bat+" %";const v=R.bat,lb=v>=90?["Excellente","#7dffb2"]:v>=80?["Correcte","#ffc66b"]:["Dégradée","#ff7a90"];$("#btv").textContent=v;$("#btl").textContent=lb[0];$(".bt").style.color=lb[1];bt.style.accentColor=lb[1]};
   const unk=$("#unk"); if(unk) unk.onchange=()=>{R.bk=unk.checked;a.Batterie=R.bk?"Inconnue":R.bat+" %";vendre()};
   const ic=$("#ic"); if(ic) ic.onchange=()=>{R.ic=ic.checked;vendre()};
-  const nx=$("#nx"),bk=$("#bk");
+  const nx=document.querySelector("#vendre #nx"),bk=document.querySelector("#vendre #bk");
   if(nx) nx.onclick=()=>{ if(R.i===n-1) R.fin=true; else R.i++; vendre(); haut(); };
-  if(bk) bk.onclick=()=>{ if(R.fin) R.fin=false; else if(R.i===0&&R.sub==="model") R.sub="gen"; else if(R.i>0) R.i--; vendre(); haut(); };
+  if(bk) bk.onclick=()=>{ vRetour(); haut(); };
+  vNav();
 }
+/* Retour dans l'estimation (bouton « Retour » et bouton retour du téléphone) */
+function vRetour(){ if(R.fin) R.fin=false; else if(R.i===0&&R.sub==="model") R.sub="gen"; else if(R.i>0) R.i--; else { R.go=false; } vendre(); }
+let VKEY=null,VPOP=false;
+function vNav(){if(!R.go)return;const k=[R.i,R.sub,R.fin?1:0].join("|");if(k===VKEY)return;
+ try{if(VKEY===null||VPOP)history.replaceState({cz:2,k},"");else history.pushState({cz:2,k},"")}catch(e){}VKEY=k}
+window.addEventListener("popstate",e=>{if(CUR!==3||!R.go)return;VPOP=true;vRetour();VPOP=false;haut()});
 
 function moveInd(){const t=document.querySelector('.tab[aria-selected="true"]'),i=$(".tabs .ind");if(i&&!t){i.style.width="0px";return}if(t&&i){i.style.width=t.offsetWidth+"px";i.style.height=t.offsetHeight+"px";i.style.transform=`translate(${t.offsetLeft}px,${t.offsetTop}px)`}}
 let CUR=0;
@@ -1837,6 +2189,7 @@ if(PHOTO_MOI) $("#moiph").innerHTML=`<img src="${esc(PHOTO_MOI)}" alt="Killian, 
   liveSync(pq==="ok",q.get("cs"));
   if(q.has("compte")){history.replaceState(null,"",location.pathname);setTimeout(compteOpen,300)}
   if(pq){history.replaceState(null,"",location.pathname);tab(2,true);if(pq==="ok")payOk();else cartOpen();}
+  else if(q.get("telephone")){const k=TELEPHONES.findIndex(t=>t.id===q.get("telephone"));tab(2,true);if(k>=0){shop(k);setTimeout(()=>$("#achat").scrollIntoView({block:"start"}),300)}}
   else if(o==="acheter")tab(2,true);else if(o==="vendre")tab(3,true);
   else if(d){const b={iphone:"iPhone",samsung:"Samsung",autre:"Autre modèle"}[d];if(b){tab(1);S={brand:b};render();setTimeout(()=>{const h=document.querySelectorAll("#repar h2");(h[1]||h[0]).scrollIntoView({block:"start"})},300)}}})();
 
@@ -1857,5 +2210,6 @@ document.addEventListener("click",e=>{
   track(p,t);
 },true);
 </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4080bf44afcc48d692c07d3cd953fbf6"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

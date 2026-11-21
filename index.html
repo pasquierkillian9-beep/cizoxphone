@@ -1033,7 +1033,7 @@ function drawBooking(){
    ${RIB.bic?`<div class="rl"><span>BIC</span><b class="cp" data-c="${esc(RIB.bic)}">${esc(RIB.bic)} <i>Copier</i></b></div>`:""}
    <div class="rl"><span>Montant</span><b>${ACOMPTE} €</b></div>
    <div class="rl"><span>Motif</span><b class="cp" data-c="${esc(motif)}">${esc(motif)} <i>Copier</i></b></div>
-   <p class="note">Je commande votre pièce dès réception du virement. L'acompte est déduit du prix de la réparation et n'est pas remboursé en cas d'annulation.</p></div>
+   <p class="note">Je commande votre pièce dès réception du virement. L'acompte est déduit du prix de la réparation et n'est pas remboursé en cas d'annulation. Si la livraison de la pièce a du retard, je vous préviens sur WhatsApp et on décale le rendez-vous ensemble.</p></div>
    <a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, je vous ai fait un virement de ${ACOMPTE} € pour l'acompte de ma réparation : ${i.titre}${i.prix?" ("+i.prix+")":""}. Rendez-vous le ${quand}. ${BK.nom}`)}">J'ai fait le virement : prévenir CizoxPhone</a>`;
   }
   el.innerHTML=h;

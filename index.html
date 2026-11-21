@@ -239,9 +239,9 @@ body{-webkit-tap-highlight-color:transparent;overflow-x:hidden}
 .tab .tl{display:none}
 @media(max-width:719px){.tab svg{width:16px;height:16px}.tab{gap:5px}}
 @media(max-width:719px){.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
-.tab#t1{order:1}.tab#t4{order:2}.tab#t5{order:3}.tab#t2{order:4}.tab#t3{order:5}
-.tab#t1{grid-column:span 6}.tab#t2,.tab#t3{grid-column:span 3}
-.tab#t2 .tl,.tab#t3 .tl{display:inline}.tab#t2 .ts,.tab#t3 .ts{display:none}
+.tab#t1{order:1}.tab#t2{order:2}.tab#t3{order:3}.tab#t4{order:4}
+.tab#t1{grid-column:span 6}.tab#t2,.tab#t3{grid-column:span 3}.tab#t4{grid-column:span 6}
+.tab#t2 .tl,.tab#t3 .tl,.tab#t4 .tl{display:inline}.tab#t2 .ts,.tab#t3 .ts,.tab#t4 .ts{display:none}
 .tab,.tab#t3{min-height:46px;padding:8px 6px;font-size:13px;line-height:1.2;text-align:center}}
 
 @media(max-width:719px){.tab#t1,.tab#t4,.tab#t5{flex-direction:column;gap:4px;padding:9px 4px}.tab#t1 svg,.tab#t4 svg,.tab#t5 svg{display:block;width:18px;height:18px}}
@@ -689,12 +689,13 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
   <button class="tab" role="tab" id="t1" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5z"/><path d="M5 19l3-3"/></svg><span class="tl">Réparer mon téléphone</span><span class="ts">Réparer mon téléphone</span></button>
   <button class="tab" role="tab" id="t2" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="tl">Acheter mon nouveau téléphone</span><span class="ts">Acheter</span></button>
   <button class="tab" role="tab" id="t3" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.6 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5V8m0 8v1.5"/></svg><span class="tl">Vendre mon iPhone</span><span class="ts">Vendre</span></button>
+  <button class="tab" role="tab" id="t4" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M4 8v8M20 8v8M11 18.5h2"/></svg><span class="tl">Accessoires</span><span class="ts">Accessoires</span></button>
 </div>
 
 <section id="repar" hidden></section>
 <section id="achat" hidden></section>
 <section id="vendre" hidden></section>
-<section id="ecouteurs" hidden></section>
+<section id="accs" hidden></section>
 <section class="seo">
 <div class="avs rvl" id="avs"><h2 id="avh">Ils m'ont confié leur téléphone</h2><div class="rvw" id="rvw"></div><div class="rdots" id="rdots"></div><a class="avall" id="avis3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h6a5.1 5.1 0 0 1-2.2 3.3v2.8h3.6c2.1-1.9 3.2-4.8 3.2-8.1z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1V7H2a11 11 0 0 0 0 9.9l3.7-2.9z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7l3.7 2.9C6.6 7.4 9.1 5.4 12 5.4z"/></svg>Voir tous les avis sur Google</a><br><a class="avbtn" href="https://search.google.com/local/writereview?placeid=ChIJw1envgLkbA8Rmj7QH9JrqhU" target="_blank" rel="noopener">⭐ Laisser un avis Google</a></div>
 <div class="moi rvl"><div class="moi-ph" id="moiph"><span>K</span></div><div><small>Qui suis-je ?</small><h2>Moi c'est Killian</h2><p>C'est moi qui répare votre téléphone chez CizoxPhone, à Verrières-en-Anjou, près d'Angers. Vous venez, vous attendez sur place et vous repartez avec votre téléphone réparé. Je vous annonce le prix avant de commencer, et toutes les pièces que je change sont garanties 1 an.</p></div></div>
@@ -734,7 +735,7 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <footer>
 <div class="fgrid">
  <div><a class="wm" href="/"><img class="lg" alt="" src="logo.webp" width="56" height="46" loading="lazy"><span class="wt">Cizox<span>Phone</span></span></a><p>Réparation de téléphones, vente d'iPhone reconditionnés et rachat d'iPhone à Verrières-en-Anjou, près d'Angers (49).</p></div>
- <div><h3>Services</h3><button class="fl" data-tab="1">Réparer mon téléphone</button><button class="fl" data-tab="2">Acheter un téléphone</button><button class="fl" data-tab="3">Vendre mon iPhone</button><button class="fl" onclick="suiviOpen()">Suivre ma réparation</button><button class="fl" onclick="compteOpen()">Mon espace client</button></div>
+ <div><h3>Services</h3><button class="fl" data-tab="1">Réparer mon téléphone</button><button class="fl" data-tab="2">Acheter un téléphone</button><button class="fl" data-tab="3">Vendre mon iPhone</button><button class="fl" data-tab="4">Accessoires</button><button class="fl" onclick="suiviOpen()">Suivre ma réparation</button><button class="fl" onclick="compteOpen()">Mon espace client</button></div>
  <div><h3>Réparations</h3><a href="/reparation-ecran-iphone-angers.html">Écran iPhone à Angers</a><a href="/changement-batterie-iphone-angers.html">Batterie iPhone à Angers</a><a href="/reparation-samsung-angers.html">Samsung à Angers</a><a href="/reparation-telephone-verrieres-en-anjou.html">Réparation à Verrières-en-Anjou</a></div>
  <div><h3>Contact</h3><a id="fwa" target="_blank" rel="noopener">WhatsApp · 06 59 00 61 84</a><a href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener">TikTok · @cizoxphone</a><a href="https://www.instagram.com/cizoxphone/" target="_blank" rel="noopener">Instagram · @cizoxphone</a><a id="avis2" target="_blank" rel="noopener">Avis Google</a><span>Pellouailles-les-Vignes · Verrières-en-Anjou · Angers</span><span style="display:block;margin-top:8px">Tous les jours · 10h – 22h</span></div>
 </div>
@@ -1408,7 +1409,7 @@ try{ACC=JSON.parse(localStorage.getItem("cz_acc")||"[]").filter(a=>ACCS[a.k])}ca
 const telId=id=>TELEPHONES.find(t=>t.id===id);
 function cartClean(){CART=CART.filter(id=>{const t=telId(id);return t&&!t.statut})}
 function cartSave(){try{localStorage.setItem("cz_panier",JSON.stringify(CART));localStorage.setItem("cz_acc",JSON.stringify(ACC))}catch(e){}cartUI()}
-function cartUI(){cartClean();const n=CART.length+ACC.reduce((x,a)=>x+a.q,0),f=$("#cartfab");if(f){f.hidden=!n||CUR!==2;$("#cartn").textContent=n}document.querySelectorAll(".cartbtn b").forEach(b=>b.textContent=n);const ad=$("#achat");if(ad)ad.dataset.n=n}
+function cartUI(){cartClean();const n=CART.length+ACC.reduce((x,a)=>x+a.q,0),f=$("#cartfab");if(f){f.hidden=!n||(CUR!==2&&CUR!==4);$("#cartn").textContent=n}document.querySelectorAll(".cartbtn b").forEach(b=>b.textContent=n);const ad=$("#achat");if(ad)ad.dataset.n=n}
 function cartAdd(id){if(!CART.includes(id))CART.push(id);cartSave();const f=$("#cartfab");if(f){f.classList.remove("bump");void f.offsetWidth;f.classList.add("bump")}}
 function cartRm(id){CART=CART.filter(x=>x!==id);cartSave();cartOpen()}
 function loadJs(u){return new Promise((ok,ko)=>{const x=document.createElement("script");x.src=u;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
@@ -1489,6 +1490,7 @@ function extraBind(){
  f(["alm","alc","alb"],"all",v=>`Bonjour, je cherche un ${v[0]}${v[1]?` (${v[1]})`:""}${v[2]?`, budget ${v[2].replace(/€/g,"").trim()} € maximum`:""}. Pouvez-vous me prévenir quand vous en avez un ?`);
 }
 
+function accsShow(){const e=$("#accs");e.innerHTML=`<div class="cartbar"><button class="cartbtn" type="button">🛒 Mon panier <b>0</b></button></div>`+ACC_H();e.querySelectorAll(".cartbtn").forEach(b=>b.onclick=cartOpen);accBind();cartUI();anim(e,0)}
 function ACC_H(){return `<h2>Accessoires</h2><p class="note">Livrés avec votre commande, ou à récupérer en main propre à Verrières-en-Anjou.</p><div class="accs">${Object.entries(ACCS).map(([k,a])=>`<div class="acc">${a.img&&a.img[1]?`<div class="aimgs">${a.img.map(u=>`<img src="${u}" alt="${esc(a.n)}" loading="lazy">`).join("")}</div>`:accImg(a,"aim")}<div><h3>${a.n}</h3><p>${a.d}</p><span class="ap">${a.p} €</span>${k==="pack"?`<br><span class="apr">💡 ${PACK_PRIX} € seulement avec l'achat d'un téléphone (-15 €)</span><br><span class="apr">🎁 2 packs achetés = -${PACK_DUO} €</span><select id="apm"><option value="">Modèle exact de votre téléphone</option>${MODELES_IPHONE.map(m=>`<option>${esc(m)}</option>`).join("")}<option value="__autre">Autre modèle (Samsung, autre marque…)</option></select><input type="text" id="apa" placeholder="Modèle exact (ex : Samsung Galaxy A54)" hidden>`:"<br>"}<button class="aadd" data-acc="${k}">Ajouter au panier</button></div></div>`).join("")}</div>`}
 function accBind(){const sm=$("#apm"),sa=$("#apa");if(sm)sm.onchange=()=>{sa.hidden=sm.value!=="__autre";sm.style.borderColor="";if(!sa.hidden)sa.focus()};
  document.querySelectorAll("[data-acc]").forEach(b=>b.onclick=()=>{const k=b.dataset.acc;let m="";
@@ -1505,8 +1507,9 @@ function shop(i){
     const card=([t,k])=>`<button class="item${t.statut==="vendu"?" sold":""}" data-k="${k}" data-p="${num(pxT(t))}"><div class="ph">${ST[t.statut]?`<span class="rib ${t.statut}">${ST[t.statut]}</span>`:""}${t.perso?`<span class="occ">Occasion</span>`:""}${t.photos[0]?`<img loading="lazy" decoding="async" src="${esc(t.photos[0])}" alt="${esc(t.nom)}">`:"Photo à venir"}</div>${grdH(t.grade)}<span><b>${esc(t.nom)}</b>${pxH(t)}</span>${bdg({badges:(t.badges||[]).slice(0,2)})}</button>`;
     const sec=(l,titre,note)=>l.length?`<h2>${titre}${nd(l)?` · ${nd(l)}`:""}</h2>${note}<div class="shop">${l.map(card).join("")}</div>`:"";
     if(!occ.length&&SHOP_TAB==="occ") SHOP_TAB="pro";
-    const tabs=`<div class="stabs${occ.length?" t3":""}"><button class="stab${SHOP_TAB==="pro"?" on":""}" data-tab="pro"><b>Reconditionnés</b><small>✅ Garantis 2 ans${nd(pro)?` · ${nd(pro)} dispo`:""}</small></button>${occ.length?`<button class="stab${SHOP_TAB==="occ"?" on":""}" data-tab="occ"><b>Occasions</b><small>Petits prix${nd(occ)?` · ${nd(occ)} dispo`:""}</small></button>`:""}<button class="stab${SHOP_TAB==="acc"?" on":""}" data-tab="acc"><b>Accessoires</b><small>Coques, câbles</small></button></div>`;
-    el.innerHTML = TELEPHONES.length? `<div class="cartbar"><button class="cartbtn" type="button">🛒 Mon panier <b>${CART.length}</b></button></div>${tabs}${SHOP_TAB==="acc"?ACC_H():BF_HTML()+GRADES_H+(SHOP_TAB==="pro"?BUDGET_H(pro)+sec(pro,"Reconditionnés CizoxPhone",""):sec(occ,"Occasions à petit prix",`<p class="gar2 occn">Téléphones d'occasion vendus en l'état décrit dans l'annonce · Test sur place possible avant achat</p>`))+EXTRA_H()}` : "<p>Aucun téléphone disponible pour le moment. Revenez bientôt !</p>"+EXTRA_H();
+    const tabs=occ.length?`<div class="stabs"><button class="stab${SHOP_TAB==="pro"?" on":""}" data-tab="pro"><b>Reconditionnés</b><small>✅ Garantis 2 ans${nd(pro)?` · ${nd(pro)} dispo`:""}</small></button>${occ.length?`<button class="stab${SHOP_TAB==="occ"?" on":""}" data-tab="occ"><b>Occasions</b><small>Petits prix${nd(occ)?` · ${nd(occ)} dispo`:""}</small></button>`:""}</div>`:"";
+    if(SHOP_TAB==="acc")SHOP_TAB="pro";
+    el.innerHTML = TELEPHONES.length? `<div class="cartbar"><button class="cartbtn" type="button">🛒 Mon panier <b>${CART.length}</b></button></div>${tabs}${BF_HTML()+GRADES_H+(SHOP_TAB==="pro"?BUDGET_H(pro)+sec(pro,"Reconditionnés CizoxPhone",""):sec(occ,"Occasions à petit prix",`<p class="gar2 occn">Téléphones d'occasion vendus en l'état décrit dans l'annonce · Test sur place possible avant achat</p>`))+EXTRA_H()}` : "<p>Aucun téléphone disponible pour le moment. Revenez bientôt !</p>"+EXTRA_H();
     el.querySelectorAll(".stab").forEach(b=>b.onclick=()=>{SHOP_TAB=b.dataset.tab;shop();});
     el.querySelectorAll(".cartbtn").forEach(b=>b.onclick=cartOpen);cartUI();budgetBind();extraBind();accBind();
     el.querySelectorAll(".item").forEach(b=>b.onclick=()=>{shop(+b.dataset.k);el.scrollIntoView({block:"start"})});
@@ -1713,19 +1716,19 @@ let CUR=0;
 function tab(n,scroll){
   $(".tabs").classList.remove("idle");{const p=$("#tpick");if(p)p.remove();}
   const same=n===CUR;CUR=n;
-  [1,2,3].forEach(i=>$("#t"+i).setAttribute("aria-selected",n===i));
+  [1,2,3,4].forEach(i=>$("#t"+i).setAttribute("aria-selected",n===i));
   moveInd();
-  $("#repar").hidden = n!==1; $("#achat").hidden = n!==2; $("#vendre").hidden = n!==3; $("#ecouteurs").hidden = n!==4;
+  $("#repar").hidden = n!==1; $("#achat").hidden = n!==2; $("#vendre").hidden = n!==3; $("#accs").hidden = n!==4;
   if(n===2) shop();
   cartUI();
   if(n===3){R.go=false;REPRISE=null;vendre();}
-  if(n===4){const e=$("#ecouteurs");e.innerHTML=budsH()||"<p>Aucun écouteur disponible pour le moment.</p>";budsBind();}
-  const sec=$(["","#repar","#achat","#vendre","#ecouteurs"][n]);
+  if(n===4) accsShow();
+  const sec=$(["","#repar","#achat","#vendre","#accs"][n]);
   if(!same&&n===1){sec.classList.remove("fadein");void sec.offsetWidth;sec.classList.add("fadein")}
   if(scroll||$(".tabs").getBoundingClientRect().top<12) sec.scrollIntoView({block:"start",behavior:RM.matches?"auto":"smooth"});
   setTimeout(fabCheck,400);
 }
-$("#t1").onclick=()=>tab(1); $("#t2").onclick=()=>tab(2); $("#t3").onclick=()=>tab(3);
+$("#t1").onclick=()=>tab(1); $("#t2").onclick=()=>tab(2); $("#t3").onclick=()=>tab(3); $("#t4").onclick=()=>tab(4);
 
 render();
 

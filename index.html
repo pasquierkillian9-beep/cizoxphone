@@ -1535,17 +1535,17 @@ function shop(i){
 }
 
 /* ====== Rachat d’iPhone : 13 questions, une par écran ====== */
-const GENS=["17","16","15","14","13","12"];
+const GENS=["17","16","15","14","13","12","11"];
 /* Visuels des générations (photos fournies) */
-const IMGS={"16": {"src": "gen-16.webp", "bg": "#12082f"}, "17": {"src": "gen-17.webp", "bg": "#12082f"}, "15": {"src": "gen-15.webp", "bg": "#12082f"}, "14": {"src": "gen-14.webp", "bg": "#12082f"}, "13": {"src": "gen-13.webp", "bg": "#12082f"}, "12": {"src": "gen-12.webp", "bg": "#12082f"}};
-const IMGM={"iPhone 17": "iphone-17.webp", "iPhone 17 Pro Max": "iphone-17-pro-max.webp", "iPhone 17 Pro": "iphone-17-pro.webp", "iPhone 17 Air": "iphone-17-air.webp", "iPhone 17 E": "iphone-17-e.webp", "iPhone 16 E": "iphone-16-e.webp", "iPhone 16": "iphone-16.webp", "iPhone 16 Pro": "iphone-16-pro.webp", "iPhone 16 Pro Max": "iphone-16-pro-max.webp", "iPhone 16 Plus": "iphone-16-plus.webp", "iPhone 15": "iphone-15.webp", "iPhone 15 Plus": "iphone-15-plus.webp", "iPhone 15 Pro": "iphone-15-pro.webp", "iPhone 15 Pro Max": "iphone-15-pro-max.webp", "iPhone 14": "iphone-14.webp", "iPhone 14 Plus": "iphone-14-plus.webp", "iPhone 14 Pro": "iphone-14-pro.webp", "iPhone 14 Pro Max": "iphone-14-pro-max.webp", "iPhone 13": "iphone-13.webp", "iPhone 13 mini": "iphone-13-mini.webp", "iPhone 13 Pro": "iphone-13-pro.webp", "iPhone 13 Pro Max": "iphone-13-pro-max.webp", "iPhone 12": "iphone-12.webp", "iPhone 12 mini": "iphone-12-mini.webp", "iPhone 12 Pro": "iphone-12-pro.webp", "iPhone 12 Pro Max": "iphone-12-pro-max.webp"};
+const IMGS={"16": {"src": "gen-16.webp", "bg": "#12082f"}, "17": {"src": "gen-17.webp", "bg": "#12082f"}, "15": {"src": "gen-15.webp", "bg": "#12082f"}, "14": {"src": "gen-14.webp", "bg": "#12082f"}, "13": {"src": "gen-13.webp", "bg": "#12082f"}, "12": {"src": "gen-12.webp", "bg": "#12082f"}, "11": {"src": "rep-iphone-11.webp", "bg": "#12082f"}};
+const IMGM={"iPhone 17": "iphone-17.webp", "iPhone 17 Pro Max": "iphone-17-pro-max.webp", "iPhone 17 Pro": "iphone-17-pro.webp", "iPhone 17 Air": "iphone-17-air.webp", "iPhone 17 E": "iphone-17-e.webp", "iPhone 16 E": "iphone-16-e.webp", "iPhone 16": "iphone-16.webp", "iPhone 16 Pro": "iphone-16-pro.webp", "iPhone 16 Pro Max": "iphone-16-pro-max.webp", "iPhone 16 Plus": "iphone-16-plus.webp", "iPhone 15": "iphone-15.webp", "iPhone 15 Plus": "iphone-15-plus.webp", "iPhone 15 Pro": "iphone-15-pro.webp", "iPhone 15 Pro Max": "iphone-15-pro-max.webp", "iPhone 14": "iphone-14.webp", "iPhone 14 Plus": "iphone-14-plus.webp", "iPhone 14 Pro": "iphone-14-pro.webp", "iPhone 14 Pro Max": "iphone-14-pro-max.webp", "iPhone 13": "iphone-13.webp", "iPhone 13 mini": "iphone-13-mini.webp", "iPhone 13 Pro": "iphone-13-pro.webp", "iPhone 13 Pro Max": "iphone-13-pro-max.webp", "iPhone 12": "iphone-12.webp", "iPhone 12 mini": "iphone-12-mini.webp", "iPhone 12 Pro": "iphone-12-pro.webp", "iPhone 12 Pro Max": "iphone-12-pro-max.webp", "iPhone 11": "rep-iphone-11.webp", "iPhone 11 Pro": "rep-iphone-11-pro.webp", "iPhone 11 Pro Max": "rep-iphone-11-pro.webp"};
 /* Photos de groupe (mêmes que le parcours Réparation) pour le rachat */
 Object.keys(IMGM).forEach(k=>{if(PHOTO_MODELE[k])IMGM[k]=PHOTO_MODELE[k]});Object.keys(IMGS).forEach(g=>{const p=PHOTO_MODELE["iPhone "+g];if(p)IMGS[g].src=p});
 function pic(g){const m=IMGS[g];return `<span class="ph wide" style="background:${m.bg}"><img loading="lazy" decoding="async" src="${m.src}" alt="iPhone ${g}"></span>`}
 const modelsOf=g=>MODELES_IPHONE.filter(m=>new RegExp("^iPhone "+g+"( |$)").test(m));
 /* Capacités par modèle (à ajuster si besoin, surtout pour la gamme 17) */
 const sGo=(...x)=>x.map(v=>v>=1000?v/1000+" To":v+" Go");
-const STO_MODELE=[[/^iPhone 12( mini)?$/,sGo(64,128,256)],[/^iPhone 12 Pro/,sGo(128,256,512)],[/^iPhone 13 Pro/,sGo(128,256,512,1000)],[/^iPhone 13/,sGo(128,256,512)],[/^iPhone 14 Pro/,sGo(128,256,512,1000)],[/^iPhone 14/,sGo(128,256,512)],[/^iPhone 15 Pro Max$/,sGo(256,512,1000)],[/^iPhone 15 Pro$/,sGo(128,256,512,1000)],[/^iPhone 15/,sGo(128,256,512)],[/^iPhone 16 Pro Max$/,sGo(256,512,1000)],[/^iPhone 16 Pro$/,sGo(128,256,512,1000)],[/^iPhone 16/,sGo(128,256,512)],[/^iPhone 17 Pro Max$/,sGo(256,512,1000,2000)],[/^iPhone 17 (Pro|Air)$/,sGo(256,512,1000)],[/^iPhone 17 E$/,sGo(128,256,512)],[/^iPhone 17$/,sGo(256,512)]];
+const STO_MODELE=[[/^iPhone 11$/,sGo(64,128,256)],[/^iPhone 11 Pro/,sGo(64,256,512)],[/^iPhone 12( mini)?$/,sGo(64,128,256)],[/^iPhone 12 Pro/,sGo(128,256,512)],[/^iPhone 13 Pro/,sGo(128,256,512,1000)],[/^iPhone 13/,sGo(128,256,512)],[/^iPhone 14 Pro/,sGo(128,256,512,1000)],[/^iPhone 14/,sGo(128,256,512)],[/^iPhone 15 Pro Max$/,sGo(256,512,1000)],[/^iPhone 15 Pro$/,sGo(128,256,512,1000)],[/^iPhone 15/,sGo(128,256,512)],[/^iPhone 16 Pro Max$/,sGo(256,512,1000)],[/^iPhone 16 Pro$/,sGo(128,256,512,1000)],[/^iPhone 16/,sGo(128,256,512)],[/^iPhone 17 Pro Max$/,sGo(256,512,1000,2000)],[/^iPhone 17 (Pro|Air)$/,sGo(256,512,1000)],[/^iPhone 17 E$/,sGo(128,256,512)],[/^iPhone 17$/,sGo(256,512)]];
 const stoOf=m=>{const r=STO_MODELE.find(x=>x[0].test(m||""));return r?r[1]:sGo(128,256,512,1000)};
 const OKB=[["Parfait","Aucune rayure"],["Rayé","Rayures légères"],["Cassé","Fissuré ou brisé"]];
 const OUINON=[["Oui"],["Non"]];
@@ -1575,10 +1575,10 @@ const refHtml=m=>`<p class="ref"><b>Désolé, je ne peux malheureusement pas rep
 const CAUSES=[["Écran","Écran cassé ou noir","Il vibre ou sonne encore, ou un ordinateur le détecte."],["Batterie","Batterie morte ou gonflée","Il ne charge plus ou ne tient pas la charge."],["Aucun signe de vie","Aucun signe de vie","Rien ne se passe, même après 30 minutes sur secteur."]];
 const AVANT=[["Fonctionnait","Oui, il s’est éteint sans prévenir","Il marchait normalement, jamais d’eau, Face ID OK."],["Face ID HS","Non, Face ID ne marchait plus","Face ID était déjà en panne, sans contact avec l’eau."],["A pris l’eau","Non, il a pris l’eau","Contact avec un liquide, même ancien ou léger."]];
 /* À REMPLIR : prix de base "Modèle|Stockage" : 300 ; déductions "Question|Réponse" : 40. Tant que la grille est vide, aucun prix n’est affiché. */
-/* GRILLE DE RACHAT (21/11/2026) : prix max en parfait état, 128 Go (64 Go pour les 12 / 12 mini).
+/* GRILLE DE RACHAT (21/11/2026) : prix max en parfait état, plus petit stockage (64 Go pour les 11 et 12).
    Calcul : prix de revente estimé × 0,477 (40 % de marge après 12,3 % de cotisations), arrondi au 5 € inférieur.
    Pour changer un prix : modifiez la valeur à côté du modèle. */
-const RACHAT_BASE={"iPhone 12 mini":80,"iPhone 12":95,"iPhone 12 Pro":120,"iPhone 12 Pro Max":140,"iPhone 13 mini":105,"iPhone 13":120,"iPhone 13 Pro":170,"iPhone 13 Pro Max":190,"iPhone 14":140,"iPhone 14 Plus":165,"iPhone 14 Pro":210,"iPhone 14 Pro Max":245,"iPhone 15":190,"iPhone 15 Plus":210,"iPhone 15 Pro":265,"iPhone 15 Pro Max":310,"iPhone 16 E":190,"iPhone 16":245,"iPhone 16 Plus":275,"iPhone 16 Pro":330,"iPhone 16 Pro Max":390};
+const RACHAT_BASE={"iPhone 11":70,"iPhone 11 Pro":85,"iPhone 11 Pro Max":95,"iPhone 12 mini":80,"iPhone 12":95,"iPhone 12 Pro":120,"iPhone 12 Pro Max":140,"iPhone 13 mini":105,"iPhone 13":120,"iPhone 13 Pro":170,"iPhone 13 Pro Max":190,"iPhone 14":140,"iPhone 14 Plus":165,"iPhone 14 Pro":210,"iPhone 14 Pro Max":245,"iPhone 15":190,"iPhone 15 Plus":210,"iPhone 15 Pro":265,"iPhone 15 Pro Max":310,"iPhone 16 E":190,"iPhone 16":245,"iPhone 16 Plus":275,"iPhone 16 Pro":330,"iPhone 16 Pro Max":390};
 const RACHAT_STO=0.05; /* +5 % par palier de stockage au-dessus du plus petit */
 const GRILLE_RACHAT={};
 for(const m of Object.keys(RACHAT_BASE)){stoOf(m).forEach((st,i)=>{GRILLE_RACHAT[m+"|"+st]=Math.floor(RACHAT_BASE[m]*(1+RACHAT_STO*i)/5)*5})}
@@ -1601,7 +1601,11 @@ const PIECES=["Écran avant","Batterie","Caméra arrière","Vitre arrière","Aut
 const act=()=>QS.filter(q=>!(q.off&&R.a.Allumage==="Non"));
 const devis=()=>REFUS.some(x=>R.a[x[0]]===x[1])||["A pris l’eau","Face ID HS"].includes(R.a["Avant la panne"])||R.a.Cause==="Aucun signe de vie"||R.df.includes(CARTE_MERE); /* true = iPhone non repris */
 function prix(){const a=R.a,m=a["Modèle"];if(devis())return null;const b=GRILLE_RACHAT[m+"|"+a["Stockage"]];if(typeof b!=="number")return null;
- let d=Object.keys(a).reduce((s,k)=>{const f=DEDUC[k+"|"+a[k]];return s+(f?f(m)||0:0)},0);
+ /* Modèles où le dos se change avec le châssis complet : un seul châssis règle le dos ET le contour, on ne compte qu'une fois */
+ const chassisSeul=!prixRep(m,"Vitre arrière")&&!!prixRep(m,"Châssis complet");
+ const chOK=chassisSeul&&(a["Face arrière"]==="Cassé"||a["Châssis"]==="Cassé ou tordu");
+ let d=Object.keys(a).reduce((s,k)=>{if(chOK&&(k==="Face arrière"||k==="Châssis"))return s;const f=DEDUC[k+"|"+a[k]];return s+(f?f(m)||0:0)},0);
+ if(chOK)d+=prixRep(m,"Châssis complet");
  d+=R.df.reduce((s,x)=>s+(DEDUC_DEF[x]?DEDUC_DEF[x](m)||0:0),0);
  d+=deducBat(m);
  const v=Math.floor((b-d)/5)*5;return v>=20?v:null}
@@ -1631,7 +1635,7 @@ const card=(k,v,t,d,on,extra)=>`<button class="oc${on?" on":""}" data-k="${k}" d
 function vendre(){
   const el=$("#vendre");
   if(!R.go){
-    el.innerHTML=`<div class="rv"><h2 class="rvh">Vendez votre iPhone.<br><em>Même cassé.</em></h2><p class="rvp">Décrivez votre iPhone en 2 minutes, je vous envoie mon prix sur WhatsApp. Sans engagement. Je rachète les iPhone 12 et plus récents.</p><button class="est" id="est" aria-label="Estimer mon iPhone"><span>ESTIMER</span></button><ol class="st3"><li><b>Décrivez votre iPhone</b><span>Modèle, stockage et état.</span></li><li><b>Recevez mon prix</b><span>Je vous réponds sur WhatsApp avec mon offre.</span></li><li><b>Choisissez la remise</b><span>En main propre à Verrières-en-Anjou et alentours.</span></li></ol></div>`;
+    el.innerHTML=`<div class="rv"><h2 class="rvh">Vendez votre iPhone.<br><em>Même cassé.</em></h2><p class="rvp">Décrivez votre iPhone en 2 minutes, je vous envoie mon prix sur WhatsApp. Sans engagement. Je rachète les iPhone 11 et plus récents.</p><button class="est" id="est" aria-label="Estimer mon iPhone"><span>ESTIMER</span></button><ol class="st3"><li><b>Décrivez votre iPhone</b><span>Modèle, stockage et état.</span></li><li><b>Recevez mon prix</b><span>Je vous réponds sur WhatsApp avec mon offre.</span></li><li><b>Choisissez la remise</b><span>En main propre à Verrières-en-Anjou et alentours.</span></li></ol></div>`;
     anim(el.firstElementChild,0);R._k=null;
     $("#est").onclick=()=>{R.go=true;vendre();haut()};
     return;

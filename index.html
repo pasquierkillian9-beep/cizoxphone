@@ -28,7 +28,7 @@ h2{font-size:19px;margin:22px 0 10px;scroll-margin-top:96px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
 .opt{min-height:48px;touch-action:manipulation;padding:13px 10px;border:1.5px solid var(--line);background:var(--card);color:var(--txt);border-radius:10px;font:600 15px 'Exo 2',sans-serif;cursor:pointer;text-align:center}
 .opt.on{border-color:var(--acc2);background:var(--acc);color:#fff}
-input[type=text]{width:100%;padding:13px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--txt);font:400 16px 'Exo 2',sans-serif;margin-bottom:8px}
+input[type=text],input[type=tel]{width:100%;padding:13px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--txt);font:400 16px 'Exo 2',sans-serif;margin-bottom:8px}
 :focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
 .price{border:2px solid var(--acc);border-radius:14px;padding:18px;background:var(--card);box-shadow:0 0 24px rgba(139,47,255,.35)}
 .price b{font-size:34px;font-style:italic}
@@ -573,6 +573,42 @@ h2.rvl.vis::after{width:64px}
 .mod.aut{border-style:dashed}.mod.aut small{font-weight:400;font-size:12px;color:var(--mute)}
 .autq{font:800 54px 'Exo 2',sans-serif;color:#e04bff;text-shadow:0 0 22px rgba(224,75,255,.7)}
 .cta.off{opacity:.45}
+.coln{margin:14px 0 8px!important;font-size:15px!important;color:#fff!important}
+.sws{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.q.sw{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 4px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:#fff;font:600 12.5px 'Exo 2',sans-serif;cursor:pointer;text-align:center;line-height:1.2}
+.q.sw i{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.35);box-shadow:inset 0 -4px 8px rgba(0,0,0,.25)}
+.q.sw.on{border-color:#e04bff;background:rgba(139,47,255,.28);box-shadow:0 0 16px rgba(224,75,255,.45)}
+.q.sw.on i{border-color:#fff}
+.bkh{margin-top:22px!important}
+.bkld{text-align:center;padding:14px 0}
+.bkst{color:#9dffc6!important;font-weight:600}
+.bkac{padding:14px;border-radius:14px;border:1.5px solid rgba(255,200,80,.55);background:rgba(255,190,60,.1);margin-bottom:12px;line-height:1.5}
+.bkac b:first-child{color:#ffd76a;font-size:16px}.bkac p{margin:6px 0 0;font-size:14.5px;color:#f2e6c9}
+.bkj{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}.bkj::-webkit-scrollbar{display:none}
+.bjd{flex:none;padding:10px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:#fff;font:700 14px 'Exo 2',sans-serif;cursor:pointer;text-transform:capitalize}
+.bjd.on{background:linear-gradient(120deg,#7b2fff,#e04bff);border-color:transparent}
+.bkt{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
+.bth{padding:10px 0;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:#fff;font:700 14px 'Exo 2',sans-serif;cursor:pointer}
+.bth.on{border-color:#e04bff;background:rgba(139,47,255,.35);box-shadow:0 0 14px rgba(224,75,255,.45)}
+.bkf{display:flex;flex-direction:column;gap:8px;margin-top:6px}.bkr{margin:4px 0;text-transform:none}
+.bkok{padding:16px;border-radius:16px;border:1.5px solid rgba(125,255,178,.5);background:rgba(37,211,102,.1);margin:18px 0 10px}
+.bkok b{font-size:17px}.bkok p{margin:8px 0 0;line-height:1.5;text-transform:none}
+.ribx{padding:16px;border-radius:16px;border:1px solid rgba(181,107,255,.45);background:rgba(26,10,77,.55);margin-bottom:10px}
+.ribx h3{margin:0 0 10px;font-size:17px}
+.rl{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px}
+.rl span{color:var(--mute);flex:none}.rl b{text-align:right;word-break:break-all}
+.cp{cursor:pointer}.cp i{font-style:normal;font-size:11px;color:#e9b8ff;margin-left:6px;white-space:nowrap}
+.rep.dgc{grid-column:1/-1;flex-direction:row;align-items:center;min-height:0;gap:14px;background:linear-gradient(135deg,rgba(224,75,255,.22),rgba(123,47,255,.18));border-color:rgba(224,75,255,.55)}
+.rep.dgc .ri{margin:0;background:rgba(224,75,255,.3)}.rep.dgc small{display:block;color:var(--mute);font-weight:400;font-size:13px;margin-top:3px}.rep.dgc em{margin:0 0 0 auto}
+.dgg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:6px 0 14px}.dgg.one{grid-template-columns:1fr}
+.dgb{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:#fff;cursor:pointer;font:600 14px 'Exo 2',sans-serif;text-align:left}
+.dgb span{font-size:20px}.dgb.on{border-color:#e04bff;background:rgba(139,47,255,.28)}
+.dgres{border:1.5px solid rgba(224,75,255,.55);border-radius:18px;padding:16px;background:rgba(139,47,255,.16);margin:6px 0 12px}
+.dgres h3{margin:0 0 6px;font-size:18px}.dgres p{margin:6px 0;line-height:1.45}.dgres .tip{color:#ffd98a}.dgres .urg{color:#ff8a8a;font-weight:700}
+.dgback{background:none;border:0;color:#e9b8ff;cursor:pointer;font:600 14px 'Exo 2',sans-serif;padding:0;margin:0 0 10px}
+.cta.ghost{background:transparent;color:#fff;border:1.5px solid rgba(224,75,255,.6);box-shadow:none}
+textarea#dgt{width:100%;min-height:90px;box-sizing:border-box;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:#fff;padding:12px;font:15px 'Exo 2',sans-serif;margin:4px 0 10px}
+@media(max-width:520px){.dgg{grid-template-columns:1fr}}
 </style>
 <link rel="canonical" href="https://www.cizoxphone.com/">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://www.cizoxphone.com/">
@@ -651,6 +687,38 @@ h2.rvl.vis::after{width:64px}
 <div class="cmod" id="cmod" hidden onclick="if(event.target===this)cartClose()"><div class="cbox" id="cbox" role="dialog" aria-label="Mon panier"></div></div>
 <a class="fab" id="fab" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.3A11.8 11.8 0 0 0 1.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg><span>Une question ?</span></a>
 
+<!-- STOCK DES PIÈCES (lu aussi par le serveur de RDV) · qte = quantité en stock · qualite : "incell", "oled" (Soft OLED) ou "orig" (Original) -->
+<script type="application/json" id="stock">
+[
+ {"cle": "batterie|iPhone 11", "piece": "batterie", "modeles": ["iPhone 11"], "qte": 1},
+ {"cle": "batterie|iPhone 11 Pro", "piece": "batterie", "modeles": ["iPhone 11 Pro"], "qte": 1},
+ {"cle": "batterie|iPhone 12/iPhone 12 Pro", "piece": "batterie", "modeles": ["iPhone 12", "iPhone 12 Pro"], "qte": 2},
+ {"cle": "batterie|iPhone 14", "piece": "batterie", "modeles": ["iPhone 14"], "qte": 2},
+ {"cle": "batterie|iPhone 15", "piece": "batterie", "modeles": ["iPhone 15"], "qte": 3},
+ {"cle": "batterie|iPhone 15 Plus", "piece": "batterie", "modeles": ["iPhone 15 Plus"], "qte": 1},
+ {"cle": "batterie|iPhone 15 Pro", "piece": "batterie", "modeles": ["iPhone 15 Pro"], "qte": 1},
+ {"cle": "batterie|iPhone 16 Plus", "piece": "batterie", "modeles": ["iPhone 16 Plus"], "qte": 1},
+ {"cle": "batterie|iPhone 17", "piece": "batterie", "modeles": ["iPhone 17"], "qte": 1},
+ {"cle": "ecran|iPhone 14|orig", "piece": "ecran", "modeles": ["iPhone 14"], "qualite": "orig", "qte": 1},
+ {"cle": "ecran|iPhone 11|incell", "piece": "ecran", "modeles": ["iPhone 11"], "qualite": "incell", "qte": 1},
+ {"cle": "ecran|iPhone 12|oled", "piece": "ecran", "modeles": ["iPhone 12"], "qualite": "oled", "qte": 1},
+ {"cle": "ecran|iPhone 13|oled", "piece": "ecran", "modeles": ["iPhone 13"], "qualite": "oled", "qte": 2},
+ {"cle": "ecran|iPhone 14|oled", "piece": "ecran", "modeles": ["iPhone 14"], "qualite": "oled", "qte": 1},
+ {"cle": "ecran|iPhone 15|oled", "piece": "ecran", "modeles": ["iPhone 15"], "qualite": "oled", "qte": 2},
+ {"cle": "vitre|iPhone 15|Noir", "piece": "vitre", "modeles": ["iPhone 15"], "couleur": "Noir", "qte": 1},
+ {"cle": "vitre|iPhone 15 Pro|Titane bleu", "piece": "vitre", "modeles": ["iPhone 15 Pro"], "couleur": "Titane bleu", "qte": 1},
+ {"cle": "vitre|iPhone 16 Plus|Outremer", "piece": "vitre", "modeles": ["iPhone 16 Plus"], "couleur": "Outremer", "qte": 1},
+ {"cle": "camera-arriere|iPhone 14 Pro Max", "piece": "camera-arriere", "modeles": ["iPhone 14 Pro Max"], "qte": 1},
+ {"cle": "connecteur|iPhone 11", "piece": "connecteur", "modeles": ["iPhone 11"], "qte": 1},
+ {"cle": "connecteur|iPhone 12", "piece": "connecteur", "modeles": ["iPhone 12"], "qte": 3},
+ {"cle": "connecteur|iPhone 13", "piece": "connecteur", "modeles": ["iPhone 13"], "qte": 1},
+ {"cle": "connecteur|iPhone 14", "piece": "connecteur", "modeles": ["iPhone 14"], "qte": 1},
+ {"cle": "connecteur|iPhone 15", "piece": "connecteur", "modeles": ["iPhone 15"], "qte": 1},
+ {"cle": "connecteur|iPhone 13 mini", "piece": "connecteur", "modeles": ["iPhone 13 mini"], "qte": 1},
+ {"cle": "lecteur-sim|iPhone 14", "piece": "lecteur-sim", "modeles": ["iPhone 14"], "qte": 1},
+ {"cle": "haut-parleur|iPhone 13", "piece": "haut-parleur", "modeles": ["iPhone 13"], "qte": 1}
+]
+</script>
 <!-- CATALOGUE DES TÉLÉPHONES (lu aussi par le serveur de paiement) · statut : "" (dispo), "reserve" ou "vendu" · grade : "diamant", "pepite" ou "excellent" -->
 <script type="application/json" id="catalogue">
 [
@@ -845,7 +913,7 @@ function render(){
   }
   const nm=S.brand==="Samsung"?"Galaxy "+S.model:S.model;
   h+=`<section class="rs"><div class="mhero"><div class="mhi">${modelImg(S.model)}</div><div class="mht"><small>Votre téléphone</small><h3>${esc(nm)}</h3><button class="chg" data-go="1">Changer de modèle</button></div></div>
-  <h2>Quelle réparation ?</h2><div class="reps">${repList().map(r=>`<button class="rep${S.rep===r?" on":""}" data-rep="${esc(r)}"><span class="ri">${REP_ICO[r]||"🔧"}</span><b>${esc(r)}</b><em>${prixDes(r)}</em></button>`).join("")}</div></section>`;
+  <h2>Quelle réparation ?</h2><div class="reps"><button class="rep dgc${S.rep==="__diag"?" on":""}" data-rep="__diag"><span class="ri">🔍</span><span><b>Je ne connais pas la panne</b><small>Décrivez ce qui se passe : je vous dis ce que c'est</small></span><em>En 30 s</em></button>${repList().map(r=>`<button class="rep${S.rep===r?" on":""}" data-rep="${esc(r)}"><span class="ri">${REP_ICO[r]||"🔧"}</span><b>${esc(r)}</b><em>${prixDes(r)}</em></button>`).join("")}</div></section>`;
   if(S.done)h+=`<section class="rs" id="devis">${result()}</section>`;
  }
  el.innerHTML=h;
@@ -854,7 +922,7 @@ function render(){
  el.querySelectorAll("[data-brand]").forEach(b=>b.onclick=()=>{S={brand:b.dataset.brand};STEP_ANIM=".rs";render();go(".crumbs")});
  el.querySelectorAll("[data-gamme]").forEach(b=>b.onclick=()=>{S.gamme=b.dataset.gamme;STEP_ANIM=".mods";render();go(".mh")});
  el.querySelectorAll("[data-model]").forEach(b=>b.onclick=()=>{S={brand:S.brand,gamme:S.gamme,model:b.dataset.model};STEP_ANIM=".rs";render();go(".crumbs")});
- el.querySelectorAll("[data-rep]").forEach(b=>b.onclick=()=>{const v=b.dataset.rep;S.rep=v;S.done=true;S.qual=S.qual||"oled";if(S.rep2===v)S.rep2=null;S.two=S.two&&S.rep2?S.two:0;STEP_ANIM="#devis";render();go("#devis")});
+ el.querySelectorAll("[data-rep]").forEach(b=>b.onclick=()=>{const v=b.dataset.rep;if(S.rep!==v)S.coul=null;S.rep=v;S.done=true;S.qual=S.qual||"oled";if(S.rep2===v)S.rep2=null;S.two=S.two&&S.rep2?S.two:0;STEP_ANIM="#devis";render();go("#devis")});
  el.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{const i=+b.dataset.go;if(i===0)S={};else if(i===1)S={brand:S.brand,gamme:S.gamme};STEP_ANIM=".rs";render();go(".crumbs")});
  const mod=$("#mod"),rep=$("#rep");
  if(mod)mod.oninput=()=>{S.model=mod.value;upd()};
@@ -862,6 +930,11 @@ function render(){
  if(S.brand==="Autre modèle")upd(true);
  bfTick();
  document.querySelectorAll(".q").forEach(q=>q.onclick=()=>{S[q.dataset.key||"qual"]=q.dataset.k;render()});
+ el.querySelectorAll("[data-dgc]").forEach(b=>b.onclick=()=>{S.dgc=b.dataset.dgc;S.dgs=null;render();go("#devis")});
+ el.querySelectorAll("[data-dgs]").forEach(b=>b.onclick=()=>{S.dgs=+b.dataset.dgs;render();go("#devis")});
+ el.querySelectorAll("[data-dgback]").forEach(b=>b.onclick=()=>{S.dgc=null;S.dgs=null;render();go("#devis")});
+ el.querySelectorAll("[data-dgr]").forEach(b=>b.onclick=()=>{S.rep=b.dataset.dgr;S.done=true;S.qual=S.qual||"oled";S.coul=null;STEP_ANIM="#devis";render();go("#devis")});
+ if(BK.open) drawBooking();
 }
 let STEP_ANIM=null;
 function pick(){} // ancien parcours (plus utilisé)
@@ -881,15 +954,217 @@ function qb(m,key){
   const pp=PRIX[m+"|Écran"]||{};
   return '<p class="note">'+EXPLICATION_ECRAN+'</p>'+Object.keys(QN).filter(k=>pp[k]!=="non").map(k=>`<div class="q ${(S[key]||"oled")===k?"on":""}" data-k="${k}" data-key="${key}"><span>${QN[k]}</span><b>${typeof pp[k]==="number"&&bfR()?`<s class="bfo2">${pp[k]} €</s> ${bfP(pp[k])} €`:fmt(pp[k])}</b></div>`).join("");
 }
+/* Couleurs Apple par modèle (vitre arrière / châssis complet) */
+const COULEURS={
+ "X":[["Argent","#e3e4e5"],["Gris sidéral","#4a4b4d"]],
+ "XR":[["Noir","#1f2020"],["Blanc","#f3f3f1"],["Bleu","#5fb3e6"],["Jaune","#f6d548"],["Corail","#f26c5a"],["(PRODUCT)RED","#c4122f"]],
+ "XS":[["Argent","#e3e4e5"],["Gris sidéral","#4a4b4d"],["Or","#f3dcc7"]],
+ "11":[["Noir","#1f2020"],["Blanc","#f3f3f1"],["Vert","#bfe3cf"],["Jaune","#ffe681"],["Mauve","#d1cdda"],["(PRODUCT)RED","#c4122f"]],
+ "11 Pro":[["Gris sidéral","#4a4b4d"],["Argent","#ebebe3"],["Or","#f3dcc7"],["Vert nuit","#4e5851"]],
+ "12":[["Noir","#1f2020"],["Blanc","#f3f3f1"],["(PRODUCT)RED","#c4122f"],["Vert","#d8efd5"],["Bleu","#1f4c73"],["Mauve","#b7afe6"]],
+ "12 Pro":[["Graphite","#52514d"],["Argent","#e3e4df"],["Or","#fcebd3"],["Bleu Pacifique","#2e4a5e"]],
+ "13":[["Minuit","#232a31"],["Lumière stellaire","#faf6f2"],["(PRODUCT)RED","#bf0013"],["Bleu","#276787"],["Rose","#f9e0dc"],["Vert","#394c38"]],
+ "13 Pro":[["Graphite","#54524f"],["Or","#fae7cf"],["Argent","#f1f2ed"],["Bleu alpin","#a7c1d9"],["Vert alpin","#576856"]],
+ "14":[["Minuit","#222930"],["Lumière stellaire","#faf6f2"],["(PRODUCT)RED","#bf0013"],["Bleu","#a0b4c7"],["Mauve","#e6ddeb"],["Jaune","#f9e479"]],
+ "14 Pro":[["Noir sidéral","#403e3d"],["Argent","#f0f2f2"],["Or","#f4e8ce"],["Violet intense","#594f63"]],
+ "15":[["Noir","#3c4042"],["Bleu","#d4e4ed"],["Vert","#e3e9d9"],["Jaune","#fdf3cf"],["Rose","#f8dde0"]],
+ "15 Pro":[["Titane naturel","#8f8a81"],["Titane bleu","#2f4452"],["Titane blanc","#dddddd"],["Titane noir","#3c3c3d"]],
+ "16":[["Noir","#3c3c3d"],["Blanc","#f5f5f0"],["Rose","#f2adda"],["Sarcelle","#b0d4d2"],["Outremer","#9aadf6"]],
+ "16 Pro":[["Titane noir","#3c3c3d"],["Titane blanc","#f2f1ed"],["Titane naturel","#c2bcb2"],["Titane sable","#bfa48f"]],
+ "16 E":[["Noir","#232323"],["Blanc","#f5f5f0"]],
+ "17":[["Noir","#353535"],["Blanc","#f5f5f0"],["Bleu brume","#96aed1"],["Lavande","#dfcee9"],["Sauge","#a9b689"]],
+ "17 Air":[["Noir sidéral","#2c2c2e"],["Blanc nuage","#f4f4f0"],["Or clair","#efdcc0"],["Bleu ciel","#d6e6f2"]],
+ "17 Pro":[["Argent","#e8e8e6"],["Orange cosmique","#f77e2d"],["Bleu intense","#2f3d55"]],
+ "17 E":[["Noir","#232323"],["Blanc","#f5f5f0"],["Rose","#f3d3da"]]
+};
+function couleursDe(m){m=m.replace(/^iPhone /,"");
+ if(COULEURS[m])return COULEURS[m];
+ if(/^XS/.test(m))return COULEURS.XS;
+ const k=m.replace(/ (Pro Max|Max)$/," Pro").replace(/ Pro Pro$/," Pro").replace(/ (mini|Plus)$/,"");
+ if(COULEURS[k])return COULEURS[k];
+ return null}
+const REP_COUL=["Vitre arrière","Châssis complet"];
+/* ===== RENDEZ-VOUS ET ACOMPTE ===== */
+/* Ton RIB : colle ton IBAN et ton BIC entre les guillemets */
+const RIB={titulaire:"Killian Pasquier",iban:"FR76 1790 6000 3296 4453 2949 279",bic:""};
+const ACOMPTE=20;
+const DUREES={"Écran":20,"Batterie":20,"Caméra avant":20,"Caméra arrière":20,"Vitre arrière":30,"Connecteur de charge":45,"Châssis complet":80};
+const STOCK=(()=>{try{return JSON.parse(document.getElementById("stock").textContent)}catch(e){return[]}})();
+const PIECE={"Écran":"ecran","Batterie":"batterie","Vitre arrière":"vitre","Châssis complet":"chassis","Connecteur de charge":"connecteur","Caméra avant":"camera-avant","Caméra arrière":"camera-arriere"};
+function pieceCle(model,rep,qual,coul){
+ if(S.brand!=="iPhone")return null;
+ const p=PIECE[rep];if(!p)return null;
+ const e=STOCK.find(x=>x.piece===p&&x.modeles.includes(model)&&(p!=="ecran"||x.qualite===qual)&&(!REP_COUL.includes(rep)||x.couleur===coul));
+ return e?e.cle:null}
+let BK={open:false},BK_INFO=null;
+const fmtJour=j=>new Date(j+"T12:00:00Z").toLocaleDateString("fr-FR",{weekday:"short",day:"numeric",month:"short",timeZone:"UTC"});
+const fmtJourL=j=>new Date(j+"T12:00:00Z").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",timeZone:"UTC"});
+const fmtH=m=>Math.floor(m/60)+"h"+String(m%60).padStart(2,"0");
+function bkSig(){return JSON.stringify([S.brand,S.model,S.rep,S.qual,S.coul,S.two&&S.rep2,S.qual2])}
+async function bookStart(info){
+ BK={open:true,sig:bkSig(),info,etape:"charge",jours:[],jour:null,heure:null};
+ drawBooking();
+ const reps=info.reps, cles=reps.map(r=>r.cle);
+ let acompte=cles.some(c=>!c);
+ try{
+  if(!acompte){const d=await fetch(`${PAY_API}/dispo?p=${encodeURIComponent(cles.join(","))}`).then(r=>r.json());acompte=cles.some(c=>!d.dispo[c])}
+  BK.acompte=acompte;
+  const c=await fetch(`${PAY_API}/creneaux?duree=${info.duree}&acompte=${acompte?1:0}`).then(r=>r.json());
+  BK.jours=c.jours||[];BK.jour=BK.jours[0]?BK.jours[0].jour:null;BK.etape="choix";
+ }catch(e){BK.etape="erreur"}
+ drawBooking();
+}
+function drawBooking(){
+ const el=$("#booking");if(!el)return;
+ if(!BK.open||BK.sig!==bkSig()){BK={open:false};el.innerHTML="";return}
+ const i=BK.info;let h="";
+ if(BK.etape==="charge"){el.innerHTML='<p class="note bkld">Recherche des créneaux disponibles…</p>';return}
+ if(BK.etape==="erreur"){el.innerHTML=`<p class="note">La réservation en ligne ne répond pas. Prenez rendez-vous sur WhatsApp :</p><a class="cta" target="_blank" rel="noopener" href="${wa(i.msg)}">Prendre rendez-vous sur WhatsApp</a>`;return}
+ if(BK.etape==="ok"){
+  const quand=`${fmtJourL(BK.jour)} à ${fmtH(BK.heure)}`;
+  if(!BK.acompte){
+   h=`<div class="bkok"><b>✅ Rendez-vous réservé !</b><p>${esc(quand)}<br>${esc(i.titre)}</p><p class="note">Envoyez-moi la confirmation sur WhatsApp : je vous réponds avec l'adresse exacte.</p></div><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai réservé un rendez-vous sur le site le ${quand} pour mon ${i.titre}${i.prix?" ("+i.prix+")":""}. ${BK.nom}`)}">Envoyer la confirmation sur WhatsApp</a>`;
+  }else{
+   const motif=`Acompte ${BK.nom} ${i.modele}`;
+   h=`<div class="bkok"><b>⏳ Créneau réservé, en attente de l'acompte</b><p>${esc(quand)}<br>${esc(i.titre)}</p></div>
+   <div class="ribx"><h3>💳 Acompte de ${ACOMPTE} € par virement</h3>
+   <div class="rl"><span>Bénéficiaire</span><b>${esc(RIB.titulaire)}</b></div>
+   ${RIB.iban?`<div class="rl"><span>IBAN</span><b class="cp" data-c="${esc(RIB.iban)}">${esc(RIB.iban)} <i>Copier</i></b></div>`:`<div class="rl"><span>IBAN</span><b>communiqué sur WhatsApp</b></div>`}
+   ${RIB.bic?`<div class="rl"><span>BIC</span><b class="cp" data-c="${esc(RIB.bic)}">${esc(RIB.bic)} <i>Copier</i></b></div>`:""}
+   <div class="rl"><span>Montant</span><b>${ACOMPTE} €</b></div>
+   <div class="rl"><span>Motif</span><b class="cp" data-c="${esc(motif)}">${esc(motif)} <i>Copier</i></b></div>
+   <p class="note">Je commande votre pièce dès réception du virement. L'acompte est déduit du prix de la réparation et n'est pas remboursé en cas d'annulation.</p></div>
+   <a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, je vous ai fait un virement de ${ACOMPTE} € pour l'acompte de ma réparation : ${i.titre}${i.prix?" ("+i.prix+")":""}. Rendez-vous le ${quand}. ${BK.nom}`)}">J'ai fait le virement : prévenir CizoxPhone</a>`;
+  }
+  el.innerHTML=h;
+  el.querySelectorAll(".cp").forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText(b.dataset.c);b.querySelector("i").textContent="Copié ✓"}catch(e){}});
+  return;
+ }
+ h+=`<h2 class="bkh">Choisissez votre rendez-vous</h2>`;
+ if(BK.acompte) h+=`<div class="bkac"><b>📦 Pièce à commander</b><p>Cette pièce n'est pas en stock. Pour la commander, un <b>acompte de ${ACOMPTE} €</b> est demandé par virement : il est déduit du prix de la réparation et n'est pas remboursé en cas d'annulation.</p><p>Acompte versé <b>avant 16h30</b> → rendez-vous possible <b>dès le lendemain</b>.</p></div>`;
+ else h+=`<p class="note bkst">✅ Pièce en stock · durée de la réparation : ${i.duree} min</p>`;
+ if(!BK.jours.length){el.innerHTML=h+`<p class="note">Aucun créneau libre pour le moment. Écrivez-moi :</p><a class="cta" target="_blank" rel="noopener" href="${wa(i.msg)}">Prendre rendez-vous sur WhatsApp</a>`;return}
+ h+=`<div class="bkj">${BK.jours.map(j=>`<button class="bjd${BK.jour===j.jour?" on":""}" data-j="${j.jour}">${fmtJour(j.jour)}</button>`).join("")}</div>`;
+ const J=BK.jours.find(j=>j.jour===BK.jour);
+ if(J) h+=`<div class="bkt">${J.creneaux.map(t=>`<button class="bth${BK.heure===t?" on":""}" data-t="${t}">${fmtH(t)}</button>`).join("")}</div>`;
+ if(BK.heure!=null){
+  h+=`<div class="bkf"><p class="bkr">📅 <b>${esc(fmtJourL(BK.jour))} à ${fmtH(BK.heure)}</b></p><input type="text" id="bkn" placeholder="Votre prénom" value="${esc(BK.nom||"")}" autocomplete="given-name"><input type="tel" id="bkp" placeholder="Votre numéro de téléphone" value="${esc(BK.tel||"")}" autocomplete="tel"><p class="cerr" id="bke" hidden></p><button class="cta" id="bkgo">${BK.acompte?`Réserver et verser l'acompte de ${ACOMPTE} €`:"Confirmer mon rendez-vous"}</button></div>`;
+ }
+ el.innerHTML=h;
+ el.querySelectorAll(".bjd").forEach(b=>b.onclick=()=>{BK.jour=b.dataset.j;BK.heure=null;drawBooking()});
+ el.querySelectorAll(".bth").forEach(b=>b.onclick=()=>{BK.heure=+b.dataset.t;drawBooking();const f=$(".bkf");if(f)f.scrollIntoView({behavior:"smooth",block:"center"})});
+ const go=$("#bkgo");
+ if(go) go.onclick=async()=>{
+  BK.nom=$("#bkn").value.trim();BK.tel=$("#bkp").value.trim();const er=$("#bke");
+  if(!BK.nom||BK.tel.replace(/\D/g,"").length<9){er.textContent="Indiquez votre prénom et votre numéro de téléphone.";er.hidden=false;return}
+  go.disabled=true;go.textContent="Réservation en cours…";
+  try{
+   const r=await fetch(`${PAY_API}/reserver`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({jour:BK.jour,debut:BK.heure,duree:i.duree,nom:BK.nom,tel:BK.tel,modele:i.modele,reparation:i.repTxt,prix:i.prix,pieces:BK.acompte?[]:i.reps.map(x=>x.cle).filter(Boolean),acompte:BK.acompte})});
+   const j=await r.json();
+   if(j.ok){BK.etape="ok";drawBooking();$("#booking").scrollIntoView({behavior:"smooth",block:"start"});return}
+   if(j.plusEnStock){BK.sig=bkSig();bookStart(i);return}
+   if(j.pris){const c=await fetch(`${PAY_API}/creneaux?duree=${i.duree}&acompte=${BK.acompte?1:0}`).then(x=>x.json());BK.jours=c.jours||[];BK.heure=null;drawBooking()}
+   er.textContent=j.erreur||"Erreur, réessayez.";er.hidden=false;
+  }catch(e){er.textContent="Connexion impossible, réessayez ou écrivez-moi sur WhatsApp.";er.hidden=false}
+  go.disabled=false;go.textContent=BK.acompte?`Réserver et verser l'acompte de ${ACOMPTE} €`:"Confirmer mon rendez-vous";
+ };
+}
+/* ===== DIAGNOSTIC : le client ne connaît pas sa panne ===== */
+const DIAG=[
+ {k:"ecran",ico:"📱",t:"Écran",s:[
+  ["Vitre fissurée ou cassée",["Écran"],"Sur votre téléphone, la vitre et l'écran sont collés ensemble : on remplace le bloc écran complet."],
+  ["Écran noir, mais le téléphone sonne ou vibre",["Écran"],"Le téléphone fonctionne, c'est l'affichage qui a lâché (souvent après une chute)."],
+  ["Lignes, taches, couleurs bizarres ou écran vert",["Écran"],"La dalle est endommagée : seul le remplacement de l'écran règle le problème."],
+  ["Le tactile ne répond plus ou clique tout seul",["Écran"],"La couche tactile est intégrée à l'écran : on change l'écran."],
+  ["L'écran scintille ou s'éteint par moments",["Écran"],"C'est le plus souvent l'écran, parfois sa nappe. Je vérifie avant de remplacer quoi que ce soit."]]},
+ {k:"batterie",ico:"🔋",t:"Batterie / autonomie",s:[
+  ["Il se décharge très vite",["Batterie"],"Votre batterie est usée.","Astuce : allez dans Réglages > Batterie > État de la batterie. En dessous de 80 %, il faut la changer."],
+  ["Il s'éteint tout seul alors qu'il reste de la batterie",["Batterie"],"Symptôme classique d'une batterie fatiguée qui ne tient plus la charge."],
+  ["L'écran se soulève / le téléphone est gonflé",["Batterie"],"Votre batterie a gonflé.",null,"⚠️ Ne le chargez plus et apportez-le rapidement : une batterie gonflée peut être dangereuse."],
+  ["Message « Service » ou « Pièce inconnue » sur la batterie",["Batterie"],"La batterie arrive en fin de vie : il faut la remplacer."]]},
+ {k:"charge",ico:"⚡",t:"Charge",s:[
+  ["Il ne charge plus, ou seulement dans une certaine position",["Connecteur de charge"],"Le connecteur de charge est abîmé ou encrassé.","Astuce : essayez avec un autre câble et un autre chargeur. Souvent, la prise est simplement bouchée par des poussières : je vérifie avant de changer la pièce."],
+  ["Il charge très lentement",["Connecteur de charge"],"C'est souvent le connecteur de charge, parfois le câble.","Astuce : testez d'abord un autre câble et un autre chargeur."],
+  ["Le câble ne tient plus dans la prise",["Connecteur de charge"],"La prise de charge est usée ou encrassée."],
+  ["Il ne charge pas du tout et ne s'allume plus",null,"Ça peut être la batterie, le connecteur ou la carte mère : il faut que je le teste.","Astuce : laissez-le 30 minutes en charge, puis faites un redémarrage forcé (volume +, volume −, puis maintenez le bouton latéral)."]]},
+ {k:"son",ico:"🔊",t:"Son / micro / appels",s:[
+  ["On ne m'entend pas bien pendant les appels",["Connecteur de charge"],"Le micro principal est en général sur la nappe du connecteur de charge : c'est cette pièce qu'on change.","Astuce : vérifiez qu'aucun écouteur Bluetooth n'est connecté, et nettoyez doucement les petits trous en bas du téléphone."],
+  ["Je n'entends pas mon correspondant (sauf en haut-parleur)",null,"C'est l'écouteur interne (le petit haut-parleur en haut de l'écran) : je vous fais un devis.","Astuce : nettoyez délicatement la grille en haut de l'écran, elle s'encrasse vite."],
+  ["Pas de son pour la musique ou la sonnerie",null,"C'est le haut-parleur du bas : je vous fais un devis.","Astuce : vérifiez que le mode silencieux est désactivé et qu'aucun appareil Bluetooth n'est connecté."],
+  ["Le son grésille ou est très faible",null,"Le haut-parleur est encrassé ou abîmé : je regarde et je vous fais un devis."]]},
+ {k:"camera",ico:"📷",t:"Appareil photo",s:[
+  ["Photos floues, ou l'appareil photo tremble ou fait du bruit",["Caméra arrière"],"La stabilisation ou la mise au point de la caméra arrière est HS (souvent après une chute)."],
+  ["Écran noir en mode photo (caméra arrière)",["Caméra arrière"],"La caméra arrière ne répond plus : on la remplace."],
+  ["Écran noir ou flou en mode selfie",["Caméra avant"],"La caméra avant ne répond plus : on la remplace."],
+  ["La petite vitre de la caméra est cassée",null,"Seule la lentille (la vitre de protection) est à changer, pas forcément la caméra : je vous fais un devis."],
+  ["Le flash ou la lampe torche ne marche plus",null,"Je vous fais un devis après un rapide test."]]},
+ {k:"faceid",ico:"🙂",t:"Face ID",s:[
+  ["« Face ID indisponible » ou Face ID ne reconnaît plus",null,"Face ID est une réparation délicate qui dépend de la panne exacte : je vous fais un devis.","Astuce : nettoyez l'encoche en haut de l'écran et retirez une éventuelle protection qui la couvre."]]},
+ {k:"reseau",ico:"📶",t:"Réseau / SIM / Wi-Fi",s:[
+  ["« Aucune carte SIM » ou « Pas de service »",null,"Ça peut venir du lecteur SIM : je vous fais un devis.","Astuce : testez une autre carte SIM ou votre SIM dans un autre téléphone, pour savoir si le problème vient de la carte."],
+  ["Le Wi-Fi ou le Bluetooth ne marche plus",null,"C'est souvent une panne de carte mère : je vous fais un devis après un test.","Astuce : essayez Réglages > Général > Transférer ou réinitialiser > Réinitialiser les réglages réseau."],
+  ["Le réseau coupe souvent ou capte mal",null,"Je vous fais un devis après un test (antenne, SIM ou carte mère)."]]},
+ {k:"eau",ico:"💧",t:"Tombé dans l'eau",s:[
+  ["Mon téléphone est tombé dans l'eau",null,"Il faut agir vite : plus on attend, plus l'oxydation abîme les composants.",null,"⚠️ Éteignez-le, ne le chargez pas, ne le mettez pas dans le riz, et apportez-le moi au plus vite."]]},
+ {k:"boutons",ico:"🔘",t:"Boutons",s:[
+  ["Le bouton volume ne marche plus",null,"C'est la nappe des boutons : je vous fais un devis."],
+  ["Le bouton allumer/éteindre ne marche plus",null,"C'est la nappe du bouton latéral : je vous fais un devis."],
+  ["Le bouton silencieux / vibreur ne marche plus",null,"C'est la nappe des boutons : je vous fais un devis."]]},
+ {k:"allumage",ico:"🔄",t:"Ne s'allume plus / bugs",s:[
+  ["Il ne s'allume plus du tout",null,"Ça peut être la batterie, l'écran ou la carte mère : je le teste pour vous dire exactement.","Astuce : faites un redémarrage forcé (volume +, volume −, puis maintenez le bouton latéral 15 secondes), après 30 minutes de charge."],
+  ["Il redémarre en boucle ou reste bloqué sur la pomme",null,"Souvent la batterie ou un souci logiciel, parfois la carte mère : je vous fais un diagnostic."],
+  ["Il chauffe beaucoup",null,"Souvent une batterie usée ou un composant en court-circuit : je vous fais un diagnostic."]]},
+ {k:"dos",ico:"✨",t:"Dos / contour",s:[
+  ["Le dos en verre est cassé",["Vitre arrière","Châssis complet"],"On remplace le dos du téléphone, et vous pouvez choisir sa couleur."],
+  ["Le contour est tordu ou cabossé",["Châssis complet"],"On remplace le châssis complet (contour + dos), et vous pouvez choisir sa couleur."]]}
+];
+function diagNom(){return S.brand==="Samsung"?"Samsung "+S.model:S.model}
+function diagHTML(){
+ const m=diagNom();
+ let h=`<h2>🔍 Trouvons votre panne</h2>`;
+ const C=DIAG.find(c=>c.k===S.dgc);
+ if(!C){
+  h+=`<p class="note">Qu'est-ce qui ne va pas avec votre ${esc(m)} ?</p><div class="dgg">${DIAG.map(c=>`<button class="dgb" data-dgc="${c.k}"><span>${c.ico}</span>${esc(c.t)}</button>`).join("")}<button class="dgb" data-dgc="autre"><span>❓</span>Autre chose</button></div>`;
+  return h;
+ }
+ h+=`<button class="dgback" data-dgback="1">← Changer de catégorie</button>`;
+ if(S.dgs==null){
+  h+=`<p class="note">${C.ico} ${esc(C.t)} : que se passe-t-il exactement ?</p><div class="dgg one">${C.s.map((x,i)=>`<button class="dgb" data-dgs="${i}">${esc(x[0])}</button>`).join("")}<button class="dgb" data-dgs="-1">Aucun de ces cas</button></div>`;
+  return h;
+ }
+ if(S.dgs===-1) return h+diagLibre(m,C.t);
+ const [sym,reps,expl,tip,urg]=C.s[S.dgs];
+ const dispo=repList();
+ const rep=reps?reps.find(r=>dispo.includes(r)):null;
+ const msg=`Bonjour, j'ai un problème avec mon ${m} : ${sym}. Pouvez-vous me faire un devis ?`;
+ h+=`<div class="dgres"><h3>🔎 Votre diagnostic</h3><p><b>${esc(sym)}</b></p>${rep?`<p>➜ Il s'agit très probablement de : <b>${REP_ICO[rep]||"🔧"} ${esc(rep)}</b> (${prixDes(rep)})</p>`:""}<p>${esc(expl)}</p>${urg?`<p class="urg">${esc(urg)}</p>`:""}${tip?`<p class="tip">💡 ${esc(tip)}</p>`:""}<p class="note">Diagnostic indicatif : je vérifie toujours le téléphone avant de réparer.</p></div>`;
+ if(rep) h+=`<button class="cta" data-dgr="${esc(rep)}">Voir le prix et prendre rendez-vous</button><a class="cta ghost" target="_blank" rel="noopener" href="${wa(msg)}">Pas sûr ? Expliquez-moi sur WhatsApp</a>`;
+ else h+=`<a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">Recevoir mon devis sur WhatsApp</a>`;
+ return h;
+}
+function diagLibre(m,cat){
+ const base=`Bonjour, j'ai un problème avec mon ${m}${cat?" ("+cat+")":""} : `;
+ return `<p class="note">Décrivez votre problème avec vos mots : je vous réponds sur WhatsApp avec le diagnostic et le prix.</p><textarea id="dgt" placeholder="Ex : depuis une chute, l'écran devient noir quand je reçois un appel…" oninput="S.dgtxt=this.value;document.getElementById('dgl').href=wa('${base.replace(/'/g,"\\'")}'+(this.value||''))">${esc(S.dgtxt||"")}</textarea><a id="dgl" class="cta" target="_blank" rel="noopener" href="${wa(base+(S.dgtxt||""))}">Envoyer sur WhatsApp</a>`;
+}
 function result(){
   const sam=S.brand==="Samsung", m=sam?"Samsung "+S.model:S.model, r=S.rep;
+  if(r==="__diag"){
+   if(S.dgc==="autre") return `<h2>🔍 Trouvons votre panne</h2><button class="dgback" data-dgback="1">← Changer de catégorie</button>`+diagLibre(m,"");
+   return diagHTML();
+  }
   if(r==="Autres réparations") return `<h2>Quelle réparation ?</h2><input type="text" id="aut" placeholder="Décrivez la réparation" oninput="S.aut=this.value;document.getElementById('lk').href=wa('Bonjour, je souhaite un devis pour mon '+(S.brand==='Samsung'?'Samsung ':'')+S.model+' : '+(S.aut||'autre réparation')+'. Devis demandé.')" value="${esc(S.aut||"")}"><a id="lk" class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, je souhaite un devis pour mon ${m} : ${S.aut||"autre réparation"}. Devis demandé.`)}">Faire un devis instantanément</a>`;
-  const ec=r==="Écran"&&!sam, q1=S.qual||"oled", p1=getP(m,r,q1), ql=ec?` (${QN[q1]})`:"";
+  const CL=!sam&&REP_COUL.includes(r)?couleursDe(S.model):null;
+  const ec=r==="Écran"&&!sam, q1=S.qual||"oled", p1=getP(m,r,q1), ql=ec?` (${QN[q1]})`:(CL&&S.coul?` – coloris ${S.coul}`:"");
   const num=typeof p1==="number", devis=!num&&p1!=="non";
   let h="<h2>Votre devis</h2>", total=null;
   if(r==="Châssis complet") h+='<p class="note">Sur ces modèles, la vitre arrière est collée au châssis : la remplacer seule est fragile et casse à la moindre chute. Le châssis complet donne un téléphone solide avec un arrière neuf. Valable uniquement pour les modèles listés, ailleurs la vitre arrière est clipsée.</p>';
   if(r==="Caméra avant") h+='<p class="note">Attention : le remplacement de la caméra avant désactive Face ID de façon permanente (tous les modèles).</p>';
   if(ec) h+=qb(m,"qual");
+  if(CL){
+    h+=r==="Châssis complet"?'<p class="note coln">🎨 Le châssis complet est neuf : vous pouvez garder la couleur de votre iPhone ou <b>en choisir une nouvelle</b> !</p>':'<p class="note coln">🎨 Choisissez la couleur de votre vitre arrière :</p>';
+    h+=`<div class="sws">${CL.map(([n,c])=>`<button class="q sw${S.coul===n?" on":""}" data-key="coul" data-k="${esc(n)}"><i style="background:${c}"></i><span>${esc(n)}</span></button>`).join("")}</div>`;
+    if(!S.coul) return h+`<div class="price"><div>${esc(m)} · ${esc(r)}</div><b>${num?eur(p1):p1==="devis"?"Sur devis":"—"}</b></div><p class="note">Choisissez une couleur pour continuer.</p>`;
+  }
   const bf=num&&bfR(), p1b=bf?bfP(p1):p1;
   const prix=num?(bf?`<s class="bfo2">${eur(p1)}</s> ${eur(p1b)}`:eur(p1)):p1==="devis"?"Sur devis":p1==="non"?"Non prise en charge":"Tarif à confirmer";
   h+=`<div class="price"><div>${esc(m)} · ${esc(r)}${ql}</div><b>${prix}</b>${bf?`<div class="bfl">${bfTag} + protection hydrogel offerte</div>`:""}</div>`;
@@ -921,7 +1196,19 @@ function result(){
       h+=`<button class="back" onclick="S.two=0;S.rep2=null;render()">Annuler la 2ème réparation</button>`;
     }
   }
-  if(p1!=="non") h+=`<a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">${label}</a>`;
+  if(p1!=="non"){
+    const canBook=PAY_API&&!devis&&label==="Prendre rendez-vous"&&S.brand!=="Autre modèle";
+    if(canBook){
+      const r2ok=S.two&&S.rep2&&typeof getP(m,S.rep2,S.qual2||"oled")==="number";
+      const reps=[{r,cle:pieceCle(S.model,r,q1,S.coul)}];
+      if(r2ok) reps.push({r:S.rep2,cle:pieceCle(S.model,S.rep2,S.qual2||"oled",null)});
+      const duree=reps.reduce((a,x)=>a+(DUREES[x.r]||30),0);
+      const titre=`${m} : ${reps.map(x=>x.r).join(" + ")}${ql}`;
+      const prix=total!=null?eur(total):(num?eur(p1):"");
+      BK_INFO={reps,duree,titre,modele:m,repTxt:reps.map(x=>x.r).join(" + ")+ql,prix,msg};
+      h+=`<button class="cta" id="bookbtn" onclick="bookStart(BK_INFO)">${BK.open&&BK.sig===bkSig()?"Rendez-vous ▾":"Prendre rendez-vous"}</button><div id="booking"></div>`;
+    } else h+=`<a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">${label}</a>`;
+  }
   return h;
 }
 

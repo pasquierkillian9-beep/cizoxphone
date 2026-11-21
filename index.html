@@ -938,7 +938,7 @@ function budsBind(){const sec=$("#buds");if(!sec)return;
  up();}
 
 /* ===== PAIEMENT EN LIGNE ===== */
-const PAY_API=""; // ← adresse du serveur de paiement (Cloudflare). Vide = la commande part sur WhatsApp.
+const PAY_API="https://cizox-paiement.cizoxphone.workers.dev"; // ← adresse du serveur de paiement (Cloudflare). Vide = la commande part sur WhatsApp.
 const MR_BRAND="BDTEST  "; // code enseigne Mondial Relay (BDTEST = code public de démo pour la carte des points relais)
 const LIV={relais:{n:"Point relais Mondial Relay",p:4.99,d:"Vous choisissez votre point relais"},domicile:{n:"Livraison à domicile",p:9.99,d:"Livré chez vous, colis suivi"},main:{n:"Remise en main propre",p:0,d:"Verrières-en-Anjou · paiement sur place"}};
 const GRADES={diamant:{n:"Diamant",i:"💎",d:"Comme neuf. Éventuellement de très légères micro-rayures, invisibles à l'usage."},pepite:{n:"Pépite",i:"✨",d:"Parfait état. Possibles micro-rayures et petits pocs sur le châssis ou l'écran."},excellent:{n:"Excellent",i:"👍",d:"Bon état. Rayures et coups visibles sur le châssis, fonctionne parfaitement."}};

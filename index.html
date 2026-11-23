@@ -1511,10 +1511,12 @@ function drawBooking(){
 
 /* ===== RDV POUR VOIR / ACHETER UN TÉLÉPHONE (1 h) ===== */
 let RV={};
+const RV_JOURS=3; // un téléphone ne peut pas être réservé plus de 3 jours
+function rvFiltre(js){const d=new Date(new Date().toLocaleDateString("sv-SE",{timeZone:"Europe/Paris"})+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+RV_JOURS);const lim=d.toISOString().slice(0,10);return (js||[]).filter(j=>j.jour<=lim)}
 async function rvStart(t){
  RV={t,etape:"charge",jours:[],jour:null,heure:null,nom:RV.nom,tel:RV.tel};rvDraw();
  const el=$("#rvbook");if(el)el.scrollIntoView({behavior:"smooth",block:"center"});
- try{const c=await fetch(`${PAY_API}/creneaux?duree=60&acompte=0`).then(r=>r.json());RV.jours=c.jours||[];RV.jour=RV.jours[0]?RV.jours[0].jour:null;RV.etape="choix"}catch(e){RV.etape="erreur"}
+ try{const c=await fetch(`${PAY_API}/creneaux?duree=60&acompte=0`).then(r=>r.json());RV.jours=rvFiltre(c.jours);RV.jour=RV.jours[0]?RV.jours[0].jour:null;RV.etape="choix"}catch(e){RV.etape="erreur"}
  rvDraw();
 }
 function rvDraw(){
@@ -1524,11 +1526,11 @@ function rvDraw(){
  if(RV.etape==="erreur"){el.innerHTML=`<p class="note">La réservation en ligne ne répond pas. Écrivez-moi sur WhatsApp :</p><a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">Prendre rendez-vous sur WhatsApp</a>`;return}
  if(RV.etape==="ok"){
   const quand=`${fmtJourL(RV.jour)} à ${fmtH(RV.heure)}`;
-  el.innerHTML=`<div class="bkok"><b>✅ Rendez-vous réservé !</b><p>${esc(quand)}<br>${esc(t.nom)} · ${esc(pxT(t))}</p><p class="note">Vous pourrez tester le téléphone sur place avant de l'acheter. Paiement sur place en espèces, par carte ou par virement instantané. Envoyez-moi la confirmation sur WhatsApp : je vous réponds avec l'adresse exacte.</p></div><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai réservé un rendez-vous sur le site le ${quand} pour venir voir le ${t.nom} (${pxT(t)}). ${RV.nom}`)}">Envoyer la confirmation sur WhatsApp</a>`;
+  el.innerHTML=`<div class="bkok"><b>✅ Rendez-vous réservé !</b><p>${esc(quand)}<br>${esc(t.nom)} · ${esc(pxT(t))}</p><p class="note">Le téléphone vous est réservé jusqu'au rendez-vous. Vous pourrez tester le téléphone sur place avant de l'acheter. Paiement sur place en espèces, par carte ou par virement instantané. Envoyez-moi la confirmation sur WhatsApp : je vous réponds avec l'adresse exacte.</p></div><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai réservé un rendez-vous sur le site le ${quand} pour venir voir le ${t.nom} (${pxT(t)}). ${RV.nom}`)}">Envoyer la confirmation sur WhatsApp</a>`;
   return;
  }
- h+=`<h2 class="bkh">Choisissez votre rendez-vous</h2><p class="note bkst">🤝 1 h pour voir et tester le ${esc(t.nom)} à Verrières-en-Anjou, puis l'acheter sur place s'il vous plaît.</p>`;
- if(!RV.jours.length){el.innerHTML=h+`<p class="note">Aucun créneau libre pour le moment. Écrivez-moi :</p><a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">Prendre rendez-vous sur WhatsApp</a>`;return}
+ h+=`<h2 class="bkh">Choisissez votre rendez-vous</h2><p class="note bkst">🤝 1 h pour voir et tester le ${esc(t.nom)} à Verrières-en-Anjou, puis l'acheter sur place s'il vous plaît.</p><p class="note">📌 Le téléphone vous est réservé jusqu'au rendez-vous, à prendre dans les ${RV_JOURS} prochains jours.</p>`;
+ if(!RV.jours.length){el.innerHTML=h+`<p class="note">Aucun créneau libre dans les ${RV_JOURS} prochains jours. Écrivez-moi :</p><a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">Prendre rendez-vous sur WhatsApp</a>`;return}
  h+=`<div class="bkj">${RV.jours.map(j=>`<button class="bjd${RV.jour===j.jour?" on":""}" data-j="${j.jour}">${fmtJour(j.jour)}</button>`).join("")}</div>`;
  const J=RV.jours.find(j=>j.jour===RV.jour);
  if(J) h+=`<div class="bkt">${J.creneaux.map(x=>`<button class="bth${RV.heure===x?" on":""}" data-t="${x}">${fmtH(x)}</button>`).join("")}</div>`;
@@ -1542,10 +1544,10 @@ function rvDraw(){
   if(!RV.nom||RV.tel.replace(/\D/g,"").length<9){er.textContent="Indiquez votre prénom et votre numéro de téléphone.";er.hidden=false;return}
   go.disabled=true;go.textContent="Réservation en cours…";
   try{
-   const r=await fetch(`${PAY_API}/reserver`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({jour:RV.jour,debut:RV.heure,duree:60,nom:RV.nom,tel:RV.tel,modele:t.nom,reparation:"🤝 Voir et acheter le téléphone",prix:pxT(t),pieces:[],acompte:false})});
+   const r=await fetch(`${PAY_API}/reserver`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({jour:RV.jour,debut:RV.heure,duree:60,nom:RV.nom,tel:RV.tel,modele:t.nom,reparation:"🤝 Voir et acheter le téléphone",prix:pxT(t),pieces:[],acompte:false,telId:t.id})});
    const j=await r.json();
-   if(j.ok){RV.etape="ok";rvDraw();return}
-   if(j.pris){const c=await fetch(`${PAY_API}/creneaux?duree=60&acompte=0`).then(x=>x.json());RV.jours=c.jours||[];RV.heure=null;rvDraw()}
+   if(j.ok){RV.etape="ok";if(!t.statut){t.statut="reserve";t._rv=1;cartUI()}rvDraw();return}
+   if(j.pris){const c=await fetch(`${PAY_API}/creneaux?duree=60&acompte=0`).then(x=>x.json());RV.jours=rvFiltre(c.jours);RV.heure=null;rvDraw()}
    const e2=$("#rve");if(e2){e2.textContent=j.erreur||"Erreur, réessayez.";e2.hidden=false}
   }catch(e){er.textContent="Connexion impossible, réessayez ou écrivez-moi sur WhatsApp.";er.hidden=false}
   const g2=$("#rvgo");if(g2){g2.disabled=false;g2.textContent="Confirmer mon rendez-vous"}
@@ -1558,6 +1560,9 @@ async function liveSync(apresPaiement,cs){
  try{const j=await fetch(`${PAY_API}/stock`).then(r=>r.json());if(Array.isArray(j.stock)&&j.stock.length)STOCK.splice(0,STOCK.length,...j.stock)}catch(e){}
  try{const j=await fetch(`${PAY_API}/vendus${apresPaiement?"?maj&cs="+encodeURIComponent(cs||""):""}`).then(r=>r.json());let ch=false;
   for(const id of j.vendus||[]){const t=TELEPHONES.find(x=>x.id===id);if(t&&t.statut!=="vendu"){t.statut="vendu";ch=true}}
+  if(Array.isArray(j.reserves)){const rs=new Set(j.reserves);for(const t of TELEPHONES){
+   if(rs.has(t.id)&&!t.statut){t.statut="reserve";t._rv=1;ch=true}
+   else if(t._rv&&!rs.has(t.id)&&t.statut==="reserve"){t.statut="";delete t._rv;ch=true}}}
   if(ch){cartUI();if(CUR===2&&!$("#achat .gal"))shop()}}catch(e){}
 }
 /* ===== REPRISE À DISTANCE AVEC ACHAT EN LIGNE ===== */

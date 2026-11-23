@@ -655,6 +655,8 @@ button.oc.mode{width:100%;font-family:inherit;cursor:pointer;color:inherit}
 @media(max-width:859px){.wzs{grid-template-columns:1fr 1fr;align-items:stretch}.wzs>.dev{order:1}.wzs>.val{order:2}.wzs>.box:not(.dev){grid-column:1/-1;order:3}
 .wzs>.dev.nm{display:none}.wzs>.dev.nm~.val{grid-column:1/-1}}
 @media(max-width:599px){.wzs>.val .vimg{display:none}.wzs>.val{padding:14px}.wzs>.val b{font-size:28px}.wzs>.val small{font-size:12.5px}.wzs>.dev{padding:14px}.wzs>.dev .dm .ph{display:none}}
+.rvb small{display:block;font-size:12px;opacity:.8;margin-top:3px;font-weight:400}
+#rvbook:not(:empty){margin:10px 0 6px}
 </style>
 <link rel="canonical" href="https://www.cizoxphone.com/">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://www.cizoxphone.com/">
@@ -1507,6 +1509,49 @@ function drawBooking(){
  };
 }
 
+/* ===== RDV POUR VOIR / ACHETER UN TÉLÉPHONE (1 h) ===== */
+let RV={};
+async function rvStart(t){
+ RV={t,etape:"charge",jours:[],jour:null,heure:null,nom:RV.nom,tel:RV.tel};rvDraw();
+ const el=$("#rvbook");if(el)el.scrollIntoView({behavior:"smooth",block:"center"});
+ try{const c=await fetch(`${PAY_API}/creneaux?duree=60&acompte=0`).then(r=>r.json());RV.jours=c.jours||[];RV.jour=RV.jours[0]?RV.jours[0].jour:null;RV.etape="choix"}catch(e){RV.etape="erreur"}
+ rvDraw();
+}
+function rvDraw(){
+ const el=$("#rvbook");if(!el||!RV.t)return;
+ const t=RV.t,msg=`Bonjour, je voudrais venir voir le ${t.nom} (${pxT(t)}) pour l'acheter.`;let h="";
+ if(RV.etape==="charge"){el.innerHTML='<p class="note bkld">Recherche des créneaux disponibles…</p>';return}
+ if(RV.etape==="erreur"){el.innerHTML=`<p class="note">La réservation en ligne ne répond pas. Écrivez-moi sur WhatsApp :</p><a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">Prendre rendez-vous sur WhatsApp</a>`;return}
+ if(RV.etape==="ok"){
+  const quand=`${fmtJourL(RV.jour)} à ${fmtH(RV.heure)}`;
+  el.innerHTML=`<div class="bkok"><b>✅ Rendez-vous réservé !</b><p>${esc(quand)}<br>${esc(t.nom)} · ${esc(pxT(t))}</p><p class="note">Vous pourrez tester le téléphone sur place avant de l'acheter. Paiement sur place en espèces, par carte ou par virement instantané. Envoyez-moi la confirmation sur WhatsApp : je vous réponds avec l'adresse exacte.</p></div><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai réservé un rendez-vous sur le site le ${quand} pour venir voir le ${t.nom} (${pxT(t)}). ${RV.nom}`)}">Envoyer la confirmation sur WhatsApp</a>`;
+  return;
+ }
+ h+=`<h2 class="bkh">Choisissez votre rendez-vous</h2><p class="note bkst">🤝 1 h pour voir et tester le ${esc(t.nom)} à Verrières-en-Anjou, puis l'acheter sur place s'il vous plaît.</p>`;
+ if(!RV.jours.length){el.innerHTML=h+`<p class="note">Aucun créneau libre pour le moment. Écrivez-moi :</p><a class="cta" target="_blank" rel="noopener" href="${wa(msg)}">Prendre rendez-vous sur WhatsApp</a>`;return}
+ h+=`<div class="bkj">${RV.jours.map(j=>`<button class="bjd${RV.jour===j.jour?" on":""}" data-j="${j.jour}">${fmtJour(j.jour)}</button>`).join("")}</div>`;
+ const J=RV.jours.find(j=>j.jour===RV.jour);
+ if(J) h+=`<div class="bkt">${J.creneaux.map(x=>`<button class="bth${RV.heure===x?" on":""}" data-t="${x}">${fmtH(x)}</button>`).join("")}</div>`;
+ if(RV.heure!=null) h+=`<div class="bkf"><p class="bkr">📅 <b>${esc(fmtJourL(RV.jour))} à ${fmtH(RV.heure)}</b></p><input type="text" id="rvn" placeholder="Votre prénom" value="${esc(RV.nom||"")}" autocomplete="given-name"><input type="tel" id="rvp" placeholder="Votre numéro de téléphone" value="${esc(RV.tel||"")}" autocomplete="tel"><p class="cerr" id="rve" hidden></p><button class="cta" id="rvgo">Confirmer mon rendez-vous</button></div>`;
+ el.innerHTML=h;
+ el.querySelectorAll(".bjd").forEach(b=>b.onclick=()=>{RV.jour=b.dataset.j;RV.heure=null;rvDraw()});
+ el.querySelectorAll(".bth").forEach(b=>b.onclick=()=>{RV.heure=+b.dataset.t;rvDraw();const f=el.querySelector(".bkf");if(f)f.scrollIntoView({behavior:"smooth",block:"center"})});
+ const go=$("#rvgo");
+ if(go) go.onclick=async()=>{
+  RV.nom=$("#rvn").value.trim();RV.tel=$("#rvp").value.trim();const er=$("#rve");
+  if(!RV.nom||RV.tel.replace(/\D/g,"").length<9){er.textContent="Indiquez votre prénom et votre numéro de téléphone.";er.hidden=false;return}
+  go.disabled=true;go.textContent="Réservation en cours…";
+  try{
+   const r=await fetch(`${PAY_API}/reserver`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({jour:RV.jour,debut:RV.heure,duree:60,nom:RV.nom,tel:RV.tel,modele:t.nom,reparation:"🤝 Voir et acheter le téléphone",prix:pxT(t),pieces:[],acompte:false})});
+   const j=await r.json();
+   if(j.ok){RV.etape="ok";rvDraw();return}
+   if(j.pris){const c=await fetch(`${PAY_API}/creneaux?duree=60&acompte=0`).then(x=>x.json());RV.jours=c.jours||[];RV.heure=null;rvDraw()}
+   const e2=$("#rve");if(e2){e2.textContent=j.erreur||"Erreur, réessayez.";e2.hidden=false}
+  }catch(e){er.textContent="Connexion impossible, réessayez ou écrivez-moi sur WhatsApp.";er.hidden=false}
+  const g2=$("#rvgo");if(g2){g2.disabled=false;g2.textContent="Confirmer mon rendez-vous"}
+ };
+}
+
 /* ===== DONNÉES EN DIRECT : stock des pièces et téléphones vendus en ligne ===== */
 async function liveSync(apresPaiement,cs){
  if(!PAY_API)return;
@@ -1884,11 +1929,12 @@ function shop(i){
   const gal=n?`<div class="gal">${ST[t.statut]?`<span class="rib ${t.statut}">${ST[t.statut]}</span>`:""}<div class="gtrack" id="gt">${t.photos.map((p,k)=>`<img ${k?'loading="lazy" ':""}decoding="async" src="${esc(p)}" alt="${esc(t.nom)} – photo ${k+1}">`).join("")}</div>${n>1?`<span class="gcount" id="gc">1/${n}</span><button class="garr l" id="gl" aria-label="Photo précédente">‹</button><button class="garr r" id="gr" aria-label="Photo suivante">›</button>`:""}</div>${n>1?`<div class="gdots" id="gd">${t.photos.map((_,k)=>`<i${k?"":' class="on"'}></i>`).join("")}</div>`:""}`:`<div class="ph">Photo à venir</div>`;
   const cta=t.statut==="vendu"?`<p class="ref sold-note"><b>Ce téléphone est vendu.</b><br>Écrivez-moi : je vous préviens dès qu'un modèle similaire arrive.</p><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai vu que le ${t.nom} est vendu. Pouvez-vous me prévenir si un modèle similaire arrive ?`)}">Être prévenu</a>`
     :t.statut==="reserve"?`<p class="inf sold-note">Ce téléphone est réservé pour le moment.</p><a class="cta" target="_blank" rel="noopener" href="${wa(`Bonjour, le ${t.nom} (${pxT(t)}) est réservé : pouvez-vous me prévenir s'il se libère ?`)}">Me prévenir s'il se libère</a>`
-    :`<button class="addc${CART.includes(t.id)?" inc":""}" id="addc">${CART.includes(t.id)?"✓ Dans le panier · Voir mon panier":"🛒 Ajouter au panier"}</button><span class="klar">ou payez en <b>3 fois sans frais avec Klarna</b></span><button class="rpk" id="rpbtn">♻️ Payez moins cher : <b>faites reprendre votre ancien iPhone</b></button><div class="livr">🚚 <b>Point relais Mondial Relay</b> : 4,99 €<br>🏠 <b>Livraison à domicile</b> : 9,99 €<br>🤝 <b>Main propre</b> à Verrières-en-Anjou : gratuit</div><a class="cta q2" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai une question sur le ${t.nom} (${pxT(t)}).`)}">Une question ? WhatsApp</a>`;
+    :`<button class="addc${CART.includes(t.id)?" inc":""}" id="addc">${CART.includes(t.id)?"✓ Dans le panier · Voir mon panier":"🛒 Ajouter au panier"}</button><span class="klar">ou payez en <b>3 fois sans frais avec Klarna</b></span><button class="rpk" id="rpbtn">♻️ Payez moins cher : <b>faites reprendre votre ancien iPhone</b></button><button class="rpk rvb" id="rvbtn">📅 <b>Venir le voir et l'acheter sur place</b><small>Rendez-vous d'1 h à Verrières-en-Anjou · gratuit, sans engagement</small></button><div id="rvbook"></div><div class="livr">🚚 <b>Point relais Mondial Relay</b> : 4,99 €<br>🏠 <b>Livraison à domicile</b> : 9,99 €<br>🤝 <b>Main propre</b> à Verrières-en-Anjou : gratuit</div><a class="cta q2" target="_blank" rel="noopener" href="${wa(`Bonjour, j'ai une question sur le ${t.nom} (${pxT(t)}).`)}">Une question ? WhatsApp</a>`;
   el.innerHTML = `<button class="back" id="bk">← Tous les téléphones</button><div class="det"><div>${gal}</div><div><h2>${esc(t.nom)}</h2>${pxH(t)}${t.grade?`<div>${grdH(t.grade)}<p class="gexp">${GRADES[t.grade].d}</p></div>`:""}${bdg(t)}${t.perso?`<p class="gar2 occn">Occasion vendue en l'état décrit</p>`:""}<div class="dsc">${descH(t.desc)}</div>${cta}</div></div>`;
   document.querySelector("#achat #bk").onclick=()=>{shop();el.scrollIntoView({block:"start"})};
   {const ab=$("#addc"); if(ab) ab.onclick=()=>{if(!CART.includes(t.id)){cartAdd(t.id);ab.classList.add("inc");ab.textContent="✓ Dans le panier · Voir mon panier"}cartOpen()};}
   {const rb=$("#rpbtn"); if(rb) rb.onclick=()=>reprise(i);}
+  {const vb=$("#rvbtn"); if(vb) vb.onclick=()=>rvStart(t);}
   [...el.children].forEach((k,j)=>{k.classList.add("rise");k.style.animationDelay=j*40+"ms"});
   const gt=$("#gt"); if(gt&&n>1){
     const go=d=>{const w=gt.clientWidth,c=Math.round(gt.scrollLeft/w);gt.scrollTo({left:((c+d+n)%n)*w,behavior:RM.matches?"auto":"smooth"})};

@@ -703,9 +703,8 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <section id="vendre" hidden></section>
 <section id="accs" hidden></section>
 <section class="seo">
-<div class="avs rvl" id="avs"><h2 id="avh">Ils m'ont confié leur téléphone</h2><div class="rvw" id="rvw"></div><div class="rdots" id="rdots"></div><a class="avall" id="avis3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h6a5.1 5.1 0 0 1-2.2 3.3v2.8h3.6c2.1-1.9 3.2-4.8 3.2-8.1z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1V7H2a11 11 0 0 0 0 9.9l3.7-2.9z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7l3.7 2.9C6.6 7.4 9.1 5.4 12 5.4z"/></svg>Voir tous les avis sur Google</a><br><a class="avbtn" href="https://search.google.com/local/writereview?placeid=ChIJw1envgLkbA8Rmj7QH9JrqhU" target="_blank" rel="noopener">⭐ Laisser un avis Google</a></div>
 <div class="moi rvl"><div class="moi-ph" id="moiph"><span>K</span></div><div><small>Qui suis-je ?</small><h2>Moi c'est Killian</h2><p>C'est moi qui répare votre téléphone chez CizoxPhone, à Verrières-en-Anjou, près d'Angers. Vous venez, vous attendez sur place et vous repartez avec votre téléphone réparé. Je vous annonce le prix avant de commencer, et l'écran est garanti 1 an et la batterie 3 mois.</p></div></div>
-<div class="tt rvl"><span class="tti"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></span><div><small>Avant / Après</small><h2>Regardez mes réparations en vidéo</h2><p>Écrans cassés, dos explosés, batteries à bout : retrouve mes réparations avant / après sur TikTok.</p></div><a class="ttb" href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg>Voir sur TikTok · @cizoxphone</a></div>
+<div class="tt rvl"><span class="tti"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></span><div><small>Avant / Après</small><h2>Regardez mes réparations en vidéo</h2><p>Écrans cassés, dos explosés, batteries à bout : retrouvez mes réparations avant / après sur TikTok.</p></div><a class="ttb" href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg>Voir sur TikTok · @cizoxphone</a></div>
 <div class="intro rvl" style="margin-top:40px">
 <h2>Réparation de téléphone à Verrières-en-Anjou (49)</h2>
 <p>CizoxPhone répare les iPhone, les Samsung et les autres téléphones à Verrières-en-Anjou, près d'Angers, et dans le Maine-et-Loire. Choisissez votre réparation plus haut : vous voyez le prix tout de suite et vous réservez votre rendez-vous en ligne en quelques secondes.</p>
@@ -2226,11 +2225,22 @@ function horaire(){
 }
 horaire(); setInterval(horaire,60000);
 
-/* Avis Google */
-(function(){
+/* Avis Google (mis à jour automatiquement depuis Google par le serveur) */
+(async function(){
+  if(PAY_API){try{
+    const ac=new AbortController();setTimeout(()=>ac.abort(),2500);
+    const g=await fetch(`${PAY_API}/avis`,{signal:ac.signal}).then(r=>r.json());
+    if(g&&g.nombre){NOTE_GOOGLE.note=Number(g.note).toFixed(1).replace(".",",");NOTE_GOOGLE.nombre=g.nombre}
+    if(g&&Array.isArray(g.avis)&&g.avis.length){
+      const nomP=n=>String(n||"").split(" ").map(w=>w.length>2?w[0].toUpperCase()+w.slice(1).toLowerCase():w).join(" ");
+      // seuls les avis venant de Google s'affichent (les anciens avis écrits à la main ne servent que si Google ne répond pas)
+      AVIS.splice(0,AVIS.length,...g.avis.filter(a=>a.texte).map(a=>({nom:nomP(a.nom),note:Math.max(1,Math.min(5,Math.round(a.note||5))),texte:a.texte})));
+    }
+  }catch(e){}}
   if(NOTE_GOOGLE&&NOTE_GOOGLE.nombre){const t=`<b style="color:#ffd166">★ ${NOTE_GOOGLE.note}</b>&nbsp;· <span class="cnt" data-n="${NOTE_GOOGLE.nombre}">${NOTE_GOOGLE.nombre}</span> avis Google <i>→</i>`;const a=$("#avis");a.innerHTML=a.querySelector("svg").outerHTML+t;const h=$("#avh");if(h)h.insertAdjacentHTML("afterend",`<p class="note" style="margin:0 0 6px">${NOTE_GOOGLE.note} sur 5 · ${NOTE_GOOGLE.nombre} avis sur Google</p>`)}
-  $("#avis3").href=$("#avis").href;
+  const a3=$("#avis3");if(a3)a3.href=$("#avis").href;
   const box=$("#rvw"), dots=$("#rdots");
+  if(!box||!dots)return; // plus de carrousel d'avis : le badge en haut mène aux avis Google
   if(!AVIS.length){$("#avh").textContent="Mes clients en parlent";box.remove();dots.remove();return}
   const AH=AVIS.map(a=>`<div class="rc"><span class="st" aria-label="${a.note||5} étoiles sur 5">${"★".repeat(a.note||5)}${"☆".repeat(5-(a.note||5))}</span><p>« ${esc(a.texte)} »</p><span class="who"><i>${esc((a.nom||"?")[0].toUpperCase())}</i>${esc(a.nom||"")}<svg viewBox="0 0 24 24">${$("#avis svg").innerHTML}</svg></span></div>`).join("");
   box.innerHTML=AH+AH.replace(/class="rc"/g,'class="rc" aria-hidden="true"');

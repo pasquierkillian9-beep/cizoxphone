@@ -657,6 +657,7 @@ button.oc.mode{width:100%;font-family:inherit;cursor:pointer;color:inherit}
 @media(max-width:599px){.wzs>.val .vimg{display:none}.wzs>.val{padding:14px}.wzs>.val b{font-size:28px}.wzs>.val small{font-size:12.5px}.wzs>.dev{padding:14px}.wzs>.dev .dm .ph{display:none}}
 .rvb small{display:block;font-size:12px;opacity:.8;margin-top:3px;font-weight:400}
 #rvbook:not(:empty){margin:10px 0 6px}
+.csug{margin:10px 0;padding:12px;border-radius:14px;border:1.5px dashed var(--line)}.csug b{display:block;font-size:14px;margin-bottom:6px}.csgb{display:flex;justify-content:space-between;width:100%;margin:6px 0 0;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:#12072e;color:#fff;font:600 14px 'Exo 2',sans-serif;cursor:pointer;text-align:left}.csgb em{font-style:normal;color:#7dffb0;font-weight:800}
 </style>
 <link rel="canonical" href="https://www.cizoxphone.com/">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://www.cizoxphone.com/">
@@ -784,6 +785,41 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 </script>
 <!-- CATALOGUE DES TÉLÉPHONES (lu aussi par le serveur de paiement) · statut : "" (dispo), "reserve" ou "vendu" · grade : "diamant", "pepite" ou "excellent" -->
 <script type="application/json" id="catalogue">[
+ {
+  "id": "iphone-12-pro-128-go-bleu-pacifique",
+  "nom": "iPhone 12 Pro 128 Go Bleu Pacifique",
+  "prix": "300 €",
+  "grade": "diamant",
+  "statut": "",
+  "badges": [
+   "Écran et batterie neufs",
+   "Batterie 100 %",
+   "Boîte d'origine"
+  ],
+  "photos": [
+   "iphone-12-pro-bleu-1.webp",
+   "iphone-12-pro-bleu-2.webp",
+   "iphone-12-pro-bleu-3.webp"
+  ],
+  "desc": "Un iPhone 12 Pro Bleu Pacifique comme neuf : écran neuf, batterie neuve d'origine Apple à 100 % et triple appareil photo pro. Un iPhone haut de gamme à petit prix, livré avec sa boîte.\n\n## L'état\n💎 Grade Diamant : comme neuf. Écran neuf, aucune rayure ni choc visible sur le contour et la face arrière.\n\n## Batterie\n🔋 Batterie neuve d'origine Apple, capacité maximale 100 %.\n\n## Pièces changées\n• Écran neuf Soft OLED (même rendu que l'écran d'origine)\n• Batterie neuve d'origine Apple\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" Super Retina XDR OLED, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Triple appareil photo 12 Mpx (grand-angle, ultra grand-angle, téléobjectif) + scanner LiDAR\n• Face ID\n• Port Lightning · 128 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
+ {
+  "id": "iphone-13-mini-128-go-minuit",
+  "nom": "iPhone 13 mini 128 Go Minuit",
+  "prix": "280 €",
+  "grade": "pepite",
+  "statut": "",
+  "badges": [
+   "Batterie 100 %",
+   "128 Go",
+   "Boîte d'origine"
+  ],
+  "photos": [
+   "iphone-13-mini-minuit-1.webp",
+   "iphone-13-mini-minuit-2.webp"
+  ],
+  "desc": "Le plus compact des iPhone récents : un iPhone 13 mini Minuit qui tient dans une main, avec une batterie à 100 %. Puce A15 Bionic, écran OLED et double appareil photo, livré avec sa boîte.\n\n## L'état\n✨ Grade Pépite : très bon état. Un léger choc sur le châssis, visible en photo, sans effet sur le fonctionnement.\n\n## Batterie\n🔋 Batterie neuve compatible, capacité maximale 100 %.\n\n## Pièces changées\n• Batterie neuve compatible\n• Tout le reste est d'origine Apple\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 5,4\" Super Retina XDR OLED, protection Ceramic Shield\n• Puce A15 Bionic · 5G · MagSafe\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle), mode Cinématique\n• Face ID\n• Port Lightning · 128 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
+ },
  {
   "id": "iphone-13-128-go-lumiere-stellaire-2",
   "nom": "iPhone 13 128 Go Lumière stellaire",
@@ -1806,14 +1842,20 @@ let CART=[],LV="relais",RELAIS=null,PACK=false,CABLE=false,ACC=[];
 const PACK_PRIX=25,PACK_SEUL=40,PACK_NOM="Pack protection : coque + verre trempé + protection caméra",CABLE_PRIX=10,CABLE_NOM="Câble de charge";
 const ACCS={pack:{n:"Pack protection",d:"Coque + verre trempé + protection caméra, adaptés à votre téléphone",p:PACK_SEUL,i:"🛡️",img:["acc-pack-2.webp","acc-pack.webp"],mod:true,max:10},
  lightning:{n:"Câble Lightning",d:"Pour iPhone 14 et plus anciens",p:10,i:"🔌",img:["acc-lightning.webp"],max:50},
- usbc:{n:"Câble USB-C",d:"Pour iPhone 15 et plus récents, et la plupart des Samsung",p:10,i:"⚡",img:["acc-usbc.webp"],max:50}};
+ usbc:{n:"Câble USB-C",d:"Pour iPhone 15 et plus récents, et la plupart des Samsung",p:10,i:"⚡",img:["acc-usbc.webp"],max:50},
+ budspro2:{n:"CizoxBuds Pro 2",d:"Écouteurs sans fil intra-auriculaires avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-pro2.webp"],buds:true,max:15},
+ buds4:{n:"CizoxBuds 4",d:"Écouteurs sans fil nouvelle génération avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-4.webp"],buds:true,max:15},
+ box:{n:"CizoxBox 6 en 1",d:"Le coffret complet : CizoxBuds Pro 2, CizoxWatch (montre connectée), batterie externe MagSafe, câble, chargeur secteur, chargeur à induction MagSafe et chargeur à induction pour la montre.",p:70,i:"🎁",img:["acc-cizoxbox.webp"],max:13}};
+const BUDS_1=30,BUDS_N=20; // écouteurs : 30 € la première paire, puis 20 € chacune des suivantes (tous modèles confondus)
+const budsN=()=>ACC.filter(a=>ACCS[a.k]&&ACCS[a.k].buds).reduce((x,a)=>x+a.q,0);
+const budsRem=()=>Math.max(0,budsN()-1)*(BUDS_1-BUDS_N);
 const accImg=(a,c)=>a.img?`<img class="${c}" src="${a.img[0]}" alt="${esc(a.n)}" loading="lazy" onerror="this.outerHTML='<span class=ai>${a.i}</span>'">`:`<span class="ai">${a.i}</span>`;
 const PACK_DUO=10; // remise par lot de 2 packs protection achetés seuls
 const packsN=()=>ACC.filter(a=>a.k==="pack").reduce((x,a)=>x+a.q,0);
 const packRem=()=>Math.floor(packsN()/2)*PACK_DUO;
 const usbcTel=nom=>/iPhone (1[5-9]|[2-9]\d)/.test(nom);
 const accNom=a=>ACCS[a.k].n+(a.m?" – "+a.m:"");
-const accTot=()=>ACC.reduce((x,a)=>x+ACCS[a.k].p*a.q,0)-packRem();
+const accTot=()=>ACC.reduce((x,a)=>x+ACCS[a.k].p*a.q,0)-packRem()-budsRem();
 function accAdd(k,m){const a=ACC.find(x=>x.k===k&&(x.m||"")===(m||""));if(a)a.q=Math.min(ACCS[k].max,a.q+1);else ACC.push({k,m:m||"",q:1});cartSave();const f=$("#cartfab");if(f){f.classList.remove("bump");void f.offsetWidth;f.classList.add("bump")}}
 function accRm(i){ACC.splice(i,1);cartSave();cartOpen()}
 function accQ(i,d){const a=ACC[i];if(!a)return;a.q+=d;if(a.q<1){ACC.splice(i,1)}else a.q=Math.min(ACCS[a.k].max,a.q);cartSave();cartOpen()}
@@ -1843,24 +1885,27 @@ function cartOpen(){const m=$("#cmod");cartClean();
  if(!L.length&&!ACC.length){h+=`<p class="cempty">Votre panier est vide.</p><button class="cpay" id="cgo">Voir les téléphones</button>`}
  else{h+=L.map(t=>`<div class="cit">${t.photos[0]?`<img src="${esc(t.photos[0])}" alt="">`:""}<div><b>${esc(t.nom)}</b>${grdH(t.grade)}<button class="crm" data-rm="${esc(t.id)}">Retirer</button></div><span class="cp">${esc(t.prix)}</span></div>`).join("");
   h+=ACC.map((a,i)=>`<div class="cit">${accImg(ACCS[a.k],"aci")}<div><b>${esc(accNom(a))}</b><span class="qty"><button data-aq="${i}" data-d="-1" aria-label="Moins">−</button><em>${a.q}</em><button data-aq="${i}" data-d="1" aria-label="Plus"${a.q>=ACCS[a.k].max?" disabled":""}>+</button></span><button class="crm" data-arm="${i}">Retirer</button></div><span class="cp">${eur2(ACCS[a.k].p*a.q)}</span></div>`).join("");
+  if(budsRem())h+=`<p class="pkr">🎧 Écouteurs : ${BUDS_1} € la première paire puis ${BUDS_N} € les suivantes : -${budsRem()} €</p>`;
+  if(L.length){const sug=["budspro2","buds4","box"].filter(k=>!ACC.some(a=>a.k===k));if(sug.length)h+=`<div class="csug"><b>Avec votre iPhone :</b>${sug.map(k=>`<button type="button" class="csgb" data-sug="${k}">${ACCS[k].i} ${esc(ACCS[k].n)} <em>+${ACCS[k].buds&&budsN()?BUDS_N:ACCS[k].p} €</em></button>`).join("")}</div>`}
   if(packRem())h+=`<p class="pkr">🎉 ${packsN()>=4?"Remise lots de 2 packs":"2 packs protection"} : -${packRem()} €</p>`;
   if(L.length){const ct=L.every(t=>usbcTel(t.nom))?"USB-C":L.every(t=>!usbcTel(t.nom))?"Lightning":"adapté";
   h+=`<label class="pk${PACK?" on":""}"><input type="checkbox" id="pkc"${PACK?" checked":""}><span><b>🛡️ Ajouter le pack protection <i class="rem">-15 €</i></b><small>Coque + verre trempé + protection caméra${L.length>1?" · pour chaque téléphone":""}</small></span><em><span class="was">${PACK_SEUL} €</span>+${PACK_PRIX} €${L.length>1?" ×"+L.length:""}</em></label><label class="pk${CABLE?" on":""}"><input type="checkbox" id="cbc"${CABLE?" checked":""}><span><b>🔌 Ajouter un câble ${ct==="adapté"?"de charge":ct}</b><small>${ct==="adapté"?"Adapté à chaque téléphone":"Compatible avec votre iPhone"}${L.length>1?" · pour chaque téléphone":""}</small></span><em>+${CABLE_PRIX} €${L.length>1?" ×"+L.length:""}</em></label>`;}
   h+=`<h3 class="ch3">Livraison</h3>`+Object.entries(LIV).map(([k,v])=>`<label class="lv${LV===k?" on":""}"><input type="radio" name="lv" value="${k}"${LV===k?" checked":""}><span><b>${v.n}</b><small>${v.d}</small></span><em>${v.p?eur2(v.p):"Gratuit"}</em></label>`).join("");
   if(LV==="relais")h+=`<div class="mrz"><div class="mrsel" id="mrs"${RELAIS?"":" hidden"}>${mrTxt()}</div><button class="mrbtn" id="mrb">📍 ${RELAIS?"Changer de point relais":"Choisir mon point relais"}</button><div id="mrw"></div></div>`;
   h+=rpcH(L);
-  h+=`<div class="ctot">${pk?`<div><span>Pack protection</span><span>${eur2(pk)}</span></div>`:""}${cb?`<div><span>Câble de charge</span><span>${eur2(cb)}</span></div>`:""}${ac?`<div><span>Accessoires${packRem()?` (dont -${packRem()} € remise packs)`:""}</span><span>${eur2(ac)}</span></div>`:""}<div><span>Sous-total</span><span>${eur2(sub)}</span></div><div><span>Livraison</span><span>${lp?eur2(lp):"Gratuit"}</span></div><div class="t"><span>Total</span><span>${eur2(tot)}</span></div></div>`;
+  h+=`<div class="ctot">${pk?`<div><span>Pack protection</span><span>${eur2(pk)}</span></div>`:""}${cb?`<div><span>Câble de charge</span><span>${eur2(cb)}</span></div>`:""}${ac?`<div><span>Accessoires${packRem()+budsRem()?` (dont -${packRem()+budsRem()} € de remise)`:""}</span><span>${eur2(ac)}</span></div>`:""}<div><span>Sous-total</span><span>${eur2(sub)}</span></div><div><span>Livraison</span><span>${lp?eur2(lp):"Gratuit"}</span></div><div class="t"><span>Total</span><span>${eur2(tot)}</span></div></div>`;
   h+=LV==="main"?`<a class="cpay wa" id="cwa" target="_blank" rel="noopener">Réserver sur WhatsApp · paiement sur place</a>`:`<button class="cpay" id="cpay">Procéder au paiement · ${eur2(tot)}</button><p class="csec">🔒 Paiement sécurisé par carte bancaire<br>ou en <b>3 fois sans frais avec Klarna</b></p><p class="cerr" id="cerr" hidden></p>`;}
  $("#cbox").innerHTML=h;m.hidden=false;document.body.style.overflow="hidden";
  $("#cx").onclick=cartClose;const g=$("#cgo");if(g)g.onclick=()=>{cartClose();tab(2,true)};
  m.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>cartRm(b.dataset.rm));
  m.querySelectorAll("[data-arm]").forEach(b=>b.onclick=()=>accRm(+b.dataset.arm));
  m.querySelectorAll("[data-aq]").forEach(b=>b.onclick=()=>accQ(+b.dataset.aq,+b.dataset.d));
+ m.querySelectorAll("[data-sug]").forEach(b=>b.onclick=()=>{accAdd(b.dataset.sug);cartOpen()});
  m.querySelectorAll("input[name=lv]").forEach(r=>r.onchange=()=>{LV=r.value;cartOpen()});
  const pkc=$("#pkc");if(pkc)pkc.onchange=()=>{PACK=pkc.checked;cartOpen()};rpcBind();
  const cbc=$("#cbc");if(cbc)cbc.onchange=()=>{CABLE=cbc.checked;cartOpen()};
  const mb=$("#mrb");if(mb)mb.onclick=mrOpen;
- const w=$("#cwa");if(w)w.href=wa(`Bonjour, je voudrais acheter :${L.length?"\n":""}${L.map(t=>`• ${t.nom} (${t.prix})`).join("\n")}${pk?`\n• ${PACK_NOM} (${eur2(pk)})`:""}${cb?`\n• ${CABLE_NOM} (${eur2(cb)})`:""}${ACC.map(a=>`\n• ${accNom(a)}${a.q>1?" ×"+a.q:""} (${eur2(ACCS[a.k].p*a.q)})`).join("")}${packRem()?`\n• Remise packs : -${packRem()} €`:""}\nTotal : ${eur2(sub)}\nRemise en main propre à Verrières-en-Anjou. Quand est-ce que je peux passer ?`);
+ const w=$("#cwa");if(w)w.href=wa(`Bonjour, je voudrais acheter :${L.length?"\n":""}${L.map(t=>`• ${t.nom} (${t.prix})`).join("\n")}${pk?`\n• ${PACK_NOM} (${eur2(pk)})`:""}${cb?`\n• ${CABLE_NOM} (${eur2(cb)})`:""}${ACC.map(a=>`\n• ${accNom(a)}${a.q>1?" ×"+a.q:""} (${eur2(ACCS[a.k].p*a.q)})`).join("")}${packRem()?`\n• Remise packs : -${packRem()} €`:""}${budsRem()?`\n• Remise écouteurs : -${budsRem()} €`:""}\nTotal : ${eur2(sub)}\nRemise en main propre à Verrières-en-Anjou. Quand est-ce que je peux passer ?`);
  const p=$("#cpay");if(p){p.onclick=cartPay;payState()}}
 function cartClose(){$("#cmod").hidden=true;document.body.style.overflow=""}
 async function cartPay(){const b=$("#cpay"),er=$("#cerr"),L=CART.map(telId);
@@ -1904,7 +1949,7 @@ function extraBind(){
 }
 
 function accsShow(){const e=$("#accs");e.innerHTML=`<div class="cartbar"><button class="cartbtn" type="button">🛒 Mon panier <b>0</b></button></div>`+ACC_H();e.querySelectorAll(".cartbtn").forEach(b=>b.onclick=cartOpen);accBind();cartUI();anim(e,0)}
-function ACC_H(){return `<h2>Accessoires</h2><p class="note">Livrés avec votre commande, ou à récupérer en main propre à Verrières-en-Anjou.</p><div class="accs">${Object.entries(ACCS).map(([k,a])=>`<div class="acc">${a.img&&a.img[1]?`<div class="aimgs">${a.img.map(u=>`<img src="${u}" alt="${esc(a.n)}" loading="lazy">`).join("")}</div>`:accImg(a,"aim")}<div><h3>${a.n}</h3><p>${a.d}</p><span class="ap">${a.p} €</span>${k==="pack"?`<br><span class="apr">💡 ${PACK_PRIX} € seulement avec l'achat d'un téléphone (-15 €)</span><br><span class="apr">🎁 2 packs achetés = -${PACK_DUO} €</span><select id="apm"><option value="">Modèle exact de votre téléphone</option>${MODELES_IPHONE.map(m=>`<option>${esc(m)}</option>`).join("")}<option value="__autre">Autre modèle (Samsung, autre marque…)</option></select><input type="text" id="apa" placeholder="Modèle exact (ex : Samsung Galaxy A54)" hidden>`:"<br>"}<button class="aadd" data-acc="${k}">Ajouter au panier</button></div></div>`).join("")}</div>`}
+function ACC_H(){return `<h2>Accessoires</h2><p class="note">Livrés avec votre commande, ou à récupérer en main propre à Verrières-en-Anjou.</p><div class="accs">${Object.entries(ACCS).map(([k,a])=>`<div class="acc">${a.img&&a.img[1]?`<div class="aimgs">${a.img.map(u=>`<img src="${u}" alt="${esc(a.n)}" loading="lazy">`).join("")}</div>`:accImg(a,"aim")}<div><h3>${a.n}</h3><p>${a.d}</p><span class="ap">${a.p} €</span>${a.buds?`<br><span class="apr">🎧 ${BUDS_1} € la première paire, puis ${BUDS_N} € chacune des suivantes</span><br>`:k==="pack"?`<br><span class="apr">💡 ${PACK_PRIX} € seulement avec l'achat d'un téléphone (-15 €)</span><br><span class="apr">🎁 2 packs achetés = -${PACK_DUO} €</span><select id="apm"><option value="">Modèle exact de votre téléphone</option>${MODELES_IPHONE.map(m=>`<option>${esc(m)}</option>`).join("")}<option value="__autre">Autre modèle (Samsung, autre marque…)</option></select><input type="text" id="apa" placeholder="Modèle exact (ex : Samsung Galaxy A54)" hidden>`:"<br>"}<button class="aadd" data-acc="${k}">Ajouter au panier</button></div></div>`).join("")}</div>`}
 function accBind(){const sm=$("#apm"),sa=$("#apa");if(sm)sm.onchange=()=>{sa.hidden=sm.value!=="__autre";sm.style.borderColor="";if(!sa.hidden)sa.focus()};
  document.querySelectorAll("[data-acc]").forEach(b=>b.onclick=()=>{const k=b.dataset.acc;let m="";
  if(ACCS[k].mod){m=sm.value==="__autre"?sa.value.trim():sm.value;if(!m){const f=sm.value==="__autre"?sa:sm;f.focus();f.style.borderColor="#ff6b8a";return}}

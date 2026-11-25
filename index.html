@@ -8,10 +8,8 @@
 <meta name="theme-color" content="#0a0420">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="fond.jpg">
 <script>document.documentElement.classList.add("js")</script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;1,800&family=Sora:wght@700;800&display=swap">
 <style>
 :root{--bg:#1d0752;--card:rgba(16,5,44,.78);--line:#7a4be0;--txt:#ffffff;--mute:#dccdf9;--acc:#9d3dff;--acc2:#d0a3ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*:before,*:after{box-sizing:inherit}
@@ -670,6 +668,39 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <script>/* MODE MAINTENANCE : mettre "maintenance" dans le fichier etat.txt (ou "en ligne" pour rouvrir). Pour voir le site pendant la maintenance : ajouter ?apercu à l'adresse. */
 (function(){var d=document.documentElement;try{if(/[?&]apercu/.test(location.search))sessionStorage.setItem("cz_apercu","1")}catch(e){}var ok=false;try{ok=sessionStorage.getItem("cz_apercu")==="1"}catch(e){}if(ok)return;d.classList.add("czchk");var done=function(){d.classList.remove("czchk")};setTimeout(done,1500);fetch("etat.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){if(/maintenance/i.test(t)){var go=function(){document.body.insertAdjacentHTML("afterbegin",'<div id="czmaint"><div class="czb"><div class="czl">Cizox<span>Phone</span></div><div class="czi">🛠️</div><h1>Le site fait peau neuve !</h1><p>Nous mettons le site à jour avec plein de nouveautés. Il revient très vite.</p><p>Besoin d\'une réparation ou d\'un téléphone ? Je reste disponible :</p><a class="czw" href="https://wa.me/33659006184?text=Bonjour%2C%20je%20viens%20du%20site%20CizoxPhone%20!" target="_blank" rel="noopener">Me contacter sur WhatsApp</a><div class="czf">📍 Verrières-en-Anjou · 🕙 7j/7 de 10h à 22h<br>📞 06 59 00 61 84</div></div></div>');document.body.style.overflow="hidden";done()};document.body?go():document.addEventListener("DOMContentLoaded",go)}else done()}).catch(done)})();</script>
 <style>html.czchk body{visibility:hidden}#czmaint{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:#0b0420;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}#czmaint .czb{width:100%;max-width:440px;text-align:center;padding:34px 24px;border-radius:26px;background:rgba(26,10,77,.55);border:1px solid rgba(181,107,255,.45);box-shadow:0 0 50px rgba(139,47,255,.35)}#czmaint .czl{font-size:30px;font-weight:800}#czmaint .czl span{color:#e04bff;text-shadow:0 0 18px rgba(224,75,255,.7)}#czmaint .czi{font-size:52px;margin:22px 0 10px}#czmaint h1{font-size:24px;margin:0 0 12px}#czmaint p{color:#cfc2ee;line-height:1.55;font-size:16px;margin:0 0 8px}#czmaint .czw{display:block;margin-top:22px;padding:16px;border-radius:14px;background:#25d366;color:#04200e;font-weight:800;font-size:17px;text-decoration:none}#czmaint .czf{margin-top:18px;font-size:14px;color:#a995d6}</style>
+<style id="theme-sobre">/* Thème sobre (sombre neutre, sans néon ni animations en boucle) */
+:root{--bg:#0f0f14!important;--card:#18181f!important;--line:#2c2c36!important;--txt:#f4f4f6!important;--mute:#a9a9b6!important;--acc:#8b5cf6!important;--acc2:#a78bfa!important}
+*,*::before,*::after{animation:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;text-shadow:none!important;background-image:none!important}
+html,body{background:#0f0f14!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important}
+body *{font-family:inherit!important;font-style:normal!important;-webkit-text-fill-color:currentColor!important}
+.fx,.prog,.hv-logo{display:none!important}
+.hero *,h1,.rvl,.rvl *{filter:none!important;opacity:1!important}
+[class],button,a{box-shadow:none!important}
+.item,.acc,.rep,.tabs,.card,details,.moi,.cit,.pk,.lv,.ctot,.bkf,.csug,.hcard,.tpick,#cbox{background-color:#18181f!important;border:1px solid #2c2c36!important}
+.tab{background:#18181f!important}
+.tab.on,button.cta,.cta,.aadd,.cpay,.b1,.cartbtn{background:#7c3aed!important;color:#fff!important;border:none!important}
+.hero h1 em,.hero h1 span,.wt span{color:#a78bfa!important}
+.grd{background:rgba(139,92,246,.12)!important;color:#c4b5fd!important;border-color:rgba(139,92,246,.35)!important}
+.grd.pepite{background:rgba(250,204,21,.1)!important;color:#fcd34d!important;border-color:rgba(250,204,21,.35)!important}
+.bdg i{background:rgba(34,197,94,.1)!important;color:#86efac!important;border-color:rgba(34,197,94,.3)!important}
+
+.ind{background:#7c3aed!important}
+.tab[aria-selected=true],.opt.on{background:#7c3aed!important;border-color:#7c3aed!important;color:#fff!important}
+.hero{grid-template-columns:1fr!important;min-height:0!important}
+
+.tpick,.tpick *{border:none!important;background:transparent!important}
+/* Panier en noir et blanc */
+.cartbtn,#cartfab,.cartfab{background:#ffffff!important;color:#0f0f14!important;border:1px solid #ffffff!important}
+.cartbtn *,#cartfab *{color:#0f0f14!important}
+.cartbtn b,#cartfab b{background:#0f0f14!important;color:#fff!important}
+#cmod #cbox,#cbox{background:#0f0f14!important;border:1px solid #2c2c36!important}
+#cbox .cit,#cbox .pk,#cbox .lv,#cbox .ctot,#cbox .csug,#cbox .mrz{background:#18181f!important;border-color:#2c2c36!important}
+#cbox .pk.on,#cbox .lv.on{border-color:#ffffff!important}
+#cbox .cpay,#cbox button.cpay{background:#ffffff!important;color:#0f0f14!important}
+#cbox .qty button,#cbox .csgb{background:#0f0f14!important;color:#fff!important;border:1px solid #3a3a46!important}
+#cbox .rem,#cbox .pkr{background:#18181f!important;color:#e5e5ea!important;border-color:#2c2c36!important}
+#cbox em,#cbox .csgb em{color:#ffffff!important}
+</style>
 </head>
 <body>
 <main>
@@ -682,12 +713,7 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <p class="lead">Écran, batterie, vitre arrière, connecteur de charge. Vous venez à Verrières-en-Anjou, on répare sur place, vous repartez avec votre téléphone.</p>
 <div class="pills"><span>Réparation sur place</span><span>Prix annoncé tout de suite</span><span>Écran garanti 1 an</span></div>
 </div>
-<div class="hero-vis" aria-hidden="true">
-<img class="hv-logo" src="logo.webp" alt="" width="360" height="294">
-<div class="hcard hc2"><span>✓</span>Écran garanti 1 an</div>
-<div class="hcard hc1"><small>Devis instantané</small><span class="hcv"><span id="hvm">iPhone 15 Pro · Écran Soft OLED</span><b id="hvp">175 €</b></span><div class="bar"><i id="hvb" style="width:100%"></i></div><small style="margin-top:6px">Réparé sur place pendant que vous attendez</small></div>
-<div class="hcard hc3"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.3A11.8 11.8 0 0 0 1.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg></span>Rendez-vous sur WhatsApp</div>
-</div>
+
 </div>
 
 <p class="tpick" id="tpick">Que souhaitez-vous faire ? 👇</p>
@@ -1318,7 +1344,7 @@ function repairsIphone(m){
 }
 /* ===== PARCOURS RÉPARATION ===== */
 /* Logos des marques : mettre les fichiers sur GitHub avec ces noms (PNG fond transparent). Tant qu'ils manquent, un visuel de remplacement s'affiche. */
-const LOGOS={"iPhone":["logo-apple.png"],"Samsung":["logo-samsung.png"],"Autre modèle":["logo-huawei.png","logo-xiaomi.png","logo-redmi.png","logo-oppo.png","logo-honor.png"]};
+const LOGOS={"iPhone":["logo-apple.webp"],"Samsung":["logo-samsung.webp"],"Autre modèle":["logo-huawei.webp","logo-xiaomi.webp","logo-redmi.webp","logo-oppo.webp","logo-honor.webp"]};
 /* Grande photo par modèle (style studio). Ex : "iPhone 15":"rep-iphone-15.webp". Sans photo : gros plan du rachat, sinon visuel CizoxPhone. */
 const PHOTO_MODELE={"A40, A41, A42 5G": "rep-samsung-a41.webp", "A02s, A03, A03s, A04s": "rep-samsung-a06.webp", "A20e, A21s, A22, A23": "rep-samsung-a24.webp", "A32, A33, A34": "rep-samsung-a37.webp", "A50, A51, A52, A52S, A53, A54": "rep-samsung-a57.webp", "S20 Ultra": "rep-samsung-s20-ultra.webp", "A70, A71, A72": "rep-samsung-a70.webp", "A10, A11, A12, A12s, A13, A14": "rep-samsung-a10.webp", "S8, S8+, S9, S9+": "rep-samsung-s9.webp", "S10, S10+, S10e": "rep-samsung-s10.webp", "S10 Lite": "rep-samsung-s10-lite.webp", "S20, S20+": "rep-samsung-s20.webp", "S21, S21 FE, S21+": "rep-samsung-s21.webp", "S21 Ultra": "rep-samsung-s21-ultra.webp", "S22, S22+, S23, S23+": "rep-samsung-s23.webp", "S22 Ultra, S23 Ultra": "rep-samsung-s22-ultra.webp", "iPhone 11 Pro": "rep-iphone-11-pro.webp", "iPhone 11 Pro Max": "rep-iphone-11-pro.webp", "iPhone 16 E": "rep-iphone-16-e.webp", "iPhone X": "rep-iphone-x.webp", "iPhone XS": "rep-iphone-x.webp", "iPhone XS Max": "rep-iphone-x.webp", "iPhone XR": "rep-iphone-xr.webp", "iPhone 11": "rep-iphone-11.webp", "iPhone 12": "rep-iphone-12.webp", "iPhone 12 mini": "rep-iphone-12.webp", "iPhone 12 Pro": "rep-iphone-12-pro.webp", "iPhone 12 Pro Max": "rep-iphone-12-pro.webp", "iPhone 13": "rep-iphone-13.webp", "iPhone 13 mini": "rep-iphone-13.webp", "iPhone 13 Pro": "rep-iphone-13-pro.webp", "iPhone 13 Pro Max": "rep-iphone-13-pro.webp", "iPhone 14": "rep-iphone-14.webp", "iPhone 14 Plus": "rep-iphone-14.webp", "iPhone 14 Pro": "rep-iphone-14-pro.webp", "iPhone 14 Pro Max": "rep-iphone-14-pro.webp", "iPhone 15": "rep-iphone-15.webp", "iPhone 15 Plus": "rep-iphone-15.webp", "iPhone 15 Pro": "rep-iphone-15-pro.webp", "iPhone 15 Pro Max": "rep-iphone-15-pro.webp", "iPhone 16": "rep-iphone-16.webp", "iPhone 16 Plus": "rep-iphone-16.webp", "iPhone 16 Pro": "rep-iphone-16-pro.webp", "iPhone 16 Pro Max": "rep-iphone-16-pro.webp", "iPhone 17 E": "rep-iphone-17-e.webp", "iPhone 17": "rep-iphone-17.webp", "iPhone 17 Pro": "rep-iphone-17-pro.webp", "iPhone 17 Pro Max": "rep-iphone-17-pro.webp", "iPhone 17 Air": "rep-iphone-17-air.webp"};
 /* Petites photos (iPhone X et 11), affichées en plus petit pour rester nettes */

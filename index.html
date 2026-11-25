@@ -655,7 +655,7 @@ button.oc.mode{width:100%;font-family:inherit;cursor:pointer;color:inherit}
 @media(max-width:599px){.wzs>.val .vimg{display:none}.wzs>.val{padding:14px}.wzs>.val b{font-size:28px}.wzs>.val small{font-size:12.5px}.wzs>.dev{padding:14px}.wzs>.dev .dm .ph{display:none}}
 .rvb small{display:block;font-size:12px;opacity:.8;margin-top:3px;font-weight:400}
 #rvbook:not(:empty){margin:10px 0 6px}
-.csug{margin:10px 0;padding:12px;border-radius:14px;border:1.5px dashed var(--line)}.csug b{display:block;font-size:14px;margin-bottom:6px}.csgb{display:flex;justify-content:space-between;width:100%;margin:6px 0 0;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:#12072e;color:#fff;font:600 14px 'Exo 2',sans-serif;cursor:pointer;text-align:left}.csgb em{font-style:normal;color:#7dffb0;font-weight:800}
+.csug{margin:10px 0;padding:12px;border-radius:14px;border:1.5px dashed var(--line)}.csug b{display:block;font-size:14px;margin-bottom:6px}.csgb{display:flex;justify-content:space-between;width:100%;margin:6px 0 0;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:#12072e;color:#fff;font:600 14px 'Exo 2',sans-serif;cursor:pointer;text-align:left}.csgb small{display:block;font-weight:400;font-size:12px;color:#a9a9b6;margin-top:3px;line-height:1.35}.csgb span{flex:1;padding-right:10px}.csgb em{font-style:normal;color:#7dffb0;font-weight:800}
 </style>
 <link rel="canonical" href="https://www.cizoxphone.com/">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://www.cizoxphone.com/">
@@ -1869,9 +1869,9 @@ const PACK_PRIX=25,PACK_SEUL=40,PACK_NOM="Pack protection : coque + verre tremp�
 const ACCS={pack:{n:"Pack protection",d:"Coque + verre trempé + protection caméra, adaptés à votre téléphone",p:PACK_SEUL,i:"🛡️",img:["acc-pack-2.webp","acc-pack.webp"],mod:true,max:10},
  lightning:{n:"Câble Lightning",d:"Pour iPhone 14 et plus anciens",p:10,i:"🔌",img:["acc-lightning.webp"],max:50},
  usbc:{n:"Câble USB-C",d:"Pour iPhone 15 et plus récents, et la plupart des Samsung",p:10,i:"⚡",img:["acc-usbc.webp"],max:50},
- budspro2:{n:"CizoxBuds Pro 2",d:"Écouteurs sans fil intra-auriculaires avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-pro2.webp"],buds:true,max:15},
- buds4:{n:"CizoxBuds 4",d:"Écouteurs sans fil nouvelle génération avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-4.webp"],buds:true,max:15},
- box:{n:"CizoxBox 6 en 1",d:"Le coffret complet : CizoxBuds Pro 2, CizoxWatch (montre connectée), batterie externe MagSafe, câble, chargeur secteur, chargeur à induction MagSafe et chargeur à induction pour la montre.",p:70,i:"🎁",img:["acc-cizoxbox.webp"],max:13}};
+ budspro2:{n:"CizoxBuds Pro 2",d:"Écouteurs sans fil intra-auriculaires avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-pro2.webp"],buds:true,max:15,sd:"Écouteurs sans fil intra-auriculaires avec étui de charge"},
+ buds4:{n:"CizoxBuds 4",d:"Écouteurs sans fil nouvelle génération avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-4.webp"],buds:true,max:15,sd:"Écouteurs sans fil nouvelle génération avec étui de charge"},
+ box:{n:"CizoxBox 6 en 1",d:"Le coffret complet : CizoxBuds Pro 2, CizoxWatch (montre connectée), batterie externe MagSafe, câble, chargeur secteur, chargeur à induction MagSafe et chargeur à induction pour la montre.",p:70,i:"🎁",img:["acc-cizoxbox.webp"],max:13,sd:"Coffret : écouteurs, montre connectée, batterie MagSafe, câble, chargeur et 2 chargeurs à induction"}};
 const BUDS_1=30,BUDS_N=20; // écouteurs : 30 € la première paire, puis 20 € chacune des suivantes (tous modèles confondus)
 const budsN=()=>ACC.filter(a=>ACCS[a.k]&&ACCS[a.k].buds).reduce((x,a)=>x+a.q,0);
 const budsRem=()=>Math.max(0,budsN()-1)*(BUDS_1-BUDS_N);
@@ -1890,7 +1890,7 @@ try{ACC=JSON.parse(localStorage.getItem("cz_acc")||"[]").filter(a=>ACCS[a.k])}ca
 const telId=id=>TELEPHONES.find(t=>t.id===id);
 function cartClean(){CART=CART.filter(id=>{const t=telId(id);return t&&!t.statut})}
 function cartSave(){try{localStorage.setItem("cz_panier",JSON.stringify(CART));localStorage.setItem("cz_acc",JSON.stringify(ACC))}catch(e){}cartUI()}
-function cartUI(){cartClean();const n=CART.length+ACC.reduce((x,a)=>x+a.q,0),f=$("#cartfab");if(f){f.hidden=!n||(CUR!==2&&CUR!==4);$("#cartn").textContent=n}document.querySelectorAll(".cartbtn b").forEach(b=>b.textContent=n);const ad=$("#achat");if(ad)ad.dataset.n=n}
+function cartUI(){cartClean();const n=CART.length+ACC.reduce((x,a)=>x+a.q,0),f=$("#cartfab");if(f){f.hidden=!n;$("#cartn").textContent=n}document.querySelectorAll(".cartbtn b").forEach(b=>b.textContent=n);const ad=$("#achat");if(ad)ad.dataset.n=n}
 function cartAdd(id){if(!CART.includes(id))CART.push(id);cartSave();const f=$("#cartfab");if(f){f.classList.remove("bump");void f.offsetWidth;f.classList.add("bump")}}
 function cartRm(id){CART=CART.filter(x=>x!==id);cartSave();cartOpen()}
 function loadJs(u){return new Promise((ok,ko)=>{const x=document.createElement("script");x.src=u;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
@@ -1912,7 +1912,7 @@ function cartOpen(){const m=$("#cmod");cartClean();
  else{h+=L.map(t=>`<div class="cit">${t.photos[0]?`<img src="${esc(t.photos[0])}" alt="">`:""}<div><b>${esc(t.nom)}</b>${grdH(t.grade)}<button class="crm" data-rm="${esc(t.id)}">Retirer</button></div><span class="cp">${esc(t.prix)}</span></div>`).join("");
   h+=ACC.map((a,i)=>`<div class="cit">${accImg(ACCS[a.k],"aci")}<div><b>${esc(accNom(a))}</b><span class="qty"><button data-aq="${i}" data-d="-1" aria-label="Moins">−</button><em>${a.q}</em><button data-aq="${i}" data-d="1" aria-label="Plus"${a.q>=ACCS[a.k].max?" disabled":""}>+</button></span><button class="crm" data-arm="${i}">Retirer</button></div><span class="cp">${eur2(ACCS[a.k].p*a.q)}</span></div>`).join("");
   if(budsRem())h+=`<p class="pkr">🎧 Écouteurs : ${BUDS_1} € la première paire puis ${BUDS_N} € les suivantes : -${budsRem()} €</p>`;
-  if(L.length){const sug=["budspro2","buds4","box"].filter(k=>!ACC.some(a=>a.k===k));if(sug.length)h+=`<div class="csug"><b>Avec votre iPhone :</b>${sug.map(k=>`<button type="button" class="csgb" data-sug="${k}">${ACCS[k].i} ${esc(ACCS[k].n)} <em>+${ACCS[k].buds&&budsN()?BUDS_N:ACCS[k].p} €</em></button>`).join("")}</div>`}
+  if(L.length){const sug=["budspro2","buds4","box"].filter(k=>!ACC.some(a=>a.k===k));if(sug.length)h+=`<div class="csug"><b>Avec votre iPhone :</b>${sug.map(k=>`<button type="button" class="csgb" data-sug="${k}"><span>${ACCS[k].i} ${esc(ACCS[k].n)}<small>${esc(ACCS[k].sd||"")}</small></span> <em>+${ACCS[k].buds&&budsN()?BUDS_N:ACCS[k].p} €</em></button>`).join("")}</div>`}
   if(packRem())h+=`<p class="pkr">🎉 ${packsN()>=4?"Remise lots de 2 packs":"2 packs protection"} : -${packRem()} €</p>`;
   if(L.length){const ct=L.every(t=>usbcTel(t.nom))?"USB-C":L.every(t=>!usbcTel(t.nom))?"Lightning":"adapté";
   h+=`<label class="pk${PACK?" on":""}"><input type="checkbox" id="pkc"${PACK?" checked":""}><span><b>🛡️ Ajouter le pack protection <i class="rem">-15 €</i></b><small>Coque + verre trempé + protection caméra${L.length>1?" · pour chaque téléphone":""}</small></span><em><span class="was">${PACK_SEUL} €</span>+${PACK_PRIX} €${L.length>1?" ×"+L.length:""}</em></label><label class="pk${CABLE?" on":""}"><input type="checkbox" id="cbc"${CABLE?" checked":""}><span><b>🔌 Ajouter un câble ${ct==="adapté"?"de charge":ct}</b><small>${ct==="adapté"?"Adapté à chaque téléphone":"Compatible avec votre iPhone"}${L.length>1?" · pour chaque téléphone":""}</small></span><em>+${CABLE_PRIX} €${L.length>1?" ×"+L.length:""}</em></label>`;}

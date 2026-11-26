@@ -8,8 +8,10 @@
 <meta name="theme-color" content="#0a0420">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="fond.jpg">
 <script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;1,800&family=Sora:wght@700;800&display=swap">
 <style>
 :root{--bg:#1d0752;--card:rgba(16,5,44,.78);--line:#7a4be0;--txt:#ffffff;--mute:#dccdf9;--acc:#9d3dff;--acc2:#d0a3ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*:before,*:after{box-sizing:inherit}
@@ -655,7 +657,6 @@ button.oc.mode{width:100%;font-family:inherit;cursor:pointer;color:inherit}
 @media(max-width:599px){.wzs>.val .vimg{display:none}.wzs>.val{padding:14px}.wzs>.val b{font-size:28px}.wzs>.val small{font-size:12.5px}.wzs>.dev{padding:14px}.wzs>.dev .dm .ph{display:none}}
 .rvb small{display:block;font-size:12px;opacity:.8;margin-top:3px;font-weight:400}
 #rvbook:not(:empty){margin:10px 0 6px}
-.csug{margin:10px 0;padding:12px;border-radius:14px;border:1.5px dashed var(--line)}.csug b{display:block;font-size:14px;margin-bottom:6px}.csgb{display:flex;justify-content:space-between;width:100%;margin:6px 0 0;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:#12072e;color:#fff;font:600 14px 'Exo 2',sans-serif;cursor:pointer;text-align:left}.csgb small{display:block;font-weight:400;font-size:12px;color:#a9a9b6;margin-top:3px;line-height:1.35}.csgb span{flex:1;padding-right:10px}.csgb em{font-style:normal;color:#7dffb0;font-weight:800}
 </style>
 <link rel="canonical" href="https://www.cizoxphone.com/">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://www.cizoxphone.com/">
@@ -668,47 +669,6 @@ if(/[?&]avis\b/.test(location.search))location.replace("https://search.google.co
 <script>/* MODE MAINTENANCE : mettre "maintenance" dans le fichier etat.txt (ou "en ligne" pour rouvrir). Pour voir le site pendant la maintenance : ajouter ?apercu à l'adresse. */
 (function(){var d=document.documentElement;try{if(/[?&]apercu/.test(location.search))sessionStorage.setItem("cz_apercu","1")}catch(e){}var ok=false;try{ok=sessionStorage.getItem("cz_apercu")==="1"}catch(e){}if(ok)return;d.classList.add("czchk");var done=function(){d.classList.remove("czchk")};setTimeout(done,1500);fetch("etat.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){if(/maintenance/i.test(t)){var go=function(){document.body.insertAdjacentHTML("afterbegin",'<div id="czmaint"><div class="czb"><div class="czl">Cizox<span>Phone</span></div><div class="czi">🛠️</div><h1>Le site fait peau neuve !</h1><p>Nous mettons le site à jour avec plein de nouveautés. Il revient très vite.</p><p>Besoin d\'une réparation ou d\'un téléphone ? Je reste disponible :</p><a class="czw" href="https://wa.me/33659006184?text=Bonjour%2C%20je%20viens%20du%20site%20CizoxPhone%20!" target="_blank" rel="noopener">Me contacter sur WhatsApp</a><div class="czf">📍 Verrières-en-Anjou · 🕙 7j/7 de 10h à 22h<br>📞 06 59 00 61 84</div></div></div>');document.body.style.overflow="hidden";done()};document.body?go():document.addEventListener("DOMContentLoaded",go)}else done()}).catch(done)})();</script>
 <style>html.czchk body{visibility:hidden}#czmaint{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:#0b0420;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}#czmaint .czb{width:100%;max-width:440px;text-align:center;padding:34px 24px;border-radius:26px;background:rgba(26,10,77,.55);border:1px solid rgba(181,107,255,.45);box-shadow:0 0 50px rgba(139,47,255,.35)}#czmaint .czl{font-size:30px;font-weight:800}#czmaint .czl span{color:#e04bff;text-shadow:0 0 18px rgba(224,75,255,.7)}#czmaint .czi{font-size:52px;margin:22px 0 10px}#czmaint h1{font-size:24px;margin:0 0 12px}#czmaint p{color:#cfc2ee;line-height:1.55;font-size:16px;margin:0 0 8px}#czmaint .czw{display:block;margin-top:22px;padding:16px;border-radius:14px;background:#25d366;color:#04200e;font-weight:800;font-size:17px;text-decoration:none}#czmaint .czf{margin-top:18px;font-size:14px;color:#a995d6}</style>
-<style id="theme-sobre">/* Thème sobre (sombre neutre, sans néon ni animations en boucle) */
-:root{--bg:#0f0f14!important;--card:#18181f!important;--line:#2c2c36!important;--txt:#f4f4f6!important;--mute:#a9a9b6!important;--acc:#8b5cf6!important;--acc2:#a78bfa!important}
-*,*::before,*::after{animation:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;text-shadow:none!important;background-image:none!important}
-html,body{background:#0f0f14!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important}
-body *{font-family:inherit!important;font-style:normal!important;-webkit-text-fill-color:currentColor!important}
-.fx,.prog,.hv-logo{display:none!important}
-.hero *,h1,.rvl,.rvl *{filter:none!important;opacity:1!important}
-[class],button,a{box-shadow:none!important}
-.item,.acc,.rep,.tabs,.card,details,.moi,.cit,.pk,.lv,.ctot,.bkf,.csug,.hcard,.tpick,#cbox{background-color:#18181f!important;border:1px solid #2c2c36!important}
-.tab{background:#18181f!important}
-.tab.on,button.cta,.cta,.aadd,.cpay,.b1,.cartbtn{background:#7c3aed!important;color:#fff!important;border:none!important}
-.hero h1 em,.hero h1 span,.wt span{color:#a78bfa!important}
-.grd{background:rgba(139,92,246,.12)!important;color:#c4b5fd!important;border-color:rgba(139,92,246,.35)!important}
-.grd.pepite{background:rgba(250,204,21,.1)!important;color:#fcd34d!important;border-color:rgba(250,204,21,.35)!important}
-.bdg i{background:rgba(34,197,94,.1)!important;color:#86efac!important;border-color:rgba(34,197,94,.3)!important}
-
-.ind{background:#7c3aed!important}
-.tab[aria-selected=true],.opt.on{background:#7c3aed!important;border-color:#7c3aed!important;color:#fff!important}
-.hero{grid-template-columns:1fr!important;min-height:0!important}
-
-.tpick,.tpick *{border:none!important;background:transparent!important}
-
-.aa{margin:34px 0 10px}.aa h2{margin:0 0 4px}
-.aal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.aal::-webkit-scrollbar{display:none}
-.aav{flex:0 0 62%;max-width:260px;margin:0;scroll-snap-align:start}
-.aav video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#18181f;border:1px solid #2c2c36}
-.aav figcaption{font-size:13px;font-weight:600;margin-top:6px;color:#e5e5ea}
-.aamore{display:inline-block;margin-top:4px;font-size:14px;font-weight:600;color:#a78bfa!important;text-decoration:none}
-@media(min-width:860px){.aal{overflow:visible}.aav{flex:1 1 0;max-width:none}}
-/* Panier en noir et blanc */
-.cartbtn,#cartfab,.cartfab{background:#ffffff!important;color:#0f0f14!important;border:1px solid #ffffff!important}
-.cartbtn *,#cartfab *{color:#0f0f14!important}
-.cartbtn b,#cartfab b{background:#0f0f14!important;color:#fff!important}
-#cmod #cbox,#cbox{background:#0f0f14!important;border:1px solid #2c2c36!important}
-#cbox .cit,#cbox .pk,#cbox .lv,#cbox .ctot,#cbox .csug,#cbox .mrz{background:#18181f!important;border-color:#2c2c36!important}
-#cbox .pk.on,#cbox .lv.on{border-color:#ffffff!important}
-#cbox .cpay,#cbox button.cpay{background:#ffffff!important;color:#0f0f14!important}
-#cbox .qty button,#cbox .csgb{background:#0f0f14!important;color:#fff!important;border:1px solid #3a3a46!important}
-#cbox .rem,#cbox .pkr{background:#18181f!important;color:#e5e5ea!important;border-color:#2c2c36!important}
-#cbox em,#cbox .csgb em{color:#ffffff!important}
-</style>
 </head>
 <body>
 <main>
@@ -721,7 +681,12 @@ body *{font-family:inherit!important;font-style:normal!important;-webkit-text-fi
 <p class="lead">Écran, batterie, vitre arrière, connecteur de charge. Vous venez à Verrières-en-Anjou, on répare sur place, vous repartez avec votre téléphone.</p>
 <div class="pills"><span>Réparation sur place</span><span>Prix annoncé tout de suite</span><span>Écran garanti 1 an</span></div>
 </div>
-
+<div class="hero-vis" aria-hidden="true">
+<img class="hv-logo" src="logo.webp" alt="" width="360" height="294">
+<div class="hcard hc2"><span>✓</span>Écran garanti 1 an</div>
+<div class="hcard hc1"><small>Devis instantané</small><span class="hcv"><span id="hvm">iPhone 15 Pro · Écran Soft OLED</span><b id="hvp">175 €</b></span><div class="bar"><i id="hvb" style="width:100%"></i></div><small style="margin-top:6px">Réparé sur place pendant que vous attendez</small></div>
+<div class="hcard hc3"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.3A11.8 11.8 0 0 0 1.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.5-8.5z"/></svg></span>Rendez-vous sur WhatsApp</div>
+</div>
 </div>
 
 <p class="tpick" id="tpick">Que souhaitez-vous faire ? 👇</p>
@@ -738,15 +703,14 @@ body *{font-family:inherit!important;font-style:normal!important;-webkit-text-fi
 <section id="vendre" hidden></section>
 <section id="accs" hidden></section>
 <section class="seo">
-<section class="aa" id="aa"><h2>Avant / Après</h2><p class="note">Quelques réparations faites à l'atelier.</p><div class="aal"><figure class="aav"><video muted loop playsinline preload="none" poster="aa-ecran-17pro.jpg" data-src="aa-ecran-17pro.mp4"></video><figcaption>iPhone 17 Pro · Écran</figcaption></figure><figure class="aav"><video muted loop playsinline preload="none" poster="aa-dos-16pro.jpg" data-src="aa-dos-16pro.mp4"></video><figcaption>iPhone 16 Pro · Vitre arrière</figcaption></figure><figure class="aav"><video muted loop playsinline preload="none" poster="aa-chassis-13.jpg" data-src="aa-chassis-13.mp4"></video><figcaption>iPhone 13 · Châssis complet</figcaption></figure><figure class="aav"><video muted loop playsinline preload="none" poster="aa-chassis-14pro.jpg" data-src="aa-chassis-14pro.mp4"></video><figcaption>iPhone 14 Pro · Châssis + batterie</figcaption></figure></div><a class="aamore" href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener">Voir plus de réparations sur TikTok →</a></section>
-<div class="moi rvl"><div class="moi-ph" id="moiph"><span>K</span></div><div><small>Qui suis-je ?</small><h2>Moi c'est Killian</h2><p>C'est moi qui répare votre téléphone chez CizoxPhone, à Verrières-en-Anjou, près d'Angers. Vous venez, vous attendez sur place et vous repartez avec votre téléphone réparé. Je vous annonce le prix avant de commencer, et l'écran est garanti 1 an et la batterie 3 mois. Déjà <b>plus de 100 réparations</b> et <b>une trentaine de téléphones vendus</b>.</p></div></div>
-
+<div class="moi rvl"><div class="moi-ph" id="moiph"><span>K</span></div><div><small>Qui suis-je ?</small><h2>Moi c'est Killian</h2><p>C'est moi qui répare votre téléphone chez CizoxPhone, à Verrières-en-Anjou, près d'Angers. Vous venez, vous attendez sur place et vous repartez avec votre téléphone réparé. Je vous annonce le prix avant de commencer, et l'écran est garanti 1 an et la batterie 3 mois.</p></div></div>
+<div class="tt rvl"><span class="tti"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></span><div><small>Avant / Après</small><h2>Regardez mes réparations en vidéo</h2><p>Écrans cassés, dos explosés, batteries à bout : retrouvez mes réparations avant / après sur TikTok.</p></div><a class="ttb" href="https://www.tiktok.com/@cizoxphone" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg>Voir sur TikTok · @cizoxphone</a></div>
 <div class="intro rvl" style="margin-top:40px">
 <h2>Réparation de téléphone à Verrières-en-Anjou (49)</h2>
 <p>CizoxPhone répare les iPhone, les Samsung et les autres téléphones à Verrières-en-Anjou, près d'Angers, et dans le Maine-et-Loire. Choisissez votre réparation plus haut : vous voyez le prix tout de suite et vous réservez votre rendez-vous en ligne en quelques secondes.</p>
 </div>
 <h2 class="rvl">Nos réparations</h2>
-<ul class="svc"><li class="rvl" data-svc="Écran"><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5h4M9 13l3-3m-1 6l4-4"/></svg></span><b>Écran</b><small>Incell, Soft OLED ou Original · iPhone et Samsung</small><em data-from="Écran"></em></li><li class="rvl" data-svc="Batterie"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3M7 10v4m3-4v4"/></svg></span><b>Batterie</b><small>Retrouvez l'autonomie du premier jour</small><em data-from="Batterie"></em></li><li class="rvl" data-svc="Connecteur de charge"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 2v5m6-5v5M7 7h10v4a5 5 0 0 1-10 0zM12 16v6"/></svg></span><b>Connecteur de charge</b><small>Votre téléphone ne charge plus ou mal</small><em data-from="Connecteur de charge"></em></li><li class="rvl" data-svc="Caméra"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><b>Caméra avant et arrière</b><small>Photo floue, tache ou caméra noire</small><em data-from="Caméra"></em></li><li class="rvl" data-svc="Dos"><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><rect x="8.5" y="5" width="5" height="5" rx="1.5"/></svg></span><b>Vitre arrière ou châssis complet</b><small>Dos fissuré ou contour abîmé</small><em data-from="Dos"></em></li><li class="rvl" data-svc="Autre"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5z"/></svg></span><b>Autres réparations sur devis</b><small>Haut-parleur, boutons, Face ID… demandez-moi</small><em data-from="Autre"></em></li></ul>
+<ul class="svc"><li class="rvl" data-svc="Écran"><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5h4M9 13l3-3m-1 6l4-4"/></svg></span><b>Écran</b><small>Incell, Soft OLED ou Original · iPhone et Samsung</small><em data-from="Écran"></em></li><li class="rvl" data-svc="Batterie"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3M7 10v4m3-4v4"/></svg></span><b>Batterie</b><small>Retrouve l'autonomie du premier jour</small><em data-from="Batterie"></em></li><li class="rvl" data-svc="Connecteur de charge"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 2v5m6-5v5M7 7h10v4a5 5 0 0 1-10 0zM12 16v6"/></svg></span><b>Connecteur de charge</b><small>Votre téléphone ne charge plus ou mal</small><em data-from="Connecteur de charge"></em></li><li class="rvl" data-svc="Caméra"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><b>Caméra avant et arrière</b><small>Photo floue, tache ou caméra noire</small><em data-from="Caméra"></em></li><li class="rvl" data-svc="Dos"><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><rect x="8.5" y="5" width="5" height="5" rx="1.5"/></svg></span><b>Vitre arrière ou châssis complet</b><small>Dos fissuré ou contour abîmé</small><em data-from="Dos"></em></li><li class="rvl" data-svc="Autre"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5z"/></svg></span><b>Autres réparations sur devis</b><small>Haut-parleur, boutons, Face ID… demandez-moi</small><em data-from="Autre"></em></li></ul>
 <p class="note2 rvl">Écran garanti 1 an, batterie garantie 3 mois. Deux réparations en même temps : -10 %.</p>
 <h2 class="rvl">Questions fréquentes</h2>
 <h3 class="rvl faqh">🔧 Réparations</h3>
@@ -821,64 +785,11 @@ body *{font-family:inherit!important;font-style:normal!important;-webkit-text-fi
 <!-- CATALOGUE DES TÉLÉPHONES (lu aussi par le serveur de paiement) · statut : "" (dispo), "reserve" ou "vendu" · grade : "diamant", "pepite" ou "excellent" -->
 <script type="application/json" id="catalogue">[
  {
-  "id": "iphone-14-128-go-violet",
-  "nom": "iPhone 14 128 Go Violet",
-  "prix": "320 €",
-  "grade": "pepite",
-  "statut": "",
-  "badges": [
-   "Batterie neuve 100 %",
-   "Vitre arrière neuve",
-   "Caméras neuves"
-  ],
-  "photos": [
-   "iphone-14-violet-1.webp",
-   "iphone-14-violet-2.webp",
-   "iphone-14-violet-3.webp"
-  ],
-  "desc": "Un iPhone 14 Violet en très bon état, avec une batterie neuve à 100 %, une vitre arrière neuve et des caméras neuves. Puce A15 Bionic, écran OLED 6,1\" et mode Action pour des vidéos stables.\n\n## L'état\n✨ Grade Pépite : très bon état. Vitre arrière neuve, sans aucune rayure. Deux légers chocs sur le châssis, visibles en photo, sans effet sur le fonctionnement.\n\n## Batterie\n🔋 Batterie neuve compatible, capacité maximale 100 %.\n\n## Pièces changées\n• Batterie neuve compatible\n• Vitre arrière neuve\n• Caméras arrière neuves\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,1\" Super Retina XDR OLED, protection Ceramic Shield\n• Puce A15 Bionic (5 cœurs GPU) · 5G · MagSafe\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle), mode Action\n• Détection des accidents · Face ID\n• Port Lightning · 128 Go de stockage\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
- },
- {
-  "id": "iphone-12-pro-max-128-go-bleu-pacifique",
-  "nom": "iPhone 12 Pro Max 128 Go Bleu Pacifique",
-  "prix": "300 €",
-  "grade": "diamant",
-  "statut": "",
-  "badges": [
-   "Écran et batterie neufs",
-   "Batterie 100 %",
-   "Boîte d'origine"
-  ],
-  "photos": [
-   "iphone-12-pro-bleu-1.webp",
-   "iphone-12-pro-bleu-2.webp",
-   "iphone-12-pro-bleu-3.webp"
-  ],
-  "desc": "Un iPhone 12 Pro Max Bleu Pacifique comme neuf : grand écran 6,7\" neuf, batterie neuve d'origine Apple à 100 % et triple appareil photo pro. Un iPhone haut de gamme à petit prix, livré avec sa boîte.\n\n## L'état\n💎 Grade Diamant : comme neuf. Écran neuf, aucune rayure ni choc visible sur le contour et la face arrière.\n\n## Batterie\n🔋 Batterie neuve d'origine Apple, capacité maximale 100 %.\n\n## Pièces changées\n• Écran neuf Soft OLED (même rendu que l'écran d'origine)\n• Batterie neuve d'origine Apple\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 6,7\" Super Retina XDR OLED, protection Ceramic Shield\n• Puce A14 Bionic · 5G · MagSafe\n• Triple appareil photo 12 Mpx (grand-angle, ultra grand-angle, téléobjectif) + scanner LiDAR, stabilisation optique par déplacement du capteur\n• Face ID\n• Port Lightning · 128 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
- },
- {
-  "id": "iphone-13-mini-128-go-minuit",
-  "nom": "iPhone 13 mini 128 Go Minuit",
-  "prix": "280 €",
-  "grade": "pepite",
-  "statut": "",
-  "badges": [
-   "Batterie 100 %",
-   "128 Go",
-   "Boîte d'origine"
-  ],
-  "photos": [
-   "iphone-13-mini-minuit-1.webp",
-   "iphone-13-mini-minuit-2.webp"
-  ],
-  "desc": "Le plus compact des iPhone récents : un iPhone 13 mini Minuit qui tient dans une main, avec une batterie à 100 %. Puce A15 Bionic, écran OLED et double appareil photo, livré avec sa boîte.\n\n## L'état\n✨ Grade Pépite : très bon état. Un léger choc sur le châssis, visible en photo, sans effet sur le fonctionnement.\n\n## Batterie\n🔋 Batterie neuve compatible, capacité maximale 100 %.\n\n## Pièces changées\n• Batterie neuve compatible\n• Tout le reste est d'origine Apple\n\n## Testé et vérifié\n• Face ID, appareils photo, haut-parleurs et micro fonctionnent parfaitement\n• Débloqué tout opérateur, iCloud libre\n• Testé et vérifié avant la vente\n\n## Caractéristiques\n• Écran 5,4\" Super Retina XDR OLED, protection Ceramic Shield\n• Puce A15 Bionic · 5G · MagSafe\n• Double appareil photo 12 Mpx (grand-angle + ultra grand-angle), mode Cinématique\n• Face ID\n• Port Lightning · 128 Go de stockage\n\n## Dans la boîte\n• Boîte d'origine\n\n## Garantie\n✅ Garantie 2 ans CizoxPhone, sauf casse et oxydation."
- },
- {
   "id": "iphone-13-128-go-lumiere-stellaire-2",
   "nom": "iPhone 13 128 Go Lumière stellaire",
   "prix": "279 €",
   "grade": "diamant",
-  "statut": "vendu",
+  "statut": "",
   "badges": [
    "Écran et châssis neufs",
    "Batterie 87 %",
@@ -1242,7 +1153,7 @@ body *{font-family:inherit!important;font-style:normal!important;-webkit-text-fi
   "nom": "iPhone 14 128 Go Bleu",
   "prix": "320 €",
   "grade": "diamant",
-  "statut": "vendu",
+  "statut": "",
   "badges": [
    "Écran neuf",
    "Batterie neuve",
@@ -1371,7 +1282,7 @@ function repairsIphone(m){
 }
 /* ===== PARCOURS RÉPARATION ===== */
 /* Logos des marques : mettre les fichiers sur GitHub avec ces noms (PNG fond transparent). Tant qu'ils manquent, un visuel de remplacement s'affiche. */
-const LOGOS={"iPhone":["logo-apple.webp"],"Samsung":["logo-samsung.webp"],"Autre modèle":["logo-huawei.webp","logo-xiaomi.webp","logo-redmi.webp","logo-oppo.webp","logo-honor.webp"]};
+const LOGOS={"iPhone":["logo-apple.png"],"Samsung":["logo-samsung.png"],"Autre modèle":["logo-huawei.png","logo-xiaomi.png","logo-redmi.png","logo-oppo.png","logo-honor.png"]};
 /* Grande photo par modèle (style studio). Ex : "iPhone 15":"rep-iphone-15.webp". Sans photo : gros plan du rachat, sinon visuel CizoxPhone. */
 const PHOTO_MODELE={"A40, A41, A42 5G": "rep-samsung-a41.webp", "A02s, A03, A03s, A04s": "rep-samsung-a06.webp", "A20e, A21s, A22, A23": "rep-samsung-a24.webp", "A32, A33, A34": "rep-samsung-a37.webp", "A50, A51, A52, A52S, A53, A54": "rep-samsung-a57.webp", "S20 Ultra": "rep-samsung-s20-ultra.webp", "A70, A71, A72": "rep-samsung-a70.webp", "A10, A11, A12, A12s, A13, A14": "rep-samsung-a10.webp", "S8, S8+, S9, S9+": "rep-samsung-s9.webp", "S10, S10+, S10e": "rep-samsung-s10.webp", "S10 Lite": "rep-samsung-s10-lite.webp", "S20, S20+": "rep-samsung-s20.webp", "S21, S21 FE, S21+": "rep-samsung-s21.webp", "S21 Ultra": "rep-samsung-s21-ultra.webp", "S22, S22+, S23, S23+": "rep-samsung-s23.webp", "S22 Ultra, S23 Ultra": "rep-samsung-s22-ultra.webp", "iPhone 11 Pro": "rep-iphone-11-pro.webp", "iPhone 11 Pro Max": "rep-iphone-11-pro.webp", "iPhone 16 E": "rep-iphone-16-e.webp", "iPhone X": "rep-iphone-x.webp", "iPhone XS": "rep-iphone-x.webp", "iPhone XS Max": "rep-iphone-x.webp", "iPhone XR": "rep-iphone-xr.webp", "iPhone 11": "rep-iphone-11.webp", "iPhone 12": "rep-iphone-12.webp", "iPhone 12 mini": "rep-iphone-12.webp", "iPhone 12 Pro": "rep-iphone-12-pro.webp", "iPhone 12 Pro Max": "rep-iphone-12-pro.webp", "iPhone 13": "rep-iphone-13.webp", "iPhone 13 mini": "rep-iphone-13.webp", "iPhone 13 Pro": "rep-iphone-13-pro.webp", "iPhone 13 Pro Max": "rep-iphone-13-pro.webp", "iPhone 14": "rep-iphone-14.webp", "iPhone 14 Plus": "rep-iphone-14.webp", "iPhone 14 Pro": "rep-iphone-14-pro.webp", "iPhone 14 Pro Max": "rep-iphone-14-pro.webp", "iPhone 15": "rep-iphone-15.webp", "iPhone 15 Plus": "rep-iphone-15.webp", "iPhone 15 Pro": "rep-iphone-15-pro.webp", "iPhone 15 Pro Max": "rep-iphone-15-pro.webp", "iPhone 16": "rep-iphone-16.webp", "iPhone 16 Plus": "rep-iphone-16.webp", "iPhone 16 Pro": "rep-iphone-16-pro.webp", "iPhone 16 Pro Max": "rep-iphone-16-pro.webp", "iPhone 17 E": "rep-iphone-17-e.webp", "iPhone 17": "rep-iphone-17.webp", "iPhone 17 Pro": "rep-iphone-17-pro.webp", "iPhone 17 Pro Max": "rep-iphone-17-pro.webp", "iPhone 17 Air": "rep-iphone-17-air.webp"};
 /* Petites photos (iPhone X et 11), affichées en plus petit pour rester nettes */
@@ -1895,20 +1806,14 @@ let CART=[],LV="relais",RELAIS=null,PACK=false,CABLE=false,ACC=[];
 const PACK_PRIX=25,PACK_SEUL=40,PACK_NOM="Pack protection : coque + verre trempé + protection caméra",CABLE_PRIX=10,CABLE_NOM="Câble de charge";
 const ACCS={pack:{n:"Pack protection",d:"Coque + verre trempé + protection caméra, adaptés à votre téléphone",p:PACK_SEUL,i:"🛡️",img:["acc-pack-2.webp","acc-pack.webp"],mod:true,max:10},
  lightning:{n:"Câble Lightning",d:"Pour iPhone 14 et plus anciens",p:10,i:"🔌",img:["acc-lightning.webp"],max:50},
- usbc:{n:"Câble USB-C",d:"Pour iPhone 15 et plus récents, et la plupart des Samsung",p:10,i:"⚡",img:["acc-usbc.webp"],max:50},
- budspro2:{n:"CizoxBuds Pro 2",d:"Écouteurs sans fil intra-auriculaires avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-pro2.webp"],buds:true,max:15,sd:"Écouteurs sans fil intra-auriculaires avec étui de charge"},
- buds4:{n:"CizoxBuds 4",d:"Écouteurs sans fil nouvelle génération avec étui de charge · Bluetooth · compatibles iPhone et Android",p:30,i:"🎧",img:["acc-cizoxbuds-4.webp"],buds:true,max:15,sd:"Écouteurs sans fil nouvelle génération avec étui de charge"},
- box:{n:"CizoxBox 6 en 1",d:"Le coffret complet : CizoxBuds Pro 2, CizoxWatch (montre connectée), batterie externe MagSafe, câble, chargeur secteur, chargeur à induction MagSafe et chargeur à induction pour la montre.",p:70,i:"🎁",img:["acc-cizoxbox.webp"],max:13,sd:"Coffret : écouteurs, montre connectée, batterie MagSafe, câble, chargeur et 2 chargeurs à induction"}};
-const BUDS_1=30,BUDS_N=20; // écouteurs : 30 € la première paire, puis 20 € chacune des suivantes (tous modèles confondus)
-const budsN=()=>ACC.filter(a=>ACCS[a.k]&&ACCS[a.k].buds).reduce((x,a)=>x+a.q,0);
-const budsRem=()=>Math.max(0,budsN()-1)*(BUDS_1-BUDS_N);
+ usbc:{n:"Câble USB-C",d:"Pour iPhone 15 et plus récents, et la plupart des Samsung",p:10,i:"⚡",img:["acc-usbc.webp"],max:50}};
 const accImg=(a,c)=>a.img?`<img class="${c}" src="${a.img[0]}" alt="${esc(a.n)}" loading="lazy" onerror="this.outerHTML='<span class=ai>${a.i}</span>'">`:`<span class="ai">${a.i}</span>`;
 const PACK_DUO=10; // remise par lot de 2 packs protection achetés seuls
 const packsN=()=>ACC.filter(a=>a.k==="pack").reduce((x,a)=>x+a.q,0);
 const packRem=()=>Math.floor(packsN()/2)*PACK_DUO;
 const usbcTel=nom=>/iPhone (1[5-9]|[2-9]\d)/.test(nom);
 const accNom=a=>ACCS[a.k].n+(a.m?" – "+a.m:"");
-const accTot=()=>ACC.reduce((x,a)=>x+ACCS[a.k].p*a.q,0)-packRem()-budsRem();
+const accTot=()=>ACC.reduce((x,a)=>x+ACCS[a.k].p*a.q,0)-packRem();
 function accAdd(k,m){const a=ACC.find(x=>x.k===k&&(x.m||"")===(m||""));if(a)a.q=Math.min(ACCS[k].max,a.q+1);else ACC.push({k,m:m||"",q:1});cartSave();const f=$("#cartfab");if(f){f.classList.remove("bump");void f.offsetWidth;f.classList.add("bump")}}
 function accRm(i){ACC.splice(i,1);cartSave();cartOpen()}
 function accQ(i,d){const a=ACC[i];if(!a)return;a.q+=d;if(a.q<1){ACC.splice(i,1)}else a.q=Math.min(ACCS[a.k].max,a.q);cartSave();cartOpen()}
@@ -1917,7 +1822,7 @@ try{ACC=JSON.parse(localStorage.getItem("cz_acc")||"[]").filter(a=>ACCS[a.k])}ca
 const telId=id=>TELEPHONES.find(t=>t.id===id);
 function cartClean(){CART=CART.filter(id=>{const t=telId(id);return t&&!t.statut})}
 function cartSave(){try{localStorage.setItem("cz_panier",JSON.stringify(CART));localStorage.setItem("cz_acc",JSON.stringify(ACC))}catch(e){}cartUI()}
-function cartUI(){cartClean();const n=CART.length+ACC.reduce((x,a)=>x+a.q,0),f=$("#cartfab");if(f){f.hidden=!n;$("#cartn").textContent=n}document.querySelectorAll(".cartbtn b").forEach(b=>b.textContent=n);const ad=$("#achat");if(ad)ad.dataset.n=n}
+function cartUI(){cartClean();const n=CART.length+ACC.reduce((x,a)=>x+a.q,0),f=$("#cartfab");if(f){f.hidden=!n||(CUR!==2&&CUR!==4);$("#cartn").textContent=n}document.querySelectorAll(".cartbtn b").forEach(b=>b.textContent=n);const ad=$("#achat");if(ad)ad.dataset.n=n}
 function cartAdd(id){if(!CART.includes(id))CART.push(id);cartSave();const f=$("#cartfab");if(f){f.classList.remove("bump");void f.offsetWidth;f.classList.add("bump")}}
 function cartRm(id){CART=CART.filter(x=>x!==id);cartSave();cartOpen()}
 function loadJs(u){return new Promise((ok,ko)=>{const x=document.createElement("script");x.src=u;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
@@ -1938,27 +1843,24 @@ function cartOpen(){const m=$("#cmod");cartClean();
  if(!L.length&&!ACC.length){h+=`<p class="cempty">Votre panier est vide.</p><button class="cpay" id="cgo">Voir les téléphones</button>`}
  else{h+=L.map(t=>`<div class="cit">${t.photos[0]?`<img src="${esc(t.photos[0])}" alt="">`:""}<div><b>${esc(t.nom)}</b>${grdH(t.grade)}<button class="crm" data-rm="${esc(t.id)}">Retirer</button></div><span class="cp">${esc(t.prix)}</span></div>`).join("");
   h+=ACC.map((a,i)=>`<div class="cit">${accImg(ACCS[a.k],"aci")}<div><b>${esc(accNom(a))}</b><span class="qty"><button data-aq="${i}" data-d="-1" aria-label="Moins">−</button><em>${a.q}</em><button data-aq="${i}" data-d="1" aria-label="Plus"${a.q>=ACCS[a.k].max?" disabled":""}>+</button></span><button class="crm" data-arm="${i}">Retirer</button></div><span class="cp">${eur2(ACCS[a.k].p*a.q)}</span></div>`).join("");
-  if(budsRem())h+=`<p class="pkr">🎧 Écouteurs : ${BUDS_1} € la première paire puis ${BUDS_N} € les suivantes : -${budsRem()} €</p>`;
-  if(L.length){const sug=["budspro2","buds4","box"].filter(k=>!ACC.some(a=>a.k===k));if(sug.length)h+=`<div class="csug"><b>Avec votre iPhone :</b>${sug.map(k=>`<button type="button" class="csgb" data-sug="${k}"><span>${ACCS[k].i} ${esc(ACCS[k].n)}<small>${esc(ACCS[k].sd||"")}</small></span> <em>+${ACCS[k].buds&&budsN()?BUDS_N:ACCS[k].p} €</em></button>`).join("")}</div>`}
   if(packRem())h+=`<p class="pkr">🎉 ${packsN()>=4?"Remise lots de 2 packs":"2 packs protection"} : -${packRem()} €</p>`;
   if(L.length){const ct=L.every(t=>usbcTel(t.nom))?"USB-C":L.every(t=>!usbcTel(t.nom))?"Lightning":"adapté";
   h+=`<label class="pk${PACK?" on":""}"><input type="checkbox" id="pkc"${PACK?" checked":""}><span><b>🛡️ Ajouter le pack protection <i class="rem">-15 €</i></b><small>Coque + verre trempé + protection caméra${L.length>1?" · pour chaque téléphone":""}</small></span><em><span class="was">${PACK_SEUL} €</span>+${PACK_PRIX} €${L.length>1?" ×"+L.length:""}</em></label><label class="pk${CABLE?" on":""}"><input type="checkbox" id="cbc"${CABLE?" checked":""}><span><b>🔌 Ajouter un câble ${ct==="adapté"?"de charge":ct}</b><small>${ct==="adapté"?"Adapté à chaque téléphone":"Compatible avec votre iPhone"}${L.length>1?" · pour chaque téléphone":""}</small></span><em>+${CABLE_PRIX} €${L.length>1?" ×"+L.length:""}</em></label>`;}
   h+=`<h3 class="ch3">Livraison</h3>`+Object.entries(LIV).map(([k,v])=>`<label class="lv${LV===k?" on":""}"><input type="radio" name="lv" value="${k}"${LV===k?" checked":""}><span><b>${v.n}</b><small>${v.d}</small></span><em>${v.p?eur2(v.p):"Gratuit"}</em></label>`).join("");
   if(LV==="relais")h+=`<div class="mrz"><div class="mrsel" id="mrs"${RELAIS?"":" hidden"}>${mrTxt()}</div><button class="mrbtn" id="mrb">📍 ${RELAIS?"Changer de point relais":"Choisir mon point relais"}</button><div id="mrw"></div></div>`;
   h+=rpcH(L);
-  h+=`<div class="ctot">${pk?`<div><span>Pack protection</span><span>${eur2(pk)}</span></div>`:""}${cb?`<div><span>Câble de charge</span><span>${eur2(cb)}</span></div>`:""}${ac?`<div><span>Accessoires${packRem()+budsRem()?` (dont -${packRem()+budsRem()} € de remise)`:""}</span><span>${eur2(ac)}</span></div>`:""}<div><span>Sous-total</span><span>${eur2(sub)}</span></div><div><span>Livraison</span><span>${lp?eur2(lp):"Gratuit"}</span></div><div class="t"><span>Total</span><span>${eur2(tot)}</span></div></div>`;
+  h+=`<div class="ctot">${pk?`<div><span>Pack protection</span><span>${eur2(pk)}</span></div>`:""}${cb?`<div><span>Câble de charge</span><span>${eur2(cb)}</span></div>`:""}${ac?`<div><span>Accessoires${packRem()?` (dont -${packRem()} € remise packs)`:""}</span><span>${eur2(ac)}</span></div>`:""}<div><span>Sous-total</span><span>${eur2(sub)}</span></div><div><span>Livraison</span><span>${lp?eur2(lp):"Gratuit"}</span></div><div class="t"><span>Total</span><span>${eur2(tot)}</span></div></div>`;
   h+=LV==="main"?`<a class="cpay wa" id="cwa" target="_blank" rel="noopener">Réserver sur WhatsApp · paiement sur place</a>`:`<button class="cpay" id="cpay">Procéder au paiement · ${eur2(tot)}</button><p class="csec">🔒 Paiement sécurisé par carte bancaire<br>ou en <b>3 fois sans frais avec Klarna</b></p><p class="cerr" id="cerr" hidden></p>`;}
  $("#cbox").innerHTML=h;m.hidden=false;document.body.style.overflow="hidden";
  $("#cx").onclick=cartClose;const g=$("#cgo");if(g)g.onclick=()=>{cartClose();tab(2,true)};
  m.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>cartRm(b.dataset.rm));
  m.querySelectorAll("[data-arm]").forEach(b=>b.onclick=()=>accRm(+b.dataset.arm));
  m.querySelectorAll("[data-aq]").forEach(b=>b.onclick=()=>accQ(+b.dataset.aq,+b.dataset.d));
- m.querySelectorAll("[data-sug]").forEach(b=>b.onclick=()=>{accAdd(b.dataset.sug);cartOpen()});
  m.querySelectorAll("input[name=lv]").forEach(r=>r.onchange=()=>{LV=r.value;cartOpen()});
  const pkc=$("#pkc");if(pkc)pkc.onchange=()=>{PACK=pkc.checked;cartOpen()};rpcBind();
  const cbc=$("#cbc");if(cbc)cbc.onchange=()=>{CABLE=cbc.checked;cartOpen()};
  const mb=$("#mrb");if(mb)mb.onclick=mrOpen;
- const w=$("#cwa");if(w)w.href=wa(`Bonjour, je voudrais acheter :${L.length?"\n":""}${L.map(t=>`• ${t.nom} (${t.prix})`).join("\n")}${pk?`\n• ${PACK_NOM} (${eur2(pk)})`:""}${cb?`\n• ${CABLE_NOM} (${eur2(cb)})`:""}${ACC.map(a=>`\n• ${accNom(a)}${a.q>1?" ×"+a.q:""} (${eur2(ACCS[a.k].p*a.q)})`).join("")}${packRem()?`\n• Remise packs : -${packRem()} €`:""}${budsRem()?`\n• Remise écouteurs : -${budsRem()} €`:""}\nTotal : ${eur2(sub)}\nRemise en main propre à Verrières-en-Anjou. Quand est-ce que je peux passer ?`);
+ const w=$("#cwa");if(w)w.href=wa(`Bonjour, je voudrais acheter :${L.length?"\n":""}${L.map(t=>`• ${t.nom} (${t.prix})`).join("\n")}${pk?`\n• ${PACK_NOM} (${eur2(pk)})`:""}${cb?`\n• ${CABLE_NOM} (${eur2(cb)})`:""}${ACC.map(a=>`\n• ${accNom(a)}${a.q>1?" ×"+a.q:""} (${eur2(ACCS[a.k].p*a.q)})`).join("")}${packRem()?`\n• Remise packs : -${packRem()} €`:""}\nTotal : ${eur2(sub)}\nRemise en main propre à Verrières-en-Anjou. Quand est-ce que je peux passer ?`);
  const p=$("#cpay");if(p){p.onclick=cartPay;payState()}}
 function cartClose(){$("#cmod").hidden=true;document.body.style.overflow=""}
 async function cartPay(){const b=$("#cpay"),er=$("#cerr"),L=CART.map(telId);
@@ -2002,7 +1904,7 @@ function extraBind(){
 }
 
 function accsShow(){const e=$("#accs");e.innerHTML=`<div class="cartbar"><button class="cartbtn" type="button">🛒 Mon panier <b>0</b></button></div>`+ACC_H();e.querySelectorAll(".cartbtn").forEach(b=>b.onclick=cartOpen);accBind();cartUI();anim(e,0)}
-function ACC_H(){return `<h2>Accessoires</h2><p class="note">Livrés avec votre commande, ou à récupérer en main propre à Verrières-en-Anjou.</p><div class="accs">${Object.entries(ACCS).map(([k,a])=>`<div class="acc">${a.img&&a.img[1]?`<div class="aimgs">${a.img.map(u=>`<img src="${u}" alt="${esc(a.n)}" loading="lazy">`).join("")}</div>`:accImg(a,"aim")}<div><h3>${a.n}</h3><p>${a.d}</p><span class="ap">${a.p} €</span>${a.buds?`<br><span class="apr">🎧 ${BUDS_1} € la première paire, puis ${BUDS_N} € chacune des suivantes</span><br>`:k==="pack"?`<br><span class="apr">💡 ${PACK_PRIX} € seulement avec l'achat d'un téléphone (-15 €)</span><br><span class="apr">🎁 2 packs achetés = -${PACK_DUO} €</span><select id="apm"><option value="">Modèle exact de votre téléphone</option>${MODELES_IPHONE.map(m=>`<option>${esc(m)}</option>`).join("")}<option value="__autre">Autre modèle (Samsung, autre marque…)</option></select><input type="text" id="apa" placeholder="Modèle exact (ex : Samsung Galaxy A54)" hidden>`:"<br>"}<button class="aadd" data-acc="${k}">Ajouter au panier</button></div></div>`).join("")}</div>`}
+function ACC_H(){return `<h2>Accessoires</h2><p class="note">Livrés avec votre commande, ou à récupérer en main propre à Verrières-en-Anjou.</p><div class="accs">${Object.entries(ACCS).map(([k,a])=>`<div class="acc">${a.img&&a.img[1]?`<div class="aimgs">${a.img.map(u=>`<img src="${u}" alt="${esc(a.n)}" loading="lazy">`).join("")}</div>`:accImg(a,"aim")}<div><h3>${a.n}</h3><p>${a.d}</p><span class="ap">${a.p} €</span>${k==="pack"?`<br><span class="apr">💡 ${PACK_PRIX} € seulement avec l'achat d'un téléphone (-15 €)</span><br><span class="apr">🎁 2 packs achetés = -${PACK_DUO} €</span><select id="apm"><option value="">Modèle exact de votre téléphone</option>${MODELES_IPHONE.map(m=>`<option>${esc(m)}</option>`).join("")}<option value="__autre">Autre modèle (Samsung, autre marque…)</option></select><input type="text" id="apa" placeholder="Modèle exact (ex : Samsung Galaxy A54)" hidden>`:"<br>"}<button class="aadd" data-acc="${k}">Ajouter au panier</button></div></div>`).join("")}</div>`}
 function accBind(){const sm=$("#apm"),sa=$("#apa");if(sm)sm.onchange=()=>{sa.hidden=sm.value!=="__autre";sm.style.borderColor="";if(!sa.hidden)sa.focus()};
  document.querySelectorAll("[data-acc]").forEach(b=>b.onclick=()=>{const k=b.dataset.acc;let m="";
  if(ACCS[k].mod){m=sm.value==="__autre"?sa.value.trim():sm.value;if(!m){const f=sm.value==="__autre"?sa:sm;f.focus();f.style.borderColor="#ff6b8a";return}}
@@ -2389,12 +2291,5 @@ document.addEventListener("click",e=>{
 },true);
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4080bf44afcc48d692c07d3cd953fbf6"}'></script><!-- End Cloudflare Web Analytics -->
-<script>
-/* Avant/Après : les vidéos ne se chargent et ne tournent que quand elles sont à l'écran */
-(function(){const vs=document.querySelectorAll(".aav video");if(!vs.length)return;
- if(!("IntersectionObserver" in window)){vs.forEach(v=>{v.src=v.dataset.src;v.play().catch(()=>{})});return}
- const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{threshold:.35});
- vs.forEach(v=>io.observe(v))})();
-</script>
 </body>
 </html>
